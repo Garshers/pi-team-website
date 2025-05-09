@@ -1,9 +1,15 @@
 import React from 'react';
 import './homePageStyle.css';
 import Gallery from '../../Gallery/Gallery';
+import { Header } from '../../HeaderAndFooter/header.js';
+import Items from './TabsArray.js';
 
 import MainVideo from "../../../assets/MainVideo.mp4";
 
+/**
+ * @constant {Array<Object>} photoDataContent - An array of objects containing data for the Gallery component.
+ * Each object has a unique `id` and an `image` which is the URL to the photo.
+ */
 const photoDataContent = [
     { id: '1', image: 'https://plus.unsplash.com/premium_photo-1680555225031-5a2559c99e75?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' },
     { id: '2', image: 'https://images.unsplash.com/photo-1741851374721-a546dc41561a?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' },
@@ -15,10 +21,18 @@ const photoDataContent = [
     { id: '8', image: 'https://plus.unsplash.com/premium_photo-1666820202651-314501c88358?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' },
 ];
 
+/**
+ * @function HomePage
+ * @returns {JSX.Element} - Component representing the home page of the application.
+ * It includes a background video section and a photo gallery. It utilizes the Header component
+ * to display the navigation menu.
+ */
 function HomePage() {
     return (
+        <><Header menuItems={Items} />
         <div className="mainBox">
             <div className='mainVideoContainer'>
+                {/* Video component playing in a loop, auto-playing, and muted. */}
                 <video
                     src={MainVideo}
                     autoPlay
@@ -28,8 +42,9 @@ function HomePage() {
                 />
             </div>
 
+            {/* Renders the Gallery component and passes the photo data as a prop. */}
             <Gallery photos={photoDataContent} />
-        </div>
+        </div></>
     );
 }
 
