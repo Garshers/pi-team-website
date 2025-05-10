@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { GiHamburgerMenu } from 'react-icons/gi';
-import Logo from "../../assets/Logo.png";
+import Logo from "../../assets/Logo.PNG";
 
 /**
  * @function Header

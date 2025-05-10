@@ -50,7 +50,7 @@ function Gallery({ photos }) {
                         {photo1 && !photo2 && (
                             <div className='galleryBox' style={{ width: `${100}%`, padding: isMobile ? '0' : '10px 5px 0 10px',}}>
                                 <img src={photo1.image} alt='' className='galleryImageStyle' loading="lazy" key={photo1.id}/>
-                                <a href={endpoint1} className='galleryButtonLink'>Zobacz więcej</a>
+                                <a href={endpoint2} className='galleryButtonLink'>Zobacz więcej</a>
                             </div>
                         )}
                         {photo2 && (

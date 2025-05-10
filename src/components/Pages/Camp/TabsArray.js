@@ -5,12 +5,12 @@
  * - path: {string} - The URL path associated with the menu item.
  */
 const Items = [
-    { label: 'treningi-na-swiezym-powietrzu', path: '/treningi-na-swiezym-powietrzu' },
-    { label: 'pyszne-jedzenie', path: '/pyszne-jedzenie' },
-    { label: 'swietna-atmosfera', path: '/swietna-atmosfera' },
-    { label: 'regeneracja-psychiczna', path: '/regeneracja-psychiczna' },
-    { label: 'wakacyjny-klimat', path: '/wakacyjny-klimat' },
-    { label: 'niezapomniane-wrazenia', path: '/niezapomniane-wrazenia' },
+    { label: 'Treningi na świeżym powietrzu', path: '/treningi-na-swiezym-powietrzu' },
+    { label: 'Pyszne jedzenie', path: '/pyszne-jedzenie' },
+    { label: 'Świetna atmosfera', path: '/swietna-atmosfera' },
+    { label: 'Regeneracja psychiczna', path: '/regeneracja-psychiczna' },
+    { label: 'Wakacyjny klimat', path: '/wakacyjny-klimat' },
+    { label: 'Niezapomniane wrażenia', path: '/niezapomniane-wrazenia' },
 ];
 
 /**

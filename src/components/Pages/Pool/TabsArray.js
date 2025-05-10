@@ -5,14 +5,14 @@
  * - path: {string} - The URL path associated with the menu item.
  */
 const Items = [
-    { label: 'treningi-dla-doroslych', path: '/treningi-dla-doroslych' },
-    { label: 'treningi-dla-dzieci', path: '/treningi-dla-dzieci' },
-    { label: 'nauka-plywania-od-podstaw', path: '/nauka-plywania-od-podstaw' },
-    { label: 'doskonalenie-technik-plywackich', path: '/doskonalenie-technik-plywackich' },
-    { label: 'zajecia-indywidualne-i-grupowe', path: '/zajecia-indywidualne-i-grupowe' },
-    { label: 'videoanaliza-techniki-plywania', path: '/videoanaliza-techniki-plywania' },
-    { label: 'profesjonalne-zindywidualizowany-treningi-plywackie-dla-triathlonistow', path: '/profesjonalne-zindywidualizowany-treningi-plywackie-dla-triathlonistow' },
-    { label: 'przygotowanie-do-testow', path: '/przygotowanie-do-testow' },
+    { label: 'Treningi dla dorosłych', path: '/treningi-dla-doroslych' },
+    { label: 'Treningi dla dzieci', path: '/treningi-dla-dzieci' },
+    { label: 'Nauka pływania od podstaw', path: '/nauka-plywania-od-podstaw' },
+    { label: 'Doskonalenie technik pływackich', path: '/doskonalenie-technik-plywackich' },
+    { label: 'Zajęcia indywidualne i grupowe', path: '/zajecia-indywidualne-i-grupowe' },
+    { label: 'Videoanaliza techniki pływania', path: '/videoanaliza-techniki-plywania' },
+    { label: 'Profesjonalne, zindywidualizowane treningi pływackie dla triathlonistów', path: '/profesjonalne-zindywidualizowany-treningi-plywackie-dla-triathlonistow' },
+    { label: 'Przygotowanie do testów', path: '/przygotowanie-do-testow' },
 ];
 
 /**

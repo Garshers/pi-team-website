@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Logo from "../../assets/Logo.png";
+import Logo from "../../assets/Logo.PNG";
 import ig from "../../assets/ig.png";
 import fb from "../../assets/fb.png";
 import yt from "../../assets/yt.png";

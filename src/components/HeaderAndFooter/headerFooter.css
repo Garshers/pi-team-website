@@ -6,7 +6,7 @@
     width: 100%;
     display: flex;
     flex-direction: row;
-    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.7) 65%, rgba(255,255,255,0.5) 80%, rgba(255,255,255,0.3) 90%, rgba(255,255,255,0) 100%);
+    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.7) 65%, rgba(0,0,0,0.5) 80%, rgba(0,0,0,0.3) 90%, rgba(0,0,0,0) 100%);
     opacity: 1;
     position: fixed;
     top: 0;
@@ -24,13 +24,15 @@
 }
 
 .header-frame.scrolled {
-    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.7) 65%, rgba(255,255,255,0.5) 80%, rgba(255,255,255,0.3) 90%, rgba(255,255,255,0) 100%);
+    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.7) 65%, rgba(0,0,0,0.5) 80%, rgba(0,0,0,0.3) 90%, rgba(0,0,0,0) 100%);
     opacity: 0.5;
+    transition: background opacity 1s ease-in-out;
 }
 
 .header-frame.scrolled:hover {
-    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.7) 65%, rgba(255,255,255,0.5) 80%, rgba(255,255,255,0.3) 90%, rgba(255,255,255,0) 100%);
+    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.7) 65%, rgba(0,0,0,0.5) 80%, rgba(0,0,0,0.3) 90%, rgba(0,0,0,0) 100%);
     opacity: 1;
+    transition: background opacity 1s ease-in-out;
 }
 
 .leftBox {
@@ -68,7 +70,7 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 140%;
-    color: black;
+    color: white;
     transition: scale 0.3s ease;
 }
 
@@ -99,22 +101,24 @@
     flex-direction: column;
     z-index: 1;
     letter-spacing: 0.04em;
+    display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
 }
 
 /* Footer styles */
 .footer-frame {
-
     height: 200px;
     width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
-    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.7) 65%, rgba(255,255,255,0.5) 80%, rgba(255,255,255,0.3) 90%, rgba(255,255,255,0) 100%);
+    background: rgba(0,0,0,1);
     z-index: 1000;
     margin-bottom: 0px;
 }
+
 .box1-3 {
     height: auto;
     width: 33.33%;
@@ -143,7 +147,7 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 140%;
-    color: rgb(113, 113, 113);
+    color: rgb(255,255,255);
     text-align: center;
     max-width: 300px;
 }
@@ -153,7 +157,7 @@
     font-weight: 650;
     font-size: 40px;
     Line-height: 100%;
-    color: black;
+    color: white;
     text-align: center;
 }
 
