@@ -33,34 +33,48 @@
     object-fit: cover;
     transition: filter 0.3s ease-in-out;
 }
-
-.galleryImageStyle:hover{
-    filter: brightness(80%);
-}
-
-.galleryButtonLink {
+.galleryBoxName {
+    /*border: 1px solid red;*/
+    width: 80%;
+    height: 100%;
+    padding: 70vh 20% 0;
     position: absolute;
     top: 50%;
     left: 50%;
-    width: fit-content;
-    height: fit-content;
     transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.4);
-    border: 1px solid white;
     color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    font-size: clamp(0.7rem, 3vw, 1rem);
     z-index: 2;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-  }
-  
-  .galleryButtonLink:hover {
-    background-color: rgba(0, 0, 0, 0.7);
-  }
+    transition: background-color 0.4s ease-in-out;
+}
+.galleryBoxName:hover{
+    background-color: rgba(0, 0, 0, 0.3);
+}
 
+.galleryBoxName__primary {
+    /*border: 1px solid red;*/
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    transition: font-size 0.3s ease-in-out;
+    
+}
+
+.galleryBoxName__secondary {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    text-align: center;
+    font-size: 1.1rem;
+    padding: 10px;
+}
+
+.galleryBoxName:hover .galleryBoxName__secondary {
+    opacity: 1;
+}
+  
 @media (max-width: 1400px) {
     .galleryMainFrame{
         flex-direction: column;
@@ -70,14 +84,26 @@
     }
     .galleryBox{
         width: 100%;
-    }   
+        height: calc(50vh - 5px);
+    }
+    .galleryBoxName {
+        width: 80%;
+        height: 100%;
+        padding: 0 20% 0;
+        background-color: rgba(0, 0, 0, 0.3);justify-content: center;
+    }
+    .galleryBoxName__secondary {
+        opacity: 1;
+        background: radial-gradient(ellipse at 50% 50%,
+                rgba(0, 0, 0, 0.6) 0%,
+                rgba(0, 0, 0, 0.3) 60%,
+                rgba(0, 0, 0, 0) 80%,
+                rgba(0, 0, 0, 0) 100%);
+    }
 }
 
 @media (max-width: 900px) {
     .galleryRow{
-        flex-direction: column;;
+        flex-direction: column;
     }
-    .galleryBox{
-        height: calc(50vh - 5px);
-    }   
 }

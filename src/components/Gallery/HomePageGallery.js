@@ -9,17 +9,33 @@ function HomePageGallery() {
             <div className='galleryRow'>
                 <a href={'/'} className='galleryBox'>
                     <img src={gymImage} alt='lena' className='galleryImageStyle' loading="lazy" key={'lena'} />
+                    <div className='galleryBoxName'>
+                        <div className='galleryBoxName__primary'>Siłownia</div>
+                        <div className='galleryBoxName__secondary'>Chcesz, by Twoja determinacja, charakter i upór była zauważana i interpretowana już przez pryzmat samego wyglądu? Jak bardzo wygląd przekłada się na postrzeganie Ciebie jako osoby? Zapraszamy do współpracy</div>
+                    </div>
                 </a>
                 <a href={'/'} className='galleryBox'>
                     <img src={poolImage} alt='lena' className='galleryImageStyle' loading="lazy" key={'lena'} />
+                    <div className='galleryBoxName'>
+                        <div className='galleryBoxName__primary'>Basen</div>
+                        <div className='galleryBoxName__secondary'>Chcesz się czuć jak ryba w wodzie dosłownie i w przenośni? Lepiej nie trafisz!</div>
+                    </div>
                 </a>
             </div>
             <div className='galleryRow'>
                 <a href={'/'} className='galleryBox'>
                     <img src={gymImage} alt='lena' className='galleryImageStyle' loading="lazy" key={'lena'} />
+                    <div className='galleryBoxName'>
+                        <div className='galleryBoxName__primary'>Obozy Sportowe</div>
+                        <div className='galleryBoxName__secondary'>Wakacje, które robią formę - sportowy reset i piękna pogoda.</div>
+                    </div>
                 </a>
                 <a href={'/'} className='galleryBox'>
                     <img src={poolImage} alt='lena' className='galleryImageStyle' loading="lazy" key={'lena'} />
+                    <div className='galleryBoxName'>
+                        <div className='galleryBoxName__primary'>Kurs Trenera Personalnego</div>
+                        <div className='galleryBoxName__secondary'>Marzysz o pracy, która łączy sport, rozwój i poczucie satysfakcji? Zostań trenerem personalnym! Potężna dawka nowoczesnej wiedzy, działającej praktyki i skutecznej motywacji. Nauczysz się, jak planować treningi, budować relacje z klientem i być najlepszym w swoim fachu. Tylko z PITEAM.</div>
+                    </div>
                 </a>
             </div>
         </div>
