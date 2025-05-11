@@ -12,7 +12,7 @@ function App() {
     <BrowserRouter>
       <div style={{ 
       minHeight: '100vh',
-      maxWidth: '2440px',
+      maxWidth: '3840px',
       margin: '0 auto'
     }}>
         <Routes>

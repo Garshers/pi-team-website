@@ -4,40 +4,23 @@ import gymImage from '../../assets/HomePage3.jpeg';
 import poolImage from '../../assets/HomePage1.jpeg'
 
 function HomePageGallery() {
-    const [isMobile, setIsMobile] = useState(window.innerWidth <= 900);
-
-    useEffect(() => {
-        const handleResize = () => {
-            setIsMobile(window.innerWidth <= 900);
-        };
-
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
-    }, []);
-
     return (
         <div className='galleryMainFrame'>
             <div className='galleryRow'>
-                <div className='galleryBox' style={{ height: '100vh', width: isMobile ? 'auto' : `${25}%`, padding: isMobile ? '0' : '5px 5px 0 5px',}}>
-                    <img src={gymImage} 
-                        alt='lena' className='galleryImageStyle' loading="lazy" key={'lena'} />
-                    <a href={'/'} className='galleryButtonLink'>Zobacz więcej</a>
-                </div>
-                <div className='galleryBox' style={{ width: isMobile ? 'auto' : `${25}%`, padding: isMobile ? '0' : '5px 5px 0 0',}}>
-                    <img src={poolImage} 
-                        alt='lena' className='galleryImageStyle' loading="lazy" key={'lena'} />
-                    <a href={'/'} className='galleryButtonLink'>Zobacz więcej</a>
-                </div>
-                <div className='galleryBox' style={{ width: isMobile ? 'auto' : `${25}%`, padding: isMobile ? '0' : '5px 5px 0 0',}}>
-                    <img src={gymImage} 
-                        alt='lena' className='galleryImageStyle' loading="lazy" key={'lena'} />
-                    <a href={'/'} className='galleryButtonLink'>Zobacz więcej</a>
-                </div>
-                <div className='galleryBox' style={{ width: isMobile ? 'auto' : `${25}%`, padding: isMobile ? '0' : '5px 5px 0 0',}}>
-                    <img src={poolImage} 
-                        alt='lena' className='galleryImageStyle' loading="lazy" key={'lena'} />
-                    <a href={'/'} className='galleryButtonLink'>Zobacz więcej</a>
-                </div>
+                <a href={'/'} className='galleryBox'>
+                    <img src={gymImage} alt='lena' className='galleryImageStyle' loading="lazy" key={'lena'} />
+                </a>
+                <a href={'/'} className='galleryBox'>
+                    <img src={poolImage} alt='lena' className='galleryImageStyle' loading="lazy" key={'lena'} />
+                </a>
+            </div>
+            <div className='galleryRow'>
+                <a href={'/'} className='galleryBox'>
+                    <img src={gymImage} alt='lena' className='galleryImageStyle' loading="lazy" key={'lena'} />
+                </a>
+                <a href={'/'} className='galleryBox'>
+                    <img src={poolImage} alt='lena' className='galleryImageStyle' loading="lazy" key={'lena'} />
+                </a>
             </div>
         </div>
     );
