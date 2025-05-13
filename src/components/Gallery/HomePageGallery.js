@@ -25,7 +25,7 @@ function HomePageGallery() {
                 <a href={'/'} className='galleryBox'>
                     <div
                         className="blurred-img"
-                        style={{ backgroundImage: `url(${gymImage_Small})`, filter: loadedStates[0] ? 'none' : 'blur(5px)' }}
+                        style={{ backgroundImage: `url(${gymImage_Small})`, filter: loadedStates[0] ? 'none' : 'blur(10px)' }}
                     >
                         <img
                             src={gymImage}
@@ -46,7 +46,7 @@ function HomePageGallery() {
                 <a href={'/'} className='galleryBox'>
                     <div
                         className="blurred-img"
-                        style={{ backgroundImage: `url(${poolImage_Small})`, filter: loadedStates[1] ? 'none' : 'blur(5px)' }}
+                        style={{ backgroundImage: `url(${poolImage_Small})`, filter: loadedStates[1] ? 'none' : 'blur(10px)' }}
                     >
                         <img
                             src={poolImage}
@@ -68,7 +68,7 @@ function HomePageGallery() {
                 <a href={'/'} className='galleryBox'>
                     <div
                         className="blurred-img"
-                        style={{ backgroundImage: `url(${courseImage_Small})`, filter: loadedStates[2] ? 'none' : 'blur(5px)' }}
+                        style={{ backgroundImage: `url(${courseImage_Small})`, filter: loadedStates[2] ? 'none' : 'blur(10px)' }}
                     >
                         <img
                             src={courseImage}
@@ -88,7 +88,7 @@ function HomePageGallery() {
                 <a href={'/'} className='galleryBox'>
                     <div
                         className="blurred-img"
-                        style={{ backgroundImage: `url(${campImage_Small})`, filter: loadedStates[3] ? 'none' : 'blur(5px)' }}
+                        style={{ backgroundImage: `url(${campImage_Small})`, filter: loadedStates[3] ? 'none' : 'blur(10px)' }}
                     >
                         <img
                             src={campImage}

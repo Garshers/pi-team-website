@@ -31,9 +31,45 @@
     display: block;
     width: 100%;
     height: 100%;
-    
     object-fit: cover;
     transition: filter 0.3s ease-in-out;
+}
+
+/* Section for loading images */
+.blurred-img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    object-fit: cover;
+    background-position: center;
+    transition: opacity 250ms ease-in-out;
+}
+
+.blurred-img img {
+    opacity: 0;
+}
+
+.blurred-img::before {
+    content: "";
+    inset: 0;
+    opacity: 0;
+    animation: pulse 2.5s infinite;
+    background-color: white;
+}
+
+.blurred-img.loaded::before {
+    animation: none;
+    content: none;
+}
+
+.blurred-img img {
+    opacity: 0;
+    transition: opacity 250ms ease-in-out;
+}
+
+.blurred-img.loaded img {
+    opacity: 1;
 }
 
 /* Section containing styles for Text on top of images */
@@ -130,40 +166,4 @@
     .galleryBoxName__secondary {
         font-size: 2.2rem;
     }
-}
-
-/* Section for loading images */
-.blurred-img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    transition: opacity 250ms ease-in-out;
-}
-
-.blurred-img img {
-    opacity: 0;
-}
-
-.blurred-img::before {
-    content: "";
-    inset: 0;
-    opacity: 0;
-    animation: pulse 2.5s infinite;
-    background-color: white;
-}
-
-.blurred-img.loaded::before {
-    animation: none;
-    content: none;
-}
-
-.blurred-img img {
-    opacity: 0;
-    transition: opacity 250ms ease-in-out;
-}
-
-.blurred-img.loaded img {
-    opacity: 1;
 }
