@@ -2,17 +2,22 @@ import React, { useState, useEffect, useRef } from 'react';
 import './galleryStyle.css';
 import gymImage from '../../assets/HomePage3.jpeg';
 import gymImage_Small from '../../assets/HomePage3_Small.jpeg';
+import gymImage_Mid from '../../assets/HomePage3_Mid.jpeg';
 import poolImage from '../../assets/HomePage1.jpeg';
 import poolImage_Small from '../../assets/HomePage1_Small.jpeg';
+import poolImage_Mid from '../../assets/HomePage1_Mid.jpeg';
 import courseImage from '../../assets/HomePage3.jpeg';
 import courseImage_Small from '../../assets/HomePage3_Small.jpeg';
+import courseImage_Mid from '../../assets/HomePage3_Mid.jpeg';
 import campImage from '../../assets/HomePage1.jpeg';
 import campImage_Small from '../../assets/HomePage1_Small.jpeg';
+import campImage_Mid from '../../assets/HomePage1_Mid.jpeg';
 
 const galleryItems = [
   {
     image: gymImage,
     smallImage: gymImage_Small,
+    midImage: gymImage_Mid,
     alt: 'siłownia',
     key: 'gym1',
     primary: 'Siłownia',
@@ -21,6 +26,7 @@ const galleryItems = [
   {
     image: poolImage,
     smallImage: poolImage_Small,
+    midImage: poolImage_Mid,
     alt: 'basen',
     key: 'pool1',
     primary: 'Basen',
@@ -29,6 +35,7 @@ const galleryItems = [
   {
     image: courseImage,
     smallImage: courseImage_Small,
+    midImage: courseImage_Mid,
     alt: 'Kurs Trenera Personalnego',
     key: 'course',
     primary: 'Obozy Sportowe',
@@ -37,6 +44,7 @@ const galleryItems = [
   {
     image: campImage,
     smallImage: campImage_Small,
+    midImage: campImage_Mid,
     alt: 'Obozy Sportowe',
     key: 'camp',
     primary: 'Kurs Trenera Personalnego',
@@ -48,6 +56,19 @@ function HomePageGallery() {
   const [loadedStates, setLoadedStates] = useState(galleryItems.map(() => false));
   const secondaryTextRefs = [useRef(null), useRef(null), useRef(null), useRef(null)];
   const [isVisible, setIsVisible] = useState(galleryItems.map(() => false));
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 1400);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 1400);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   const handleImageLoad = (index) => {
     setLoadedStates(prevLoadedStates => {
@@ -82,6 +103,8 @@ function HomePageGallery() {
   }, [secondaryTextRefs]);
 
   const renderGalleryItem = (item, index, ref) => {
+    const imageSrc = isMobile ? item.midImage : item.image;
+
     return (
       <a href={'/'} className='galleryBox' key={item.key}>
         <div
@@ -89,7 +112,7 @@ function HomePageGallery() {
           style={{ backgroundImage: `url(${item.smallImage})`, filter: loadedStates[index] ? 'none' : 'blur(10px)' }}
         >
           <img
-            src={item.image}
+            src={imageSrc}
             alt={item.alt}
             className='galleryImageStyle'
             loading="lazy"
