@@ -15,45 +15,42 @@ function HomePageGallery() {
     const [isVisible, setIsVisible] = useState([false, false, false, false]);
 
     const handleImageLoad = (index) => {
-    setLoadedStates(prevLoadedStates => {
-        const newLoadedStates = [...prevLoadedStates];
-        newLoadedStates[index] = true;
-        return newLoadedStates;
-    });
-    console.log(`Image`, index, `loaded (after setState):`, loadedStates);
+        setLoadedStates(prevLoadedStates => {
+            const newLoadedStates = [...prevLoadedStates];
+            newLoadedStates[index] = true;
+            return newLoadedStates;
+        });
     };
 
     useEffect(() => {
-        console.log('Current loadedStates:', loadedStates);
-    }, [loadedStates]);
-
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    const index = secondaryTextRefs.findIndex(ref => ref.current === entry.target);
-                    if (index !== -1 && entry.isIntersecting) {
-                        const newIsVisible = [...isVisible];
-                        newIsVisible[index] = true;
-                        setIsVisible(newIsVisible);
-                    }
-                });
-            },
-            {
-                threshold: 0.01,
-            }
-        );
-
-        secondaryTextRefs.forEach(ref => {
-            if (ref.current) {
-                observer.observe(ref.current);
+    const observer = new IntersectionObserver(
+        (entries) => {
+        entries.forEach((entry) => {
+            const index = secondaryTextRefs.findIndex(ref => ref.current === entry.target);
+            if (index !== -1 && entry.isIntersecting) {
+            setIsVisible(prevIsVisible => {
+                const newIsVisible = [...prevIsVisible];
+                newIsVisible[index] = true;
+                return newIsVisible;
+            });
             }
         });
+        },
+        {
+        threshold: 0.01,
+        }
+    );
 
-        return () => {
-            observer.disconnect();
-        };
-    }, [isVisible]);
+    secondaryTextRefs.forEach(ref => {
+        if (ref.current) {
+        observer.observe(ref.current);
+        }
+    });
+
+    return () => {
+        observer.disconnect();
+    };
+    }, [secondaryTextRefs]);
 
     return (
         <div className='galleryMainFrame'>
@@ -68,14 +65,14 @@ function HomePageGallery() {
                             alt='siłownia'
                             loading="lazy"
                             key={0}
-                            onLoad={() => {console.log('onLoad triggered for index: 0'); handleImageLoad(0);}}
+                            onLoad={() => handleImageLoad(0)}
                             onError={() => console.error("Błąd ładowania obrazu:", gymImage)}
                             style={{ opacity: loadedStates[0] ? 1 : 0 }}
                         />
                     </div>
                     <div className='galleryBoxName'>
                         <div className='galleryBoxName__primary'>Siłownia</div>
-                        <div className={`galleryBoxName__secondary ${isVisible[1] ? 'animate' : ''}`} ref={secondaryTextRefs[1]}>
+                        <div className={`galleryBoxName__secondary ${isVisible[0] ? 'animate' : ''}`} ref={secondaryTextRefs[0]}>
                             Chcesz, by Twoja determinacja, charakter i upór była zauważana i interpretowana już przez pryzmat samego wyglądu? Jak bardzo wygląd przekłada się na postrzeganie Ciebie jako osoby? Zapraszamy do współpracy
                         </div>
                     </div>
