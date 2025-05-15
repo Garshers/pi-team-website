@@ -9,143 +9,120 @@ import courseImage_Small from '../../assets/HomePage3_Small.jpeg';
 import campImage from '../../assets/HomePage1.jpeg';
 import campImage_Small from '../../assets/HomePage1_Small.jpeg';
 
+const galleryItems = [
+  {
+    image: gymImage,
+    smallImage: gymImage_Small,
+    alt: 'siłownia',
+    key: 'gym1',
+    primary: 'Siłownia',
+    secondary: 'Chcesz, by Twoja determinacja, charakter i upór była zauważana i interpretowana już przez pryzmat samego wyglądu? Jak bardzo wygląd przekłada się na postrzeganie Ciebie jako osoby? Zapraszamy do współpracy'
+  },
+  {
+    image: poolImage,
+    smallImage: poolImage_Small,
+    alt: 'basen',
+    key: 'pool1',
+    primary: 'Basen',
+    secondary: 'Chcesz się czuć jak ryba w wodzie dosłownie i w przenośni? Lepiej nie trafisz!'
+  },
+  {
+    image: courseImage,
+    smallImage: courseImage_Small,
+    alt: 'Kurs Trenera Personalnego',
+    key: 'course',
+    primary: 'Obozy Sportowe',
+    secondary: 'Wakacje, które robią formę - sportowy reset i piękna pogoda.'
+  },
+  {
+    image: campImage,
+    smallImage: campImage_Small,
+    alt: 'Obozy Sportowe',
+    key: 'camp',
+    primary: 'Kurs Trenera Personalnego',
+    secondary: 'Marzysz o pracy, która łączy sport, rozwój i poczucie satysfakcji? Zostań trenerem personalnym! Potężna dawka nowoczesnej wiedzy, działającej praktyki i skutecznej motywacji. Nauczysz się, jak planować treningi, budować relacje z klientem i być najlepszym w swoim fachu. Tylko z PITEAM.'
+  }
+];
+
 function HomePageGallery() {
-    const [loadedStates, setLoadedStates] = useState([false, false, false, false]);
-    const secondaryTextRefs = [useRef(null), useRef(null), useRef(null), useRef(null)];
-    const [isVisible, setIsVisible] = useState([false, false, false, false]);
+  const [loadedStates, setLoadedStates] = useState(galleryItems.map(() => false));
+  const secondaryTextRefs = [useRef(null), useRef(null), useRef(null), useRef(null)];
+  const [isVisible, setIsVisible] = useState(galleryItems.map(() => false));
 
-    const handleImageLoad = (index) => {
-        setLoadedStates(prevLoadedStates => {
-            const newLoadedStates = [...prevLoadedStates];
-            newLoadedStates[index] = true;
-            return newLoadedStates;
-        });
-    };
+  const handleImageLoad = (index) => {
+    setLoadedStates(prevLoadedStates => {
+      const newLoadedStates = [...prevLoadedStates];
+      newLoadedStates[index] = true;
+      return newLoadedStates;
+    });
+  };
 
-    useEffect(() => {
+  useEffect(() => {
     const observer = new IntersectionObserver(
-        (entries) => {
+      (entries) => {
         entries.forEach((entry) => {
-            const index = secondaryTextRefs.findIndex(ref => ref.current === entry.target);
-            if (index !== -1 && entry.isIntersecting) {
+          const index = secondaryTextRefs.findIndex(ref => ref.current === entry.target);
+          if (index !== -1 && entry.isIntersecting) {
             setIsVisible(prevIsVisible => {
-                const newIsVisible = [...prevIsVisible];
-                newIsVisible[index] = true;
-                return newIsVisible;
+              const newIsVisible = [...prevIsVisible];
+              newIsVisible[index] = true;
+              return newIsVisible;
             });
-            }
+          }
         });
-        },
-        {
-        threshold: 0.01,
-        }
+      },
+      { threshold: 0.01 }
     );
 
     secondaryTextRefs.forEach(ref => {
-        if (ref.current) {
-        observer.observe(ref.current);
-        }
+      if (ref.current) observer.observe(ref.current);
     });
 
-    return () => {
-        observer.disconnect();
-    };
-    }, [secondaryTextRefs]);
+    return () => observer.disconnect();
+  }, [secondaryTextRefs]);
 
+  const renderGalleryItem = (item, index, ref) => {
     return (
-        <div className='galleryMainFrame'>
-            <div className='galleryRow'>
-                <a href={'/'} className='galleryBox'>
-                    <div
-                        className="blurred-img"
-                        style={{ backgroundImage: `url(${gymImage_Small})`, filter: loadedStates[0] ? 'none' : 'blur(7px)' }}
-                    >
-                        <img
-                            src={gymImage}
-                            alt='siłownia'
-                            loading="lazy"
-                            key={0}
-                            onLoad={() => handleImageLoad(0)}
-                            onError={() => console.error("Błąd ładowania obrazu:", gymImage)}
-                            style={{ opacity: loadedStates[0] ? 1 : 0 }}
-                        />
-                    </div>
-                    <div className='galleryBoxName'>
-                        <div className='galleryBoxName__primary'>Siłownia</div>
-                        <div className={`galleryBoxName__secondary ${isVisible[0] ? 'animate' : ''}`} ref={secondaryTextRefs[0]}>
-                            Chcesz, by Twoja determinacja, charakter i upór była zauważana i interpretowana już przez pryzmat samego wyglądu? Jak bardzo wygląd przekłada się na postrzeganie Ciebie jako osoby? Zapraszamy do współpracy
-                        </div>
-                    </div>
-                </a>
-                <a href={'/'} className='galleryBox'>
-                    <div
-                        className="blurred-img"
-                        style={{ backgroundImage: `url(${poolImage_Small})`, filter: loadedStates[1] ? 'none' : 'blur(7px)' }}
-                    >
-                        <img
-                            src={poolImage}
-                            alt='basen'
-                            loading="lazy"
-                            key={1}
-                            onLoad={() => handleImageLoad(1)}
-                            onError={() => console.error("Błąd ładowania obrazu:", poolImage)}
-                            style={{ opacity: loadedStates[1] ? 1 : 0 }}
-                        />
-                    </div>
-                    <div className='galleryBoxName'>
-                        <div className='galleryBoxName__primary'>Basen</div>
-                        <div className={`galleryBoxName__secondary ${isVisible[1] ? 'animate' : ''}`} ref={secondaryTextRefs[1]}>
-                            Chcesz się czuć jak ryba w wodzie dosłownie i w przenośni? Lepiej nie trafisz!
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div className='galleryRow'>
-                <a href={'/'} className='galleryBox'>
-                    <div
-                        className="blurred-img"
-                        style={{ backgroundImage: `url(${courseImage_Small})`, filter: loadedStates[2] ? 'none' : 'blur(7px)' }}
-                    >
-                        <img
-                            src={courseImage}
-                            alt='Kurs Trenera Personalnego'
-                            loading="lazy"
-                            key={2}
-                            onLoad={() => handleImageLoad(2)}
-                            style={{ opacity: loadedStates[2] ? 1 : 0 }}
-                        />
-                    </div>
-                    <div className='galleryBoxName'>
-                        <div className='galleryBoxName__primary'>Obozy Sportowe</div>
-                        <div className={`galleryBoxName__secondary ${isVisible[2] ? 'animate' : ''}`} ref={secondaryTextRefs[2]}>
-                            Wakacje, które robią formę - sportowy reset i piękna pogoda.
-                        </div>
-                    </div>
-                </a>
-                <a href={'/'} className='galleryBox'>
-                    <div
-                        className="blurred-img"
-                        style={{ backgroundImage: `url(${campImage_Small})`, filter: loadedStates[3] ? 'none' : 'blur(7px)' }}
-                    >
-                        <img
-                            src={campImage}
-                            alt='Obozy Sportowe'
-                            loading="lazy"
-                            key={3}
-                            onLoad={() => handleImageLoad(3)}
-                            style={{ opacity: loadedStates[3] ? 1 : 0 }}
-                        />
-                    </div>
-                    <div className='galleryBoxName'>
-                        <div className='galleryBoxName__primary'>Kurs Trenera Personalnego</div>
-                        <div className={`galleryBoxName__secondary ${isVisible[3] ? 'animate' : ''}`} ref={secondaryTextRefs[3]}>
-                            Marzysz o pracy, która łączy sport, rozwój i poczucie satysfakcji? Zostań trenerem personalnym! Potężna dawka nowoczesnej wiedzy, działającej praktyki i skutecznej motywacji. Nauczysz się, jak planować treningi, budować relacje z klientem i być najlepszym w swoim fachu. Tylko z PITEAM.
-                        </div>
-                    </div>
-                </a>
-            </div>
+      <a href={'/'} className='galleryBox' key={item.key}>
+        <div
+          className="blurred-img"
+          style={{ backgroundImage: `url(${item.smallImage})`, filter: loadedStates[index] ? 'none' : 'blur(10px)' }}
+        >
+          <img
+            src={item.image}
+            alt={item.alt}
+            className='galleryImageStyle'
+            loading="lazy"
+            key={item.key}
+            onLoad={() => handleImageLoad(index)}
+            style={{ opacity: loadedStates[index] ? 1 : 0 }}
+          />
         </div>
+        <div className='galleryBoxName'>
+          <div className='galleryBoxName__primary'>{item.primary}</div>
+          <div
+            className={`galleryBoxName__secondary ${isVisible[index] ? 'animate' : ''}`}
+            ref={ref}
+          >
+            {item.secondary}
+          </div>
+        </div>
+      </a>
     );
+  };
+
+  return (
+    <div className='galleryMainFrame'>
+      <div className='galleryRow'>
+        {renderGalleryItem(galleryItems[0], 0, secondaryTextRefs[0])}
+        {renderGalleryItem(galleryItems[1], 1, secondaryTextRefs[1])}
+      </div>
+      <div className='galleryRow'>
+        {renderGalleryItem(galleryItems[2], 2, secondaryTextRefs[2])}
+        {renderGalleryItem(galleryItems[3], 3, secondaryTextRefs[3])}
+      </div>
+    </div>
+  );
 }
 
 export default HomePageGallery;
