@@ -5,12 +5,11 @@
  * - path: {string} - The URL path associated with the menu item.
  */
 const Items = [
-    { label: 'Treningi na świeżym powietrzu', path: '/treningi-na-swiezym-powietrzu' },
-    { label: 'Pyszne jedzenie', path: '/pyszne-jedzenie' },
-    { label: 'Świetna atmosfera', path: '/swietna-atmosfera' },
-    { label: 'Regeneracja psychiczna', path: '/regeneracja-psychiczna' },
-    { label: 'Wakacyjny klimat', path: '/wakacyjny-klimat' },
-    { label: 'Niezapomniane wrażenia', path: '/niezapomniane-wrazenia' },
+    { label: 'Siłownia', path: '/silownia' },
+    { label: 'Basen', path: '/basen' },
+    { label: 'Kurs na trenera personalnego', path: '/kursy' },
+    { label: 'Obozy sportowe', path: '/obozy' },
+    { label: 'Strona Główna', path: '/' },
 ];
 
 /**

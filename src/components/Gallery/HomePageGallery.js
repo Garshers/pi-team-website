@@ -18,7 +18,8 @@ const galleryItems = [
     image: gymImage,
     smallImage: gymImage_Small,
     midImage: gymImage_Mid,
-    alt: 'siłownia',
+    href: '/silownia',
+    alt: 'Siłownia',
     key: 'gym1',
     primary: 'Siłownia',
     secondary: 'Chcesz, by Twoja determinacja, charakter i upór była zauważana i interpretowana już przez pryzmat samego wyglądu? Jak bardzo wygląd przekłada się na postrzeganie Ciebie jako osoby? Zapraszamy do współpracy'
@@ -27,7 +28,8 @@ const galleryItems = [
     image: poolImage,
     smallImage: poolImage_Small,
     midImage: poolImage_Mid,
-    alt: 'basen',
+    href: '/basen',
+    alt: 'Basen',
     key: 'pool1',
     primary: 'Basen',
     secondary: 'Chcesz się czuć jak ryba w wodzie dosłownie i w przenośni? Lepiej nie trafisz!'
@@ -36,6 +38,7 @@ const galleryItems = [
     image: courseImage,
     smallImage: courseImage_Small,
     midImage: courseImage_Mid,
+    href: '/kurs-trenera-personalnego',
     alt: 'Kurs Trenera Personalnego',
     key: 'course',
     primary: 'Obozy Sportowe',
@@ -45,6 +48,7 @@ const galleryItems = [
     image: campImage,
     smallImage: campImage_Small,
     midImage: campImage_Mid,
+    href: '/obozy-sportowe',
     alt: 'Obozy Sportowe',
     key: 'camp',
     primary: 'Kurs Trenera Personalnego',
@@ -106,7 +110,7 @@ function HomePageGallery() {
     const imageSrc = isMobile ? item.midImage : item.image;
 
     return (
-      <a href={'/'} className='galleryBox' key={item.key}>
+      <a href={item.href} className='galleryBox' key={item.key}>
         <div
           className="blurred-img"
           style={{ backgroundImage: `url(${item.smallImage})`, filter: loadedStates[index] ? 'none' : 'blur(10px)' }}

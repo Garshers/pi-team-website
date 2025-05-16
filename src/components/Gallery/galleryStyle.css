@@ -35,7 +35,6 @@
     object-fit: cover;
     background-position: center;
     transition: opacity 250ms ease-in-out;
-    filter: blur(7px);
 }
 
 .blurred-img img {
@@ -109,13 +108,6 @@
         1px 1px 0 black;
 }
 
-@media (min-width: 1400px) {
-    .galleryBoxName:hover .galleryBoxName__secondary {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
 @media (max-width: 1400px) {
     .galleryMainFrame{
         flex-direction: column;
@@ -147,6 +139,13 @@
 @media (max-width: 900px) {
     .galleryRow{
         flex-direction: column;
+    }
+}
+
+@media (min-width: 1400px) {
+    .galleryBoxName:hover .galleryBoxName__secondary {
+        opacity: 1;
+        transform: translateX(0);
     }
 }
 

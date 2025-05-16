@@ -1,20 +1,22 @@
 import React from 'react';
-import './homePageStyle.css';
-import HomePageGallery from '../../Gallery/HomePageGallery.js';
+import './gymPageStyle.css';
 import { Header } from '../../HeaderAndFooter/header.js';
 import Items from '../../../assets/Arrays/TabsArray.js';
 
 /**
- * @function HomePage
+ * @function GymPage
  * @returns {JSX.Element} - Component representing the home page of the application.
  * It includes a photo gallery.
  */
 function HomePage() {
     return (
-        <>{/*<Header menuItems={Items} />*/}
+        <>
         <div className="mainBox">
-            <HomePageGallery />
-        </div></>
+            <Header menuItems={Items} />
+   
+
+        </div>
+        </>
     );
 }
 

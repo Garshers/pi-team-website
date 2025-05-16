@@ -1,11 +1,19 @@
 import React from 'react';
 import { Header } from './components/HeaderAndFooter/header.js';
-import Items from './components/Pages/HomePage/TabsArray.js';
+import Items from './assets/Arrays/TabsArray.js';
 
 function NotFoundPage() {
   return (
     <><Header menuItems={Items} />
-    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '50vh', flexDirection: 'column'}}>
+    <div style={{ 
+          minHeight: '100vh', 
+          backgroundColor: 'white', 
+          display: 'flex', 
+          justifyContent: 'center', 
+          alignItems: 'center', 
+          height: '50vh', 
+          flexDirection: 'column'
+          }}>
       <div style={{ textAlign: 'center' }}>
         <h1>Error 404 - Nie znaleziono strony</h1>
         <p>Przepraszamy, ale strona o podanym adresie nie istnieje lub jest w trakcie budowy.</p>
