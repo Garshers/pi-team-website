@@ -5,6 +5,8 @@ import NotFoundPage from './NotFoundPage';
 import HomePage from './components/Pages/HomePage/HomePage.js';
 import GymPage from './components/Pages/Gym/GymPage.js';
 
+import PersonnelPage from './components/Pages/Personnel/PersonnelPage.js';
+
 import Footer from './components/HeaderAndFooter/footer.js';
 import './components/HeaderAndFooter/headerFooter.css';
 
@@ -20,6 +22,8 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/silownia" element={<GymPage />} />
         
+          <Route path="/kadra" element={<PersonnelPage />} />
+
           {/* If other then NotFoungPage */}
           <Route path="*" element={<NotFoundPage />} />
         </Routes>

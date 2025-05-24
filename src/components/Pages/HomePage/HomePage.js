@@ -1,20 +1,21 @@
 import React from 'react';
-import './homePageStyle.css';
 import HomePageGallery from '../../Gallery/HomePageGallery.js';
-import { Header } from '../../HeaderAndFooter/header.js';
-import Items from '../../../assets/Arrays/TabsArray.js';
 
 /**
  * @function HomePage
  * @returns {JSX.Element} - Component representing the home page of the application.
- * It includes a photo gallery.
  */
 function HomePage() {
     return (
-        <>{/*<Header menuItems={Items} />*/}
-        <div className="mainBox">
+        <div style={{
+            width: '100%',
+            minHeight: '100vh',
+            height: 'fit-content',
+            justifyContent: 'center',
+            alignItems: 'center',
+        }}>
             <HomePageGallery />
-        </div></>
+        </div>
     );
 }
 

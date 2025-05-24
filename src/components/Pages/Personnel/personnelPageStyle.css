@@ -1,0 +1,44 @@
+.mainBox{
+    width: 100%;
+    min-height: 100vh;
+    height: fit-content;
+    margin-top: 100px;
+    gap: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.trainerProfile {
+  min-height: 200px;
+  margin: 0 auto;
+  max-width: 500px;
+  width: 80%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 10px;
+  object-fit: cover;
+  object-position: 0 -40px;
+  transition: aspect-ratio 0.5s ease-in-out, object-position 0.5s ease-in-out;
+  box-shadow: 2px 2px 4px 1px rgba(255, 255, 255, 0.3);
+}
+
+.trainerProfile:hover {
+  aspect-ratio: 1 / 1.25;
+  object-position: top;
+}
+
+@media screen and (max-width: 650px) {
+  .mainBox{
+    flex-direction: column;
+    gap: 0;
+}
+
+  .trainerProfile {
+    border: none;
+    box-sizing: border-box;
+    border-radius: 0;
+    object-position: 0 -20px;
+    width: 100%;
+  }
+}

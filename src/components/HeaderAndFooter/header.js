@@ -4,12 +4,10 @@ import Logo from "../../assets/Logo.PNG";
 
 /**
  * @function Header
- * @param {Object} { menuItems } - Props object containing:
- * @param {Array<Object>} menuItems - An array of menu item objects, each with 'label' and 'path' properties.
  * @returns {JSX.Element} - The header component for the website, displaying the logo and navigation.
  * The navigation adapts for mobile and desktop views.
  */
-export function Header({ menuItems }) {
+export function Header() {
     /**
      * @constant {boolean} isScrolled - State variable to track if the page has been scrolled.
      * Updated based on the window's scroll position.
@@ -27,6 +25,14 @@ export function Header({ menuItems }) {
      * Toggled by the hamburger menu icon.
      */
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const menuItems = [
+    { label: 'Oferta', path: '/' },
+    { label: 'O Nas', path: '/o-nas' },
+    { label: 'Kadra', path: '/kadra' },
+    { label: 'Kontakt', path: '/kontakt' },
+    { label: 'Galeria', path: '/galeria' },
+];
 
     /**
      * @useEffect
