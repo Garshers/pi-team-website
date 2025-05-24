@@ -1,3 +1,11 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Oswald", sans-serif;
+    background-color: #000;
+    color: #fff;
+}
+
 /* Header styles */
 .header-frame {
     height: max(108px, 10vh);
@@ -11,6 +19,7 @@
     top: 0;
     z-index: 1000;
     transition: background opacity 1s ease-in-out;
+    font-family: "Oswald", sans-serif;
 }
 
 .header-frame.menu-open {
@@ -88,7 +97,8 @@
 }
 
 .hamburger-menu {
-    font-size: 24px;
+    font-size: 36px;
+    padding: 10px;
     cursor: pointer;
     display: none;
     color: white;
@@ -146,7 +156,7 @@
 }
 
 .footerText {
-    font-family: "Oswald", sans-serif;
+    
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -156,7 +166,7 @@
     max-width: 300px;
 }
 .footer-mainText {
-    font-family: "Oswald", sans-serif;
+    
     font-style: normal;
     font-weight: 650;
     font-size: 40px;
