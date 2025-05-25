@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { GiHamburgerMenu } from 'react-icons/gi';
 import Logo from "../../assets/Logo.PNG";
 
 /**
@@ -91,7 +90,7 @@ export function Header() {
                 {/* Conditional rendering for mobile and desktop navigation. */}
                 {isMobile ? ( // Hamburger menu for mobile view.
                     <div className="hamburger-menu" onClick={toggleMenu}>
-                        <GiHamburgerMenu />
+                        &#x2630;
                     </div>
                 ) : (// Regular menu display for desktop view.
                     <div className="menuButton">

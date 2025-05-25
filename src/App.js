@@ -14,9 +14,11 @@ function App() {
   return (
     <BrowserRouter>
       <div style={{ 
-        minHeight: '100vh',
+        width: '100%',
+        minHeight: '100%',
         maxWidth: '3840px',
-        margin: '0 auto'
+        margin: '0 auto',
+        overflow: 'hidden'
       }}>
         <Routes>
           <Route path="/" element={<HomePage />} />

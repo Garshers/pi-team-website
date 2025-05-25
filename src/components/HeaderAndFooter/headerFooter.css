@@ -8,8 +8,8 @@ body {
 
 /* Header styles */
 .header-frame {
-    height: max(108px, 10vh);
-    width: 100%;
+    height: max(108px, 8vh);
+    width: 100vw;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -18,7 +18,7 @@ body {
     position: fixed;
     top: 0;
     z-index: 1000;
-    transition: background opacity 1s ease-in-out;
+    transition: background 1s ease-in-out, opacity 0.5s ease-in-out;
     font-family: "Oswald", sans-serif;
 }
 
@@ -28,19 +28,14 @@ body {
 
 .header-frame:hover {
     opacity: 1;
-    transition: b opacity 1s ease-in-out;
 }
 
 .header-frame.scrolled {
-    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.7) 65%, rgba(0,0,0,0.5) 80%, rgba(0,0,0,0.3) 90%, rgba(0,0,0,0) 100%);
     opacity: 0.5;
-    transition: background opacity 1s ease-in-out;
 }
 
 .header-frame.scrolled:hover {
-    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.7) 65%, rgba(0,0,0,0.5) 80%, rgba(0,0,0,0.3) 90%, rgba(0,0,0,0) 100%);
     opacity: 1;
-    transition: background opacity 1s ease-in-out;
 }
 
 .leftBox {
@@ -97,10 +92,10 @@ body {
 }
 
 .hamburger-menu {
-    font-size: 36px;
-    padding: 10px;
+    font-size: 32px;
+    padding: 0 10px;
     cursor: pointer;
-    display: none;
+    display: block;
     color: white;
 }
 
@@ -124,7 +119,7 @@ body {
 /* Footer styles */
 .footer-frame {
     height: 200px;
-    width: 100%;
+    width: 100vw;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -156,7 +151,6 @@ body {
 }
 
 .footerText {
-    
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -166,7 +160,6 @@ body {
     max-width: 300px;
 }
 .footer-mainText {
-    
     font-style: normal;
     font-weight: 650;
     font-size: 40px;
@@ -196,9 +189,5 @@ body {
 
     .menuButton {
         display: none;
-    }
-
-    .hamburger-menu {
-        display: block;
     }
 }
