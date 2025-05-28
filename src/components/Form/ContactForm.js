@@ -41,6 +41,7 @@ function ContactForm() {
     const [selectedSpecialist, setSelectedSpecialist] = useState('');
     const [canSubmit, setCanSubmit] = useState(true);
     const [cooldownMessage, setCooldownMessage] = useState('');
+    const [privacyAccepted, setPrivacyAccepted] = useState(false); 
 
     React.useEffect(() => {
         const lastSubmissionTime = localStorage.getItem('lastFormSubmission');
@@ -73,7 +74,7 @@ function ContactForm() {
 
                 localStorage.setItem('lastFormSubmission', new Date().getTime().toString());
                 setCanSubmit(false);
-                setCooldownMessage('Wysłano! Możesz wysłać kolejne zgłoszenie za około 60 minut.');
+                setCooldownMessage('Możesz wysłać kolejne zgłoszenie za około 60 minut.');
 
                 setTimeout(() => {
                     setCanSubmit(true);
@@ -93,6 +94,10 @@ function ContactForm() {
         setSelectedSpecialist(event.target.value);
     };
 
+    const handlePrivacyChange = (event) => {
+        setPrivacyAccepted(event.target.checked);
+    };
+
     const currentSpecialists = selectedService && selectedService !== 'oboz_sportowy'
         ? specialists[selectedService] || []
         : [];
@@ -107,7 +112,7 @@ function ContactForm() {
                 <input type="email" name="Email" placeholder="Email" required />
                 <input type="tel" name="Telefon" placeholder="Telefon" required />
 
-                {/* Lista rozwijana usług */}
+                {/* Services list */}
                 <select
                   name="Usługa"
                   value={selectedService}
@@ -121,7 +126,7 @@ function ContactForm() {
                   ))}
                 </select>
 
-                {/* Warunkowe renderowanie listy specjalistów */}
+                {/* Conditional specialist list rendering */}
                 {selectedService && selectedService !== '' && selectedService !== 'oboz_sportowy' && (
                     <select name="Specjalista"
                       value={selectedSpecialist}
@@ -137,7 +142,20 @@ function ContactForm() {
                 )}
 
                 <textarea name="Uwagi" placeholder="Uwagi" ></textarea>
-                <button type="submit" className="gymButton">Wyślij</button>
+
+                {/* Privacy Policy Checkbox */}
+                <div className="privacy-checkbox-container">
+                    <input
+                        type="checkbox"
+                        id="privacyPolicy"
+                        name="privacyPolicy"
+                        checked={privacyAccepted}
+                        onChange={handlePrivacyChange}
+                    />
+                    <label htmlFor="privacyPolicy">Wyrażam zgodę na przetwarzanie moich danych osobowych zgodnie z <a href="/polityka-prywatnosci" target="_blank" rel="noopener noreferrer">polityką prywatności</a>.</label>
+                </div>
+
+                <button type="submit" className="gymButton" disabled={!privacyAccepted || !canSubmit}>Wyślij</button>
             </form>
 
             {messageSent && (

@@ -28,10 +28,10 @@ body{
 
 /* --------- Image box for the gym section --------- */
 .gymImageBox {
-  height: 40vh;
+  height: calc(100vh - 108px);
   width: 100%;
   padding-top: 108px;
-  margin-bottom: 20vh;
+  margin-bottom: 10vh;
   background-size: cover;
   background-position: center;
   position: relative;
