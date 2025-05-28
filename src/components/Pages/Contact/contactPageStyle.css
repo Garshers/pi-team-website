@@ -1,0 +1,75 @@
+.mainContactBox{
+  width: 100%;
+  min-height: calc(100vh - 100px);
+  height: fit-content;
+  margin-top: 100px;
+  gap: 10px;
+  display: flex;
+
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.contactContainer {
+  width: fit-content;
+  height: 300px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+  padding: 5px;
+  /*border: 1px solid red;*/
+  background-color: rgba(0,0,0,0.3);;
+  border: 1px solid rgba(255,255,255,0.2);
+  box-shadow: 0 0 10px rgba(255,255,255,0.2);
+  border-radius: 15px;
+  margin: 20px;
+}
+
+.contactImage {
+  height: 100%;
+  aspect-ratio: 1 / 1;
+}
+
+.contactDescriptionBox {
+  height: fit-content;
+  text-align: left;
+  padding: 20px;
+  /*border: 1px solid red;*/
+}
+
+.contactTitle{
+  font-size: 2em;
+  font-weight: bold;
+  /*border: 1px solid red;*/
+}
+
+.contactDescription {
+  font-size: 1.2em;
+  /*border: 1px solid red;*/
+}
+
+
+
+@media screen and (max-width: 650px) {
+  .mainContactBox{
+    justify-content: center;
+  }
+  .contactContainer {
+    flex-direction: column;
+    min-width: 350px;
+    width: 60%;
+    height: fit-content;
+  }
+  .contactImage {
+    width: 250px;
+    aspect-ratio: 1 / 1;
+  }
+  .contactDescriptionBox {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    width: 90%;
+  }
+}

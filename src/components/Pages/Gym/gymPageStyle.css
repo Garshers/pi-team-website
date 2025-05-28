@@ -29,6 +29,7 @@ body{
 /* --------- Image box for the gym section --------- */
 .gymImageBox {
   height: 40vh;
+  width: 100%;
   padding-top: 108px;
   margin-bottom: 20vh;
   background-size: cover;
@@ -159,14 +160,14 @@ body{
     align-content: center;
     text-decoration: none;
     flex-wrap: wrap;
-    color: gray;
+    color: white;
     background: linear-gradient(to bottom,
         rgba(0, 0, 0, 0.6) 0%,
         rgba(0, 0, 0, 0.7) 80%,
         rgba(0, 0, 0, 1) 100%
         );
     border-radius: 10px 10px 0px 0px;
-    transition: background 0.5s ease-in-out;
+    transition: background 0.5s ease-in-out, transform 0.5s ease-in-out, color 0.3s ease-in-out;
     border-top: 1px solid rgba(255,255,255,0.2);
     padding: 5px;
 }
@@ -174,7 +175,7 @@ body{
 .gymCheckAlsoBox:hover {
     background-color: black;
     transform: scale(1.02);
-    color: white;
+    color: gray;
 }
 
 @media (max-width: 768px) {

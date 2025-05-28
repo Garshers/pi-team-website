@@ -39,18 +39,49 @@ function ContactForm() {
     const [messageSent, setMessageSent] = useState(false);
     const [selectedService, setSelectedService] = useState('');
     const [selectedSpecialist, setSelectedSpecialist] = useState('');
+    const [canSubmit, setCanSubmit] = useState(true);
+    const [cooldownMessage, setCooldownMessage] = useState('');
+
+    React.useEffect(() => {
+        const lastSubmissionTime = localStorage.getItem('lastFormSubmission');
+        if (lastSubmissionTime) {
+            const now = new Date().getTime();
+            const timeElapsed = now - parseInt(lastSubmissionTime, 10);
+            const oneHour = 60 * 60 * 1000;
+
+            if (timeElapsed < oneHour) {
+                setCanSubmit(false);
+                const timeLeft = Math.ceil((oneHour - timeElapsed) / (60 * 1000));
+                setCooldownMessage(`Możesz wysłać kolejne zgłoszenie za około ${timeLeft} minut.`);
+            }
+        }
+    }, []);
 
     const handleSubmit = (event) => {
         event.preventDefault();
 
+        if (!canSubmit) {
+            console.warn('Zbyt szybka próba wysłania formularza. Proszę poczekać.');
+            return;
+        }
+
         emailjs.sendForm('service_xqlzr6l', 'template_nipqukd', event.target, 'T7YNx0b5GFz5-aLZr')
-          .then((result) => {
-              console.log('Formularz został wysłany!:', result.text);
-              setMessageSent(true);
-              event.target.reset();
-          }, (error) => {
-              console.error('Błąd podczas wysyłania formularza:', error.text);
-          });
+            .then((result) => {
+                console.log('Formularz został wysłany!:', result.text);
+                setMessageSent(true);
+                event.target.reset();
+
+                localStorage.setItem('lastFormSubmission', new Date().getTime().toString());
+                setCanSubmit(false);
+                setCooldownMessage('Wysłano! Możesz wysłać kolejne zgłoszenie za około 60 minut.');
+
+                setTimeout(() => {
+                    setCanSubmit(true);
+                    setCooldownMessage('');
+                }, 60 * 60 * 1000);
+            }, (error) => {
+                console.error('Błąd podczas wysyłania formularza:', error.text);
+            });
     };
 
     const handleServiceChange = (event) => {
@@ -111,6 +142,9 @@ function ContactForm() {
 
             {messageSent && (
                 <p className="successMessage">Wysłano! Dziękujemy za kontakt.</p>
+            )}
+            {cooldownMessage && (
+                <p className="cooldownMessage">{cooldownMessage}</p>
             )}
         </>
     );

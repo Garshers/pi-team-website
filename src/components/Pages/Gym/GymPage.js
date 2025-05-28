@@ -47,10 +47,10 @@ function GymPage() {
                 <ContactForm/>
             </div>
             <div className="gymCheckAlsoContainer">
-                <a href="/treningi-plywackie" class="gymCheckAlsoBox">Treningi Pływackie</a>
-                <a href="/kursy-trenera-personalnego" class="gymCheckAlsoBox">Kursy Trenera Personalnego</a>
-                <a href="/obozy-sportowe" class="gymCheckAlsoBox">Obozy Sportowe</a>
-                <a href="/masaze" class="gymCheckAlsoBox">Masaże</a>
+                <a href="/treningi-plywackie" className="gymCheckAlsoBox">Treningi Pływackie</a>
+                <a href="/kursy-trenera-personalnego" className="gymCheckAlsoBox">Kursy Trenera Personalnego</a>
+                <a href="/obozy-sportowe" className="gymCheckAlsoBox">Obozy Sportowe</a>
+                <a href="/masaze" className="gymCheckAlsoBox">Masaże</a>
             </div>
         </div>
         </>

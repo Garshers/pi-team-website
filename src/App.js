@@ -7,6 +7,8 @@ import GymPage from './components/Pages/Gym/GymPage.js';
 
 import PersonnelPage from './components/Pages/Personnel/PersonnelPage.js';
 
+import ContactPage from './components/Pages/Contact/ContactPage.js';
+
 import Footer from './components/HeaderAndFooter/footer.js';
 import './components/HeaderAndFooter/headerFooter.css';
 
@@ -25,6 +27,7 @@ function App() {
           <Route path="/silownia" element={<GymPage />} />
         
           <Route path="/kadra" element={<PersonnelPage />} />
+          <Route path="/kontakt" element={<ContactPage />} />
 
           {/* If other then NotFoungPage */}
           <Route path="*" element={<NotFoundPage />} />

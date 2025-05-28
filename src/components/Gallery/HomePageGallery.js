@@ -6,12 +6,12 @@ import gymImage_Mid from '../../assets/HomePage3_Mid.jpeg';
 import poolImage from '../../assets/HomePage1.jpeg';
 import poolImage_Small from '../../assets/HomePage1_Small.jpeg';
 import poolImage_Mid from '../../assets/HomePage1_Mid.jpeg';
-import courseImage from '../../assets/HomePage3.jpeg';
-import courseImage_Small from '../../assets/HomePage3_Small.jpeg';
-import courseImage_Mid from '../../assets/HomePage3_Mid.jpeg';
-import campImage from '../../assets/HomePage1.jpeg';
-import campImage_Small from '../../assets/HomePage1_Small.jpeg';
-import campImage_Mid from '../../assets/HomePage1_Mid.jpeg';
+import courseImage from '../../assets/HomePage1.jpeg';
+import courseImage_Small from '../../assets/HomePage1_Small.jpeg';
+import courseImage_Mid from '../../assets/HomePage1_Mid.jpeg';
+import campImage from '../../assets/HomePage3.jpeg';
+import campImage_Small from '../../assets/HomePage3_Small.jpeg';
+import campImage_Mid from '../../assets/HomePage3_Mid.jpeg';
 
 const galleryItems = [
   {
@@ -35,16 +35,6 @@ const galleryItems = [
     secondary: 'Chcesz się czuć jak ryba w wodzie dosłownie i w przenośni? Lepiej nie trafisz!'
   },
   {
-    image: courseImage,
-    smallImage: courseImage_Small,
-    midImage: courseImage_Mid,
-    href: '/kurs-trenera-personalnego',
-    alt: 'Kurs Trenera Personalnego',
-    key: 'course',
-    primary: 'Obozy Sportowe',
-    secondary: 'Wakacje, które robią formę - sportowy reset i piękna pogoda.'
-  },
-  {
     image: campImage,
     smallImage: campImage_Small,
     midImage: campImage_Mid,
@@ -53,12 +43,32 @@ const galleryItems = [
     key: 'camp',
     primary: 'Kurs Trenera Personalnego',
     secondary: 'Marzysz o pracy, która łączy sport, rozwój i poczucie satysfakcji? Zostań trenerem personalnym! Potężna dawka nowoczesnej wiedzy, działającej praktyki i skutecznej motywacji. Nauczysz się, jak planować treningi, budować relacje z klientem i być najlepszym w swoim fachu. Tylko z PITEAM.'
+  },
+  {
+    image: courseImage,
+    smallImage: courseImage_Small,
+    midImage: courseImage_Mid,
+    href: '/masaz',
+    alt: 'Masaż',
+    key: 'massage',
+    primary: 'Masaż',
+    secondary: 'Marzysz o pracy, która łączy sport, rozwój i poczucie satysfakcji? Zostań trenerem personalnym! Potężna dawka nowoczesnej wiedzy, działającej praktyki i skutecznej motywacji. Nauczysz się, jak planować treningi, budować relacje z klientem i być najlepszym w swoim fachu. Tylko z PITEAM.'
+  },
+  {
+    image: campImage,
+    smallImage: campImage_Small,
+    midImage: campImage_Mid,
+    href: '/kurs-trenera-personalnego',
+    alt: 'Kurs Trenera Personalnego',
+    key: 'course',
+    primary: 'Obozy Sportowe',
+    secondary: 'Wakacje, które robią formę - sportowy reset i piękna pogoda.'
   }
 ];
 
 function HomePageGallery() {
   const [loadedStates, setLoadedStates] = useState(galleryItems.map(() => false));
-  const secondaryTextRefs = [useRef(null), useRef(null), useRef(null), useRef(null)];
+  const secondaryTextRefs = [useRef(null), useRef(null), useRef(null), useRef(null), useRef(null)];
   const [isVisible, setIsVisible] = useState(galleryItems.map(() => false));
   const [isMobile, setIsMobile] = useState(window.innerWidth < 1400);
 
@@ -140,13 +150,16 @@ function HomePageGallery() {
 
   return (
     <div className='galleryMainFrame'>
-      <div className='galleryRow'>
+      <div className='galleryRow' style={isMobile ? { width: '100%', height: 'calc(100vh-15px)'} : { width: '40%' }}>
         {renderGalleryItem(galleryItems[0], 0, secondaryTextRefs[0])}
         {renderGalleryItem(galleryItems[1], 1, secondaryTextRefs[1])}
       </div>
-      <div className='galleryRow'>
+      <div className='galleryRow' style={isMobile ? { width: '100%', height: 'calc(100vh-15px)'} : { width: '40%' }}>
         {renderGalleryItem(galleryItems[2], 2, secondaryTextRefs[2])}
         {renderGalleryItem(galleryItems[3], 3, secondaryTextRefs[3])}
+      </div>
+      <div className='galleryRow' style={isMobile ? { width: '100%', height: 'calc(50vh-7.5px)'} : { width: '20%' }}>
+        {renderGalleryItem(galleryItems[4], 4, secondaryTextRefs[4])}
       </div>
     </div>
   );

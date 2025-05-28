@@ -9,15 +9,14 @@
 }
 
 .galleryRow{
-    width: 50%;
-    height: fit-content;
+    height: calc(100vh - 10px);
     display: flex;
     flex-direction: row;
     gap: 5px;
 }
 
 .galleryBox{
-    width: 50%;
+    flex: 1;
     height: calc(100vh - 10px);
     overflow: hidden;
     display: flex; 
@@ -85,8 +84,8 @@
     font-size: 2rem;
     font-weight: bold;
     text-align: center;
-    padding: 10px;
     transition: font-size 0.3s ease-in-out;
+    padding-bottom: 20px;
     text-shadow:
         -1px -1px 0 black,
         1px -1px 0 black,
@@ -100,7 +99,6 @@
     transform: translateY(-20px);
     text-align: center;
     font-size: 1.1rem;
-    padding: 10px;
     text-shadow:
         -1px -1px 0 black,
         1px -1px 0 black,
@@ -113,7 +111,7 @@
         flex-direction: column;
     }
     .galleryRow{
-        width: 100%;
+        height: calc(50vh - 7.5px);
     }
     .galleryBox{
         width: 100%;
@@ -139,6 +137,7 @@
 @media (max-width: 900px) {
     .galleryRow{
         flex-direction: column;
+        height: calc(100vh - 15px);
     }
 }
 
