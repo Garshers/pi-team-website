@@ -18,10 +18,10 @@ const galleryItems = [
     image: gymImage,
     smallImage: gymImage_Small,
     midImage: gymImage_Mid,
-    href: '/silownia',
-    alt: 'Siłownia',
+    href: '/treningi-personalne',
+    alt: 'Treningi Parsonalne',
     key: 'gym1',
-    primary: 'Siłownia',
+    primary: 'Treningi Parsonalne',
     secondary: 'Chcesz, by Twoja determinacja, charakter i upór była zauważana i interpretowana już przez pryzmat samego wyglądu? Jak bardzo wygląd przekłada się na postrzeganie Ciebie jako osoby? Zapraszamy do współpracy'
   },
   {
@@ -38,9 +38,9 @@ const galleryItems = [
     image: campImage,
     smallImage: campImage_Small,
     midImage: campImage_Mid,
-    href: '/obozy-sportowe',
-    alt: 'Obozy Sportowe',
-    key: 'camp',
+    href: '/kurs-trenera-personalnego',
+    alt: 'Kurs Trenera Personalnego',
+    key: 'course',
     primary: 'Kurs Trenera Personalnego',
     secondary: 'Marzysz o pracy, która łączy sport, rozwój i poczucie satysfakcji? Zostań trenerem personalnym! Potężna dawka nowoczesnej wiedzy, działającej praktyki i skutecznej motywacji. Nauczysz się, jak planować treningi, budować relacje z klientem i być najlepszym w swoim fachu. Tylko z PITEAM.'
   },
@@ -58,9 +58,9 @@ const galleryItems = [
     image: campImage,
     smallImage: campImage_Small,
     midImage: campImage_Mid,
-    href: '/kurs-trenera-personalnego',
-    alt: 'Kurs Trenera Personalnego',
-    key: 'course',
+    href: '/obozy-sportowe',
+    alt: 'Obozy Sportowe',
+    key: 'camp',
     primary: 'Obozy Sportowe',
     secondary: 'Wakacje, które robią formę - sportowy reset i piękna pogoda.'
   }
@@ -70,11 +70,13 @@ function HomePageGallery() {
   const [loadedStates, setLoadedStates] = useState(galleryItems.map(() => false));
   const secondaryTextRefs = [useRef(null), useRef(null), useRef(null), useRef(null), useRef(null)];
   const [isVisible, setIsVisible] = useState(galleryItems.map(() => false));
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 1400);
+  const [isTablet, setIsTablet] = useState(window.innerWidth < 1400);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 900);
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 1400);
+      setIsTablet(window.innerWidth < 1400);
+      setIsMobile(window.innerWidth < 900);
     };
 
     window.addEventListener('resize', handleResize);
@@ -117,7 +119,7 @@ function HomePageGallery() {
   }, [secondaryTextRefs]);
 
   const renderGalleryItem = (item, index, ref) => {
-    const imageSrc = isMobile ? item.midImage : item.image;
+    const imageSrc = isTablet ? item.midImage : item.image;
 
     return (
       <a href={item.href} className='galleryBox' key={item.key}>
@@ -150,15 +152,24 @@ function HomePageGallery() {
 
   return (
     <div className='galleryMainFrame'>
-      <div className='galleryRow' style={isMobile ? { width: '100%', height: 'calc(100vh-15px)'} : { width: '40%' }}>
+      <div
+          className='galleryRow'
+          style={
+              isTablet
+                  ? (isMobile
+                      ? { flexDirection: 'column', height: 'calc(50vh - 7.5px)' } // If tablet BUT NOT mobile
+                      : { width: '100%', height: 'calc(50vh - 7.5px)' }) // If tablet AND mobile
+                  : { width: '20%' } // If desktop
+          }
+      >
         {renderGalleryItem(galleryItems[0], 0, secondaryTextRefs[0])}
+      </div>
+      <div className='galleryRow' style={isTablet ? { width: '100%', height: 'calc(100vh-15px)'} : { width: '40%' }}>
         {renderGalleryItem(galleryItems[1], 1, secondaryTextRefs[1])}
-      </div>
-      <div className='galleryRow' style={isMobile ? { width: '100%', height: 'calc(100vh-15px)'} : { width: '40%' }}>
         {renderGalleryItem(galleryItems[2], 2, secondaryTextRefs[2])}
-        {renderGalleryItem(galleryItems[3], 3, secondaryTextRefs[3])}
       </div>
-      <div className='galleryRow' style={isMobile ? { width: '100%', height: 'calc(50vh-7.5px)'} : { width: '20%' }}>
+      <div className='galleryRow' style={isTablet ? { width: '100%', height: 'calc(100vh-15px)'} : { width: '40%' }}>
+        {renderGalleryItem(galleryItems[3], 3, secondaryTextRefs[3])}
         {renderGalleryItem(galleryItems[4], 4, secondaryTextRefs[4])}
       </div>
     </div>

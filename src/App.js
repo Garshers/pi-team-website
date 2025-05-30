@@ -1,16 +1,17 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
-import NotFoundPage from './NotFoundPage';
-import HomePage from './components/Pages/HomePage/HomePage.js';
-import GymPage from './components/Pages/Gym/GymPage.js';
-
-import PersonnelPage from './components/Pages/Personnel/PersonnelPage.js';
-
-import ContactPage from './components/Pages/Contact/ContactPage.js';
-
 import Footer from './components/HeaderAndFooter/footer.js';
 import './components/HeaderAndFooter/headerFooter.css';
+
+import HomePage from './components/Pages/HomePage/HomePage.js';
+import GymPage from './components/Pages/Gym/GymPage.js';
+import CoursePage from './components/Pages/Course/CoursePage.js';
+
+import PersonnelPage from './components/Pages/Personnel/PersonnelPage.js';
+import ContactPage from './components/Pages/Contact/ContactPage.js';
+
+import PolicyPage from './components/Pages/Policy/PolicyPage.js';
+import NotFoundPage from './NotFoundPage';
 
 function App() {
   return (
@@ -24,12 +25,13 @@ function App() {
       }}>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/silownia" element={<GymPage />} />
+          <Route path="/treningi-personalne" element={<GymPage />} />
+          <Route path="/kurs-trenera-personalnego" element={<CoursePage />} />
         
           <Route path="/kadra" element={<PersonnelPage />} />
           <Route path="/kontakt" element={<ContactPage />} />
 
-          {/* If other then NotFoungPage */}
+          <Route path="polityka-prywatnosci" element={<PolicyPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       <Footer />
