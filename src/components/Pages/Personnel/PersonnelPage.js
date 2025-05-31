@@ -12,12 +12,29 @@ import imgMilena from '../../../assets/Personnel/imgMilenaRemoved.png';
 
 
 const trainersData = [
-  { src: imgPatryk, name: 'TRENER PATRYK', description: 'Specjalizuje się w treningu siłowym i redukcji tkanki tłuszczowej.', callToAction: 'Kliknij, aby poznać Patryka!',  hoverDisplacement: '70px' },
-  { src: imgIza, name: 'TRENER IZA', description: 'Ekspertka od fitnessu funkcjonalnego i zajęć grupowych.', callToAction: 'Dowiedz się więcej o Izie!',  hoverDisplacement: '70px' },
-  { src: imgPiotr, name: 'TRENER PIOTR', description: 'Pomaga w budowaniu masy mięśniowej i poprawie wytrzymałości.', callToAction: 'Dowiedz się więcej o Piotrze!',  hoverDisplacement: '70px' },
-  { src: imgMilena, name: 'TRENER MILENA', description: 'Zajmuje się treningiem personalnym dla początkujących i zaawansowanych.', callToAction: 'Poznaj Milenę!',  hoverDisplacement: '70px' },
-  { src: imgPatryk, name: 'FIZIOTERAPEUTA DAWID', description: 'Pomaga w rehabilitacji po kontuzjach i poprawie mobilności.', callToAction: 'Skonsultuj się z Dawidem!',  hoverDisplacement: '70px' },
-  { src: imgNatalia, name: 'MASAŻYSTKA NATALIA', description: 'Oferuje masaże relaksacyjne i sportowe.', callToAction: 'Umów się na masaż!',  hoverDisplacement: '70px' },
+  { src: imgPatryk, name: 'TRENER PATRYK',
+    description: 'Cześć, tu Patryk Iwaszczyszyn- założyciel PITEAM, trener personalny, wielokrotny mistrz Polski i osoba, która stoi za tą firmą od pierwszego dnia.',
+    LearnMore: 'Kliknij, aby poznać Patryka!'},
+
+  { src: imgIza, name: 'TRENER IZA',
+    description: 'Poznajcie Izę- pasjonatkę treningu siłowego, trenerkę kobiet oraz naszą specjalistkę od treningu pływackiego!',
+    LearnMore: 'Dowiedz się więcej o Izie!'},
+
+  { src: imgPiotr, name: 'TRENER PIOTR',
+    description: 'Poznajcie Piotrka - jednego z naszych trenerów personalnych w Katowicach!',
+    LearnMore: 'Dowiedz się więcej o Piotrze!'},
+
+  { src: imgMilena, name: 'TRENER MILENA',
+    description: 'Poznajcie Milenę- niesamowicie zaangażowaną i pełną pasji trenerkę, która od 3 lat specjalizuje się w treningu siłowym. Ze sportem związana jest od najmłodszych lat.',
+    LearnMore: 'Poznaj Milenę!'},
+
+  { src: imgPatryk, name: 'FIZIOTERAPEUTA DAWID',
+    description: 'Poznajcie Dawida - naszego specjalistę od fizjoterapii ortopedycznej i treningu medycznego!',
+    LearnMore: 'Skonsultuj się z Dawidem!'},
+    
+  { src: imgNatalia, name: 'MASAŻYSTKA NATALIA',
+    description: 'Poznajcie Natalię - naszą utalentowaną masażystkę!',
+    LearnMore: 'Umów się na masaż!'},
 ];
 
 /**
@@ -53,6 +70,8 @@ function PersonnelPage() {
     };
 
     const currentTrainerName = trainersData[currentIndex]?.name || 'Trener';
+    const currentDescription = trainersData[currentIndex]?.description || 'Nie znaleziono opisu!';
+    const currentLearnMore = trainersData[currentIndex]?.LearnMore || 'Nie znaleziono opisu!';
 
     return (
         <>
@@ -60,7 +79,12 @@ function PersonnelPage() {
         <div className="mainPersonnelBox" style={{ backgroundImage: `url(${blackCurtain})` }}>
             {isMobile ? (
                 <div className="mobileGalleryWrapper" style={{ backgroundImage: `url(${trainersData[currentIndex]?.src})` }}>
-                    <div className="GalleryName">{currentTrainerName}</div>
+                    <span
+                        className='GalleryName'
+                        style={{ bottom: '70px' }}
+                    ></span>
+                    <span className='desktopGalleryDescription'>{currentDescription}</span>
+                    <span className='desktopLearnMore'>{currentLearnMore || 'Dowiedz się więcej'}</span>
                     <div className="leftArrow" onClick={goToPrevious}>❮</div>
                     <div className="rightArrow" onClick={goToNext}>❯</div>
                 </div>
@@ -71,14 +95,11 @@ function PersonnelPage() {
                     {trainersData.slice(rowIndex * 3, (rowIndex + 1) * 3).map((trainer, colIndex) => (
                         <div className='desktopGalleryBox' key={rowIndex * 3 + colIndex}>
                             <img src={trainer.src} alt={`Trener Personalny ${trainer.name}`} />
-                            <span
-                                className='GalleryName'
-                                style={{ '--hover-top': trainer.hoverDisplacement }}
-                            >
-                                {trainer.name}
-                            </span>
-                            <span className='desktopGalleryDescription'>{trainer.description}</span>
-                            <span className='desktopLearnMore'>{trainer.callToAction || 'Dowiedz się więcej'}</span>
+                            <div className='desktopDescriptionBox'>
+                                <span className='GalleryName'>{trainer.name}</span>
+                                <span className='desktopGalleryDescription'>{trainer.description}</span>
+                                <span className='desktopLearnMore'>{trainer.LearnMore || 'Dowiedz się więcej'}</span>
+                            </div>
                         </div>
                     ))}
                     </div>

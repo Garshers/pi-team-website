@@ -6,45 +6,9 @@
   gap: 10px;
   display: flex;
   justify-content: center;
-  align-items: center;
-  justify-content: center;
   /*border: 1px solid red;*/
   background-size: cover;
   background-position: center;
-}
-
-.GalleryName {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: white;
-  padding: 5px 10px;
-  border-radius: 5px;
-  font-weight: bold;
-  z-index: 10;
-  text-align: center;
-  white-space: nowrap;
-  transition: bottom 0.5s ease-in-out;
-}
-
-.desktopGalleryBox:hover .GalleryName{
-  bottom: var(--hover-displacement, 70px);
-}
-
-.GalleryPersonnelDescription {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: white;
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 5px 10px;
-  border-radius: 5px;
-  font-weight: bold;
-  z-index: 10;
-  text-align: center;
-  white-space: nowrap;
 }
 
 /* ------ Desktop gallery styles ------ */
@@ -78,10 +42,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow-y: hidden;
-  overflow-x: visible;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
 }
 
 .desktopGalleryBox img {
@@ -95,63 +55,6 @@
   scale: 1.2;
 }
 
-.desktopGalleryDescription {
-  position: absolute;
-  bottom: -30px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 90%;
-  color: white;
-  padding: 8px 12px;
-  border-radius: 5px;
-  font-size: 0.9em;
-  text-align: center;
-  z-index: 10;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out, bottom 0.5s ease-in-out;
-}
-
-.desktopGalleryBox:hover .desktopGalleryDescription {
-  bottom: 30px;
-  opacity: 1;
-  visibility: visible;
-}
-
-
-/* ----------------- Doweidz się więcej styles ----------------- */
-.desktopLearnMore {
-  width: 100%;
-  position: absolute;
-  bottom: -40px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  z-index: 11;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out, bottom 0.5s ease-in-out;
-
-  color: grey;
-  font-size: 0.8em;
-  margin-bottom: 5px;
-  text-align: center;
-}
-
-.desktopLearnMore:hover {
-  color: white;
-  cursor: pointer;
-}
-
-.desktopGalleryBox:hover .desktopLearnMore{
-  bottom: 10px;
-  opacity: 1;
-  visibility: visible;
-}
-
 /* ----------------- Mobile gallery styles ----------------- */
 .mobileGalleryWrapper {
   width: 100%;
@@ -162,7 +65,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: background-image 0.5s ease-in-out; /* Płynne przejście */
+  transition: background-image 0.5s ease-in-out;
   background-size: cover;
   background-position: center;
 }
@@ -183,6 +86,90 @@
 .rightArrow:hover {
   background-color: rgba(0, 0, 0, 0.7);
 }
+
+
+/* ----------------- Description styles ----------------- */
+.desktopDescriptionBox {
+  width: 100%;
+  height: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /*border: 1px solid red;*/
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  box-sizing: border-box;
+  transition: height 1.2s ease-in-out;
+}
+
+.desktopGalleryBox:hover .desktopDescriptionBox {
+  height: 25%;
+}
+
+.GalleryName {
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  z-index: 10;
+  text-align: center;
+  white-space: nowrap;
+  transition: all 0.5s ease-in-out;
+  margin-top: auto;
+}
+
+.desktopGalleryDescription {
+  width: 90%;
+  color: white;
+  font-size: 0.9em;
+  text-align: center;
+  z-index: 10;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  margin-bottom: 5px;
+}
+
+.mobileGalleryWrapper .desktopDescriptionBox .desktopGalleryDescription {
+  opacity: 1;
+  visibility: visible;
+}
+
+.desktopLearnMore {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 11;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s ease-in-out;
+  color: grey;
+  font-size: 0.8em;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.desktopLearnMore:hover {
+  color: white;
+  cursor: pointer;
+}
+
+.desktopGalleryBox:hover .desktopDescriptionBox .desktopGalleryDescription{
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0.5s;
+}
+
+.desktopGalleryBox:hover .desktopDescriptionBox .desktopLearnMore{
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0.6s;
+}
+
 @media screen and (max-width: 900px) {
 
 }
