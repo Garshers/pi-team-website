@@ -12,27 +12,27 @@ import imgMilena from '../../../assets/Personnel/imgMilenaRemoved.png';
 
 
 const trainersData = [
-  { src: imgPatryk, name: 'TRENER PATRYK',
+  { src: imgPatryk, name: 'PATRYK',
     description: 'Cześć, tu Patryk Iwaszczyszyn- założyciel PITEAM, trener personalny, wielokrotny mistrz Polski i osoba, która stoi za tą firmą od pierwszego dnia.',
     LearnMore: 'Kliknij, aby poznać Patryka!'},
 
-  { src: imgIza, name: 'TRENER IZA',
-    description: 'Poznajcie Izę- pasjonatkę treningu siłowego, trenerkę kobiet oraz naszą specjalistkę od treningu pływackiego!',
+  { src: imgIza, name: 'IZA',
+    description: 'Poznajcie Izę - pasjonatkę treningu siłowego, trenerkę kobiet oraz naszą specjalistkę od treningu pływackiego!',
     LearnMore: 'Dowiedz się więcej o Izie!'},
 
-  { src: imgPiotr, name: 'TRENER PIOTR',
+  { src: imgPiotr, name: 'PIOTR',
     description: 'Poznajcie Piotrka - jednego z naszych trenerów personalnych w Katowicach!',
     LearnMore: 'Dowiedz się więcej o Piotrze!'},
 
-  { src: imgMilena, name: 'TRENER MILENA',
+  { src: imgMilena, name: 'MILENA',
     description: 'Poznajcie Milenę - niesamowicie zaangażowaną i pełną pasji trenerkę, która od 3 lat specjalizuje się w treningu siłowym. Ze sportem związana jest od najmłodszych lat.',
     LearnMore: 'Poznaj Milenę!'},
 
-  { src: imgPatryk, name: 'FIZIOTERAPEUTA DAWID',
+  { src: imgPatryk, name: 'DAWID',
     description: 'Poznajcie Dawida - naszego specjalistę od fizjoterapii ortopedycznej i treningu medycznego!',
     LearnMore: 'Skonsultuj się z Dawidem!'},
 
-  { src: imgNatalia, name: 'MASAŻYSTKA NATALIA',
+  { src: imgNatalia, name: 'NATALIA',
     description: 'Poznajcie Natalię - naszą utalentowaną masażystkę!',
     LearnMore: 'Umów się na masaż!'},
 ];
@@ -69,27 +69,39 @@ function PersonnelPage() {
         setCurrentIndex(newIndex);
     };
 
-    const currentTrainerName = trainersData[currentIndex]?.name || 'Trener';
-    const currentDescription = trainersData[currentIndex]?.description || 'Nie znaleziono opisu!';
-    const currentLearnMore = trainersData[currentIndex]?.LearnMore || 'Nie znaleziono opisu!';
+    const currentTrainer = trainersData[currentIndex];
 
     return (
         <>
         <Header/>
         <div className="mainPersonnelBox" style={{ backgroundImage: `url(${blackCurtain})` }}>
-            <h1>Poznajcie naszą kadrę</h1>
+            <h1>Poznaj naszą kadrę</h1>
             {isMobile ? (
+                <>
                 <div className="mobileGalleryWrapper" style={{ backgroundImage: `url(${trainersData[currentIndex]?.src})` }}>
-                    <div class="galleryArrows">
-                        <span class="leftArrow" onClick={goToPrevious}>❮</span>
-                        <span class="rightArrow" onClick={goToNext}>❯</span>
+                    <div className="galleryArrows">
+                    <span className="leftArrow" onClick={goToPrevious}>❮</span>
+                    <span className="rightArrow" onClick={goToNext}>❯</span>
                     </div>
                     <div className='mobileDescriptionBox'>
-                        <span className='mobileGalleryName'>{currentTrainerName}</span>
-                        <span className='mobileGalleryDescription'>{currentDescription}</span>
-                        <a href="/kontakt" className='mobileLearnMore'>{currentLearnMore || 'Dowiedz się więcej'}</a>
+                    <span className='mobileGalleryName'>{currentTrainer.name}</span>
+                    <span className='mobileGalleryDescription'>{currentTrainer.description}</span>
+                    <a href="/kontakt" className='mobileLearnMore'>{currentTrainer.LearnMore || 'Dowiedz się więcej'}</a>
                     </div>
                 </div>
+
+                <div className="thumbnails">
+                    {trainersData.map((trainer, index) => (
+                    <img
+                        key={index}
+                        src={trainer.src}
+                        alt={`Miniaturka ${trainer.name}`}
+                        className={index === currentIndex ? 'thumbnail active' : 'thumbnail'}
+                        onClick={() => setCurrentIndex(index)}
+                    />
+                    ))}
+                </div>
+                </>
             ) : (
                 <div className='desktopGalleryWrapper'>
                 {[0, 1].map((rowIndex) => (
@@ -98,8 +110,8 @@ function PersonnelPage() {
                         <div className='desktopGalleryBox' key={rowIndex * 3 + colIndex}>
                             <img src={trainer.src} alt={`Trener Personalny ${trainer.name}`} />
                             <div className='desktopDescriptionBox'>
-                                <span className='desktopGalleryName'>{trainer.name}</span>
-                                <span className='desktopGalleryDescription'>{trainer.description}</span>
+                                <h2 className='desktopGalleryName'>{trainer.name}</h2>
+                                <p className='desktopGalleryDescription'>{trainer.description}</p>
                                 <a href="/kontakt" className='desktopLearnMore'>{trainer.LearnMore || 'Dowiedz się więcej'}</a>
                             </div>
                         </div>

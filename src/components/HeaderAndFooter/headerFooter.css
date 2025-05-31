@@ -1,11 +1,3 @@
-body {
-    margin: 0;
-    padding: 0;
-    font-family: "Oswald", sans-serif;
-    background-color: #000;
-    color: #fff;
-}
-
 /* Header styles */
 .header-frame {
     height: max(108px, 8vh);

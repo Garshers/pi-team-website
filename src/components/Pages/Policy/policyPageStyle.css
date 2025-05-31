@@ -1,16 +1,4 @@
-body{
-  margin: 0;
-  background-color: black;
-  font-family: 'Arial', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  text-shadow:
-      -1px -1px 0 black,
-      1px -1px 0 black,
-      -1px 1px 0 black,
-      1px 1px 0 black;
-}
+
 
 .policyMainBox{
   min-height: 100vh;
