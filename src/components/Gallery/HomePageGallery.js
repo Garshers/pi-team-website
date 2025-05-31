@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import './galleryStyle.css';
+import './homeGalleryStyle.css';
 import gymImage from '../../assets/HomePage3.jpeg';
 import gymImage_Small from '../../assets/HomePage3_Small.jpeg';
 import gymImage_Mid from '../../assets/HomePage3_Mid.jpeg';

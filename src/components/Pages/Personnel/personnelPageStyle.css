@@ -1,44 +1,188 @@
-.mainBox{
-    width: 100%;
-    min-height: 100vh;
-    height: fit-content;
-    margin-top: 100px;
-    gap: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.mainPersonnelBox{
+  width: 100%;
+  min-height: 100vh;
+  height: fit-content;
+  margin-top: 100px;
+  gap: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: center;
+  /*border: 1px solid red;*/
+  background-size: cover;
+  background-position: center;
 }
 
-.trainerProfile {
-  min-height: 200px;
-  margin: 0 auto;
-  max-width: 500px;
-  width: 80%;
-  aspect-ratio: 1 / 1;
-  overflow: hidden;
-  border-radius: 10px;
+.GalleryName {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  z-index: 10;
+  text-align: center;
+  white-space: nowrap;
+  transition: bottom 0.5s ease-in-out;
+}
+
+.desktopGalleryBox:hover .GalleryName{
+  bottom: var(--hover-displacement, 70px);
+}
+
+.GalleryPersonnelDescription {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  z-index: 10;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* ------ Desktop gallery styles ------ */
+
+.desktopGalleryWrapper{
+  min-width: 900px;
+  width: 70%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  /*border: 1px solid red;*/
+  margin: 40px;
+  gap: 5px;
+  padding: 5px;
+}
+.desktopGalleryRow{
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 5px;
+  /*border: 1px solid red;*/
+}
+.desktopGalleryBox {
+  min-height: 100px;
+  height: fit-content;
+  /*border: 1px solid red;*/
+  position: relative;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: hidden;
+  overflow-x: visible;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.desktopGalleryBox img {
+  width: 100%;
+  aspect-ratio: 2/3;
   object-fit: cover;
-  object-position: 0 -40px;
-  transition: aspect-ratio 0.5s ease-in-out, object-position 0.5s ease-in-out;
-  box-shadow: 2px 2px 4px 1px rgba(255, 255, 255, 0.3);
+  transition: scale 0.5s ease-in-out;
 }
 
-.trainerProfile:hover {
-  aspect-ratio: 1 / 1.25;
-  object-position: top;
+.desktopGalleryBox:hover img {
+  scale: 1.2;
 }
 
-@media screen and (max-width: 650px) {
-  .mainBox{
-    flex-direction: column;
-    gap: 0;
+.desktopGalleryDescription {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-size: 0.9em;
+  text-align: center;
+  z-index: 10;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out, bottom 0.5s ease-in-out;
 }
 
-  .trainerProfile {
-    border: none;
-    box-sizing: border-box;
-    border-radius: 0;
-    object-position: 0 -20px;
-    width: 100%;
-  }
+.desktopGalleryBox:hover .desktopGalleryDescription {
+  bottom: 30px;
+  opacity: 1;
+  visibility: visible;
+}
+
+
+/* ----------------- Doweidz się więcej styles ----------------- */
+.desktopLearnMore {
+  width: 100%;
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 11;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out, bottom 0.5s ease-in-out;
+
+  color: grey;
+  font-size: 0.8em;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.desktopLearnMore:hover {
+  color: white;
+  cursor: pointer;
+}
+
+.desktopGalleryBox:hover .desktopLearnMore{
+  bottom: 10px;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ----------------- Mobile gallery styles ----------------- */
+.mobileGalleryWrapper {
+  width: 100%;
+  max-width: 500px;
+  aspect-ratio: 2/3;
+  position: relative;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-image 0.5s ease-in-out; /* Płynne przejście */
+  background-size: cover;
+  background-position: center;
+}
+
+.leftArrow,
+.rightArrow {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 50%;
+  font-size: 24px;
+  user-select: none;
+  margin: 0 10px;
+}
+
+.leftArrow:hover,
+.rightArrow:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+@media screen and (max-width: 900px) {
+
 }

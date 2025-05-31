@@ -1,0 +1,160 @@
+/* Main Boxes for HomePageGallery */
+.galleryMainFrame{
+    width: calc(100% - 10px);
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    margin: 5px;
+    gap: 5px;
+}
+
+.galleryRow{
+    height: calc(100vh - 10px);
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.galleryBox{
+    flex: 1;
+    height: calc(100vh - 10px);
+    overflow: hidden;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Section for loading images */
+.blurred-img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    object-fit: cover;
+    background-position: center;
+    transition: opacity 250ms ease-in-out;
+}
+
+.blurred-img img {
+    opacity: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: filter 0.3s ease-in-out;
+    z-index: 10;
+}
+
+.blurred-img.loaded::before {
+    animation: none;
+    content: none;
+}
+
+.blurred-img img {
+    opacity: 0;
+    transition: opacity 250ms ease-in-out;
+}
+
+.blurred-img.loaded img {
+    opacity: 1;
+}
+
+/* Section containing styles for Text on top of images */
+.galleryBoxName {
+    width: 80%;
+    height: 100%;
+    padding: 70vh 20% 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: background-color 0.4s ease-in-out;
+}
+.galleryBoxName:hover{
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.galleryBoxName__primary {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    transition: font-size 0.3s ease-in-out;
+    padding-bottom: 20px;
+    text-shadow:
+        -1px -1px 0 black,
+        1px -1px 0 black,
+        -1px 1px 0 black,
+        1px 1px 0 black;
+}
+
+.galleryBoxName__secondary {
+    opacity: 0;
+    transition: transform 0.5s ease-out, opacity 0.3s ease-out;
+    transform: translateY(-20px);
+    text-align: center;
+    font-size: 1.1rem;
+    text-shadow:
+        -1px -1px 0 black,
+        1px -1px 0 black,
+        -1px 1px 0 black,
+        1px 1px 0 black;
+}
+
+@media (max-width: 1400px) {
+    .galleryMainFrame{
+        flex-direction: column;
+    }
+    .galleryRow{
+        height: calc(50vh - 7.5px);
+    }
+    .galleryBox{
+        width: 100%;
+        height: calc(50vh - 7.5px);
+        /*height: calc(100vh - 10px);*/
+    }
+    .galleryBoxName {
+        width: 85%;
+        height: 100%;
+        padding: 0 20% 0;
+        background-color: rgba(0, 0, 0, 0.3);justify-content: center;
+    }
+    .galleryBoxName__secondary {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    .galleryBoxName__secondary.animate {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@media (max-width: 900px) {
+    .galleryRow{
+        flex-direction: column;
+        height: calc(100vh - 15px);
+    }
+}
+
+@media (min-width: 1400px) {
+    .galleryBoxName:hover .galleryBoxName__secondary {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@media (min-width: 3000px) {
+    .galleryBoxName__primary {
+        font-size: 4rem;
+        
+    }
+
+    .galleryBoxName__secondary {
+        font-size: 2.2rem;
+    }
+}
