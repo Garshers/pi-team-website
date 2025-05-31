@@ -25,13 +25,13 @@ const trainersData = [
     LearnMore: 'Dowiedz się więcej o Piotrze!'},
 
   { src: imgMilena, name: 'TRENER MILENA',
-    description: 'Poznajcie Milenę- niesamowicie zaangażowaną i pełną pasji trenerkę, która od 3 lat specjalizuje się w treningu siłowym. Ze sportem związana jest od najmłodszych lat.',
+    description: 'Poznajcie Milenę - niesamowicie zaangażowaną i pełną pasji trenerkę, która od 3 lat specjalizuje się w treningu siłowym. Ze sportem związana jest od najmłodszych lat.',
     LearnMore: 'Poznaj Milenę!'},
 
   { src: imgPatryk, name: 'FIZIOTERAPEUTA DAWID',
     description: 'Poznajcie Dawida - naszego specjalistę od fizjoterapii ortopedycznej i treningu medycznego!',
     LearnMore: 'Skonsultuj się z Dawidem!'},
-    
+
   { src: imgNatalia, name: 'MASAŻYSTKA NATALIA',
     description: 'Poznajcie Natalię - naszą utalentowaną masażystkę!',
     LearnMore: 'Umów się na masaż!'},
@@ -77,16 +77,18 @@ function PersonnelPage() {
         <>
         <Header/>
         <div className="mainPersonnelBox" style={{ backgroundImage: `url(${blackCurtain})` }}>
+            <h1>Poznajcie naszą kadrę</h1>
             {isMobile ? (
                 <div className="mobileGalleryWrapper" style={{ backgroundImage: `url(${trainersData[currentIndex]?.src})` }}>
-                    <span
-                        className='GalleryName'
-                        style={{ bottom: '70px' }}
-                    ></span>
-                    <span className='desktopGalleryDescription'>{currentDescription}</span>
-                    <span className='desktopLearnMore'>{currentLearnMore || 'Dowiedz się więcej'}</span>
-                    <div className="leftArrow" onClick={goToPrevious}>❮</div>
-                    <div className="rightArrow" onClick={goToNext}>❯</div>
+                    <div class="galleryArrows">
+                        <span class="leftArrow" onClick={goToPrevious}>❮</span>
+                        <span class="rightArrow" onClick={goToNext}>❯</span>
+                    </div>
+                    <div className='mobileDescriptionBox'>
+                        <span className='mobileGalleryName'>{currentTrainerName}</span>
+                        <span className='mobileGalleryDescription'>{currentDescription}</span>
+                        <a href="/kontakt" className='mobileLearnMore'>{currentLearnMore || 'Dowiedz się więcej'}</a>
+                    </div>
                 </div>
             ) : (
                 <div className='desktopGalleryWrapper'>
@@ -96,15 +98,16 @@ function PersonnelPage() {
                         <div className='desktopGalleryBox' key={rowIndex * 3 + colIndex}>
                             <img src={trainer.src} alt={`Trener Personalny ${trainer.name}`} />
                             <div className='desktopDescriptionBox'>
-                                <span className='GalleryName'>{trainer.name}</span>
+                                <span className='desktopGalleryName'>{trainer.name}</span>
                                 <span className='desktopGalleryDescription'>{trainer.description}</span>
-                                <span className='desktopLearnMore'>{trainer.LearnMore || 'Dowiedz się więcej'}</span>
+                                <a href="/kontakt" className='desktopLearnMore'>{trainer.LearnMore || 'Dowiedz się więcej'}</a>
                             </div>
                         </div>
                     ))}
                     </div>
                 ))}
                 </div>
+                
             )}
         </div>
         </>

@@ -3,15 +3,22 @@
   min-height: 100vh;
   height: fit-content;
   margin-top: 100px;
-  gap: 10px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   /*border: 1px solid red;*/
   background-size: cover;
   background-position: center;
 }
 
-/* ------ Desktop gallery styles ------ */
+.mainPersonnelBox h1{
+  font-size: 3em;
+  font-weight: bold;
+  margin: 0 10px;
+  /*border: 1px solid red;*/
+}
+
+/* --------------------------------------------------- Desktop gallery styles ------ */
 
 .desktopGalleryWrapper{
   min-width: 900px;
@@ -20,7 +27,9 @@
   display: flex;
   flex-direction: column;
   /*border: 1px solid red;*/
-  margin: 40px;
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(2px);
+  margin: 20px 40px;
   gap: 5px;
   padding: 5px;
 }
@@ -52,10 +61,10 @@
 }
 
 .desktopGalleryBox:hover img {
-  scale: 1.2;
+  scale: 1.15;
 }
 
-/* ----------------- Mobile gallery styles ----------------- */
+/* --------------------------------------------------- Mobile gallery styles ----------------- */
 .mobileGalleryWrapper {
   width: 100%;
   max-width: 500px;
@@ -68,18 +77,39 @@
   transition: background-image 0.5s ease-in-out;
   background-size: cover;
   background-position: center;
+  /*border: 1px solid red;*/
+  box-sizing: border-box;
+}
+
+.galleryArrows {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+  padding: 0 10px;
+  box-sizing: border-box;
+  pointer-events: none;
 }
 
 .leftArrow,
 .rightArrow {
   cursor: pointer;
+  height: 34px;
+  width: 24px;
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
   padding: 10px 15px;
   border-radius: 50%;
   font-size: 24px;
   user-select: none;
-  margin: 0 10px;
+  /*border: 1px solid red;*/
+  transition: background-color 0.3s ease;
+  pointer-events: auto;
 }
 
 .leftArrow:hover,
@@ -87,9 +117,8 @@
   background-color: rgba(0, 0, 0, 0.7);
 }
 
-
-/* ----------------- Description styles ----------------- */
-.desktopDescriptionBox {
+/* --------------------------------------------------- Description styles for desktop----------------- */
+.desktopDescriptionBox, .mobileDescriptionBox {
   width: 100%;
   height: 30px;
   display: flex;
@@ -101,26 +130,25 @@
   left: 50%;
   transform: translateX(-50%);
   box-sizing: border-box;
-  transition: height 1.2s ease-in-out;
+  transition: height 0.7s ease-in-out;
 }
 
 .desktopGalleryBox:hover .desktopDescriptionBox {
   height: 25%;
 }
 
-.GalleryName {
+.desktopGalleryName, .mobileGalleryName{
   color: white;
   padding: 5px 10px;
   border-radius: 5px;
   font-weight: bold;
   z-index: 10;
   text-align: center;
-  white-space: nowrap;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.6s ease-in-out;
   margin-top: auto;
 }
 
-.desktopGalleryDescription {
+.desktopGalleryDescription, .mobileGalleryDescription {
   width: 90%;
   color: white;
   font-size: 0.9em;
@@ -137,7 +165,7 @@
   visibility: visible;
 }
 
-.desktopLearnMore {
+.desktopLearnMore, .mobileLearnMore{
   width: 90%;
   display: flex;
   flex-direction: column;
@@ -146,11 +174,13 @@
   z-index: 11;
   opacity: 0;
   visibility: hidden;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.3s ease-in-out;
   color: grey;
   font-size: 0.8em;
   margin-bottom: 5px;
+  text-decoration: none;
   text-align: center;
+  padding-top: 10px;
 }
 
 .desktopLearnMore:hover {
@@ -168,6 +198,28 @@
   opacity: 1;
   visibility: visible;
   transition-delay: 0.6s;
+}
+
+/* --------------------------------------------------- Description styles for mobile----------------- */
+
+.mobileDescriptionBox {
+  height: fit-content;
+}
+
+.mobileGalleryName{
+  font-size: 2em;
+}
+
+.mobileGalleryDescription {
+  font-size: 1.1em;
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobileLearnMore {
+  font-size: 1em;
+  opacity: 1;
+  visibility: visible;
 }
 
 @media screen and (max-width: 900px) {
