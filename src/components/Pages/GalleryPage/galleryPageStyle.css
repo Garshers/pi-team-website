@@ -8,13 +8,14 @@
   justify-content: center;
   /*border: 1px solid red;
   background-color: black;*/
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  background: #000000;
+  background: -webkit-linear-gradient(195deg, #000000 0%, #656565 50%, #000000 100%);
+  background: linear-gradient(195deg, #000000 0%, #656565 50%, #000000 100%);
 }
 
 .imageGalleryWrapper{
-  width: 80%;
+  padding-top: 100px;
+  width: 95%;
 }
 
 
