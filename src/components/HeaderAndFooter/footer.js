@@ -11,22 +11,22 @@ function Footer() {
         <footer>
             <div className="footer-frame">
                 <div className="box1-3">
-                    <div className="footerText">+48 XXX XXX XXX</div>
+                    <div className="footerText">+48 795 502 007</div>
                     <div className="footerText">
-                        The helpline is available from Monday to Friday, from 9:00 AM to 9:00 PM.
+                        Infolinia jest dostępna od poniedziałku do piątku, w godzinach od 9:00 do 21:00.
                     </div>
                 </div>
                 <div className="box1-3">
                     <img src={Logo} alt="Icon Logo" style={{ width: `60px`}} />
-                    <div className="footer-mainText">Customer Service Office</div>
+                    <div className="footer-mainText">Biuro Obsługi klienta</div>
                 </div>
                 <div className="box1-3">
                     <div className='box1-3-row'>
                         <img className="logo" src={mail} alt="Icon mail" />
-                        <div className="footerText">SeaStrike@SeaStrike.com</div>
+                        <div className="footerText">kontakt@piteam.pl</div>
                     </div>
-                        <div className='box1-3-row'>
-                        <a href="https://www.instagram.com/izzzyway" target="_blank" rel="noopener noreferrer">
+                    <div className='box1-3-row'>
+                        <a href="https://www.instagram.com/p.i.team" target="_blank" rel="noopener noreferrer">
                         <img className="logo" src={ig} alt="Icon IG" />
                         </a>
 

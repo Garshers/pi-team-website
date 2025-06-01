@@ -104,6 +104,7 @@ function ContactForm() {
 
     return (
         <>
+        <div className='gymFormWrapper'>
             <form id='ContactForm' className="gymForm" onSubmit={handleSubmit}>
                 <h1 className="gymFormTitle">Formularz zgłoszeniowy</h1>
 
@@ -164,6 +165,7 @@ function ContactForm() {
             {cooldownMessage && (
                 <p className="cooldownMessage">{cooldownMessage}</p>
             )}
+        </div>
         </>
     );
 }

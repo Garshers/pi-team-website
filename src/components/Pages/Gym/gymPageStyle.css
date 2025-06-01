@@ -1,17 +1,3 @@
-body{
-  margin: 0;
-  background-color: black;
-  font-family: 'Arial', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  text-shadow:
-      -1px -1px 0 black,
-      1px -1px 0 black,
-      -1px 1px 0 black,
-      1px 1px 0 black;
-}
-
 .gymMainBox{
   min-height: 100vh;
   width: 100%;
@@ -26,118 +12,23 @@ body{
   background-attachment: fixed;
 }
 
-/* --------- Image box for the gym section --------- */
-.gymImageBox {
-  height: calc(100vh - 108px);
-  width: 100%;
-  padding-top: 108px;
-  margin-bottom: 10vh;
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  transition: height 0.8s ease-in-out;
-}
-
-.gymImageBox::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 50%;
-
-  background: linear-gradient(to top,
-        rgba(10, 10, 10, 0.8) 0%,
-        rgba(10, 10, 10, 0.2) 10%,
-        rgba(10, 10, 10, 0.0) 20%
-        );
-  pointer-events: none;
-}
-
-.gymOverlay{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.gymTitle {
-  font-size: 3rem;
-  font-weight: bold;
-  transition: font-size 0.3s ease-in-out;
-  color: white;
-  padding: 5px;
-}
-
-.gymTitle {
-  font-size: clamp(1.8em, 3vw, 3em);
-  font-weight: bold;
-  text-align: center;
-  transition: font-size 0.3s ease-in-out;
-  color: white;
-  padding: 5px;
-}
-
-.gymDescription {
-  transition: transform 0.5s ease-out, opacity 0.3s ease-out;
-  transform: translateY(-20px);
-  color: white;
-  width: min(100%, 1100px);
-  font-size: clamp(1rem, 2vw, 1.2rem);
-}
-
-.Arrow {
-    font-size: 2em;
-    background-color: rgba(0, 0, 0, 0);
-    color: white;
-    text-align: center;
-    margin: 20px 0;
-    font-weight: bold;
-    cursor: pointer;
-    transition: transform 0.3s ease-in-out;
-
-    border: none;
-    padding: 0;
-    font-family: inherit;
-    outline: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-}
-
-.Arrow:hover {
-    color: #007bff;
-    transform: translateY(5px);
-}
-
 /* --------- Text box for the gym section --------- */
 .gymTextBox{
-    width: 80%;
-    max-width: 800px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2em;
+  margin-top: -11px;
+  padding: 30px 5px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255,255,255,0.2);
+  box-shadow: 0 5px 10px rgba(255,255,255,0.2);
 }
-
-/* --------- Form styles for the gym section --------- */
-.gymFormWrapper{
-    width: 80%;
-    max-width: 600px;
-    background-color: rgba(0,0,0,0.3);;
-    border: 1px solid rgba(255,255,255,0.2);
-    box-shadow: 0 0 10px rgba(255,255,255,0.2);
-    backdrop-filter: blur(4px);
-    color: #fff;
-    border-radius: 10px;
-    padding: 30px 40px;
-    margin: 50px auto;
-    box-sizing: border-box;
+.gymText{
+  width: 80%;
+  max-width: 800px;
 }
 
 /* --------- Chcek Also styles for the gym section --------- */
@@ -181,7 +72,6 @@ body{
 @media (max-width: 768px) {
   .gymImageBox {
     height: 100vh;
-    margin-bottom: 10vh;
     padding: 0;
   }
   .gymFormWrapper{

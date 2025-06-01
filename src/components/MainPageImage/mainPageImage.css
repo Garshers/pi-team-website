@@ -1,0 +1,66 @@
+/* --------- Image box for the gym section --------- */
+.gymImageBox {
+  height: calc(100vh - 108px);
+  width: 100%;
+  padding-top: 108px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  transition: height 0.8s ease-in-out;
+}
+
+.gymImageBox::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+
+  background: linear-gradient(to top,
+        rgba(10, 10, 10, 0.8) 0%,
+        rgba(10, 10, 10, 0.2) 10%,
+        rgba(10, 10, 10, 0.0) 20%
+        );
+  pointer-events: none;
+}
+
+.gymOverlay{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 25vh;
+}
+
+.gymTitle {
+  font-size: clamp(1.8em, 3vw, 3em);
+  font-weight: bold;
+  text-align: center;
+  transition: font-size 0.3s ease-in-out;
+  color: white;
+  padding: 5px;
+}
+
+.gymDescription {
+  transition: transform 0.5s ease-out, opacity 0.3s ease-out;
+  transform: translateY(-20px);
+  color: white;
+  width: min(100%, 1100px);
+  font-size: clamp(1rem, 2vw, 1.2rem);
+}
+
+.gymSubtitle {
+  top: 80vh;
+  position: absolute;
+  transition: transform 0.3s ease-in-out;
+}
+
+.gymSubtitle:hover{
+  color: grey;
+  transform: translateY(5px);
+  cursor: pointer;
+}
