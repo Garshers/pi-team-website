@@ -75,7 +75,7 @@ function PersonnelPage() {
         <>
         <Header/>
         <div className="mainPersonnelBox" style={{ backgroundImage: `url(${blackCurtain})` }}>
-            <h1>Poznaj naszą kadrę</h1>
+            <h1 data-text="NASZ TEAM">NASZ TEAM</h1>
             {isMobile ? (
                 <>
                 <div className="mobileGalleryWrapper" style={{ backgroundImage: `url(${trainersData[currentIndex]?.src})` }}>

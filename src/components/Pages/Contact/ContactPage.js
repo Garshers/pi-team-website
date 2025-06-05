@@ -19,12 +19,10 @@ function ContactPage() {
                 <div className="contactDescriptionBox">
                     <h1>Kontakt</h1>
                     <p>Telefon: +48 123 456 789</p>
-                    <p>Email: piteam@gmail.com</p>
+                    <p>Email: kontakt@piteam.pl</p>
                 </div>
             </div>
-            <div className='contactFormWrapper'>
-                <ContactForm/>
-            </div>
+            <ContactForm/>
         </div>
         </>
     );

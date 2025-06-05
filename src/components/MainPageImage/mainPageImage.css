@@ -37,26 +37,46 @@
 }
 
 .gymTitle {
-  font-size: clamp(1.8em, 3vw, 3em);
-  font-weight: bold;
+  font-size: clamp(1.8em, 3.3vw, 3em);
+  font-weight: 900;
   text-align: center;
   transition: font-size 0.3s ease-in-out;
-  color: white;
   padding: 5px;
+  color: transparent;
+  -webkit-text-stroke: 1px #696969;
+  position: relative;
+  font-style: oblique;
+}
+
+.gymTitle::before {
+  content: attr(data-text);
+  position: absolute;
+  top: -2px;
+  left: -5px;
+  color: white;
+  -webkit-text-stroke: 1px #696969;
+  z-index: 100;
+  font-size: inherit;
+  font-weight: inherit;
+  font-style: inherit;
+  width: 100%;
 }
 
 .gymDescription {
-  transition: transform 0.5s ease-out, opacity 0.3s ease-out;
-  transform: translateY(-20px);
-  color: white;
-  width: min(100%, 1100px);
-  font-size: clamp(1rem, 2vw, 1.2rem);
+    transition: transform 0.5s ease-out, opacity 0.3s ease-out;
+    transform: translateY(-20px);
+    color: white;
+    font-weight: 600;
+    width: min(100%, 1100px);
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    font-style: oblique;
 }
 
 .gymSubtitle {
   top: 80vh;
   position: absolute;
   transition: transform 0.3s ease-in-out;
+  font-style: oblique;
 }
 
 .gymSubtitle:hover{

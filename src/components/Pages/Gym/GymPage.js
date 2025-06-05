@@ -17,7 +17,7 @@ function GymPage() {
         <div className="gymMainBox" style={{ backgroundImage: `url(${background})` }}>
             <MainPageImage 
                 Image={gymImage}
-                Title={'Treningi Personalne'}
+                Title={'TRENINGI PERSONALNE'}
                 Description={'Chcesz, by Twoja determinacja, charakter i upór była zauważana i interpretowana już przez pryzmat samego wyglądu? Jak bardzo wygląd przekłada się na postrzeganie Ciebie jako osoby? Zapraszamy do współpracy'}
             />
             <div className="gymTextBox">

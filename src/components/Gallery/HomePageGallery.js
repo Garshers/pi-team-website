@@ -1,17 +1,20 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './homeGalleryStyle.css';
-import gymImage from '../../assets/HomePage3.jpeg';
-import gymImage_Small from '../../assets/HomePage3_Small.jpeg';
-import gymImage_Mid from '../../assets/HomePage3_Mid.jpeg';
-import poolImage from '../../assets/HomePage1.jpeg';
-import poolImage_Small from '../../assets/HomePage1_Small.jpeg';
-import poolImage_Mid from '../../assets/HomePage1_Mid.jpeg';
-import courseImage from '../../assets/HomePage1.jpeg';
-import courseImage_Small from '../../assets/HomePage1_Small.jpeg';
-import courseImage_Mid from '../../assets/HomePage1_Mid.jpeg';
-import campImage from '../../assets/HomePage3.jpeg';
-import campImage_Small from '../../assets/HomePage3_Small.jpeg';
-import campImage_Mid from '../../assets/HomePage3_Mid.jpeg';
+import gymImage from '../../assets/HomePage/HomePage3.jpeg';
+import gymImage_Small from '../../assets/HomePage/HomePage3_Small.jpeg';
+import gymImage_Mid from '../../assets/HomePage/HomePage3_Mid.jpeg';
+import poolImage from '../../assets/HomePage/HomePage1.jpeg';
+import poolImage_Small from '../../assets/HomePage/HomePage1_Small.jpeg';
+import poolImage_Mid from '../../assets/HomePage/HomePage1_Mid.jpeg';
+import courseImage from '../../assets/HomePage/CourseImg.jpeg';
+import courseImage_Small from '../../assets/HomePage/CourseImg.jpeg';
+import courseImage_Mid from '../../assets/HomePage/CourseImg.jpeg';
+import massageImage from '../../assets/HomePage/MassageImg.jpeg';
+import massageImage_Small from '../../assets/HomePage/MassageImg.jpeg';
+import massageImage_Mid from '../../assets/HomePage/MassageImg.jpeg';
+import campImage from '../../assets/HomePage/CampImg.jpeg';
+import campImage_Small from '../../assets/HomePage/CampImg.jpeg';
+import campImage_Mid from '../../assets/HomePage/CampImg.jpeg';
 
 const galleryItems = [
   {
@@ -21,7 +24,7 @@ const galleryItems = [
     href: '/treningi-personalne',
     alt: 'Treningi Parsonalne',
     key: 'gym1',
-    primary: 'Treningi Parsonalne',
+    primary: 'TRENINGI PERSONALNE',
     secondary: 'Chcesz, by Twoja determinacja, charakter i upór była zauważana i interpretowana już przez pryzmat samego wyglądu? Jak bardzo wygląd przekłada się na postrzeganie Ciebie jako osoby? Zapraszamy do współpracy'
   },
   {
@@ -31,27 +34,27 @@ const galleryItems = [
     href: '/basen',
     alt: 'Basen',
     key: 'pool1',
-    primary: 'Basen',
+    primary: 'BASEN',
     secondary: 'Chcesz się czuć jak ryba w wodzie dosłownie i w przenośni? Lepiej nie trafisz!'
-  },
-  {
-    image: campImage,
-    smallImage: campImage_Small,
-    midImage: campImage_Mid,
-    href: '/kurs-trenera-personalnego',
-    alt: 'Kurs Trenera Personalnego',
-    key: 'course',
-    primary: 'Kurs Trenera Personalnego',
-    secondary: 'Marzysz o pracy, która łączy sport, rozwój i poczucie satysfakcji? Zostań trenerem personalnym! Potężna dawka nowoczesnej wiedzy, działającej praktyki i skutecznej motywacji. Nauczysz się, jak planować treningi, budować relacje z klientem i być najlepszym w swoim fachu. Tylko z PITEAM.'
   },
   {
     image: courseImage,
     smallImage: courseImage_Small,
     midImage: courseImage_Mid,
+    href: '/kurs-trenera-personalnego',
+    alt: 'Kurs Trenera Personalnego',
+    key: 'course',
+    primary: 'KURS TRENERA PERSONALNEGO',
+    secondary: 'Marzysz o pracy, która łączy sport, rozwój i poczucie satysfakcji? Zostań trenerem personalnym! Potężna dawka nowoczesnej wiedzy, działającej praktyki i skutecznej motywacji. Nauczysz się, jak planować treningi, budować relacje z klientem i być najlepszym w swoim fachu. Tylko z PITEAM.'
+  },
+  {
+    image: massageImage,
+    smallImage: massageImage_Small,
+    midImage: massageImage_Mid,
     href: '/masaz',
     alt: 'Masaż',
     key: 'massage',
-    primary: 'Masaż',
+    primary: 'MASAŻ',
     secondary: 'Marzysz o pracy, która łączy sport, rozwój i poczucie satysfakcji? Zostań trenerem personalnym! Potężna dawka nowoczesnej wiedzy, działającej praktyki i skutecznej motywacji. Nauczysz się, jak planować treningi, budować relacje z klientem i być najlepszym w swoim fachu. Tylko z PITEAM.'
   },
   {
@@ -61,7 +64,7 @@ const galleryItems = [
     href: '/obozy-sportowe',
     alt: 'Obozy Sportowe',
     key: 'camp',
-    primary: 'Obozy Sportowe',
+    primary: 'OBOZY SPORTOWE',
     secondary: 'Wakacje, które robią formę - sportowy reset i piękna pogoda.'
   }
 ];
@@ -138,7 +141,7 @@ function HomePageGallery() {
           />
         </div>
         <div className='galleryBoxName'>
-          <div className='galleryBoxName__primary'>{item.primary}</div>
+          <div className='galleryBoxName__primary' data-text={item.primary}>{item.primary}</div>
           <div
             className={`galleryBoxName__secondary ${isVisible[index] ? 'animate' : ''}`}
             ref={ref}

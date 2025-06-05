@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
 import './contactFormStyle.css';
 
@@ -35,34 +35,56 @@ const specialists = {
     ],
   };
 
+const MAX_SUBMISSIONS = 3;
+const COOLDOWN_DURATION = 3600000; // 1 hour
+
 function ContactForm() {
     const [messageSent, setMessageSent] = useState(false);
     const [selectedService, setSelectedService] = useState('');
     const [selectedSpecialist, setSelectedSpecialist] = useState('');
     const [canSubmit, setCanSubmit] = useState(true);
     const [cooldownMessage, setCooldownMessage] = useState('');
-    const [privacyAccepted, setPrivacyAccepted] = useState(false); 
+    const [privacyAccepted, setPrivacyAccepted] = useState(false);
+    const [submissionsCount, setSubmissionsCount] = useState(0);
 
-    React.useEffect(() => {
-        const lastSubmissionTime = localStorage.getItem('lastFormSubmission');
-        if (lastSubmissionTime) {
-            const now = new Date().getTime();
-            const timeElapsed = now - parseInt(lastSubmissionTime, 10);
-            const oneHour = 60 * 60 * 1000;
+    useEffect(() => {
+        const storedSubmissions = localStorage.getItem('formSubmissionsCount');
+        const lastResetTime = localStorage.getItem('formLastResetTime');
+        const now = new Date().getTime();
 
-            if (timeElapsed < oneHour) {
-                setCanSubmit(false);
-                const timeLeft = Math.ceil((oneHour - timeElapsed) / (60 * 1000));
-                setCooldownMessage(`Możesz wysłać kolejne zgłoszenie za około ${timeLeft} minut.`);
+        if (lastResetTime) {
+            const timeElapsed = now - parseInt(lastResetTime, 10);
+            if (timeElapsed >= COOLDOWN_DURATION) {
+                // Reset counter if cooldown period has passed
+                localStorage.setItem('formSubmissionsCount', '0');
+                localStorage.setItem('formLastResetTime', now.toString());
+                setSubmissionsCount(0);
+                setCanSubmit(true);
+                setCooldownMessage('');
+            } else {
+                // Otherwise, load stored count and check if submission is allowed
+                const currentCount = parseInt(storedSubmissions, 10) || 0;
+                setSubmissionsCount(currentCount);
+                if (currentCount >= MAX_SUBMISSIONS) {
+                    setCanSubmit(false);
+                    const timeLeft = Math.ceil((COOLDOWN_DURATION - timeElapsed) / (60 * 1000));
+                    setCooldownMessage(`Osiągnięto limit wysyłek. Spróbuj ponownie za około ${timeLeft} minut.`);
+                } else {
+                    setCanSubmit(true);
+                }
             }
+        } else {
+            // First time loading, initialize storage
+            localStorage.setItem('formSubmissionsCount', '0');
+            localStorage.setItem('formLastResetTime', now.toString());
         }
     }, []);
 
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        if (!canSubmit) {
-            console.warn('Zbyt szybka próba wysłania formularza. Proszę poczekać.');
+        if (!canSubmit || submissionsCount >= MAX_SUBMISSIONS) {
+            console.warn('Zbyt szybka próba wysłania formularza lub osiągnięto limit.');
             return;
         }
 
@@ -72,16 +94,37 @@ function ContactForm() {
                 setMessageSent(true);
                 event.target.reset();
 
-                localStorage.setItem('lastFormSubmission', new Date().getTime().toString());
-                setCanSubmit(false);
-                setCooldownMessage('Możesz wysłać kolejne zgłoszenie za około 60 minut.');
+                const newSubmissionsCount = submissionsCount + 1;
+                setSubmissionsCount(newSubmissionsCount);
+                localStorage.setItem('formSubmissionsCount', newSubmissionsCount.toString());
 
-                setTimeout(() => {
-                    setCanSubmit(true);
-                    setCooldownMessage('');
-                }, 60 * 60 * 1000);
+                // Set last reset time if it's the first submission in the period
+                const lastResetTime = localStorage.getItem('formLastResetTime');
+                if (!lastResetTime || (new Date().getTime() - parseInt(lastResetTime, 10) >= COOLDOWN_DURATION)) {
+                    localStorage.setItem('formLastResetTime', new Date().getTime().toString());
+                }
+
+
+                if (newSubmissionsCount >= MAX_SUBMISSIONS) {
+                    setCanSubmit(false);
+                    setCooldownMessage(`Osiągnięto limit wysyłek. Spróbuj ponownie za około ${Math.ceil(COOLDOWN_DURATION / (60 * 1000))} minut.`);
+                    setTimeout(() => {
+                        setCanSubmit(true);
+                        setCooldownMessage('');
+                        setSubmissionsCount(0);
+                        localStorage.setItem('formSubmissionsCount', '0');
+                        localStorage.setItem('formLastResetTime', new Date().getTime().toString());
+                    }, COOLDOWN_DURATION);
+                } else {
+                    // Message for successful submission within the limit
+                    setCooldownMessage(`Wysłano ${newSubmissionsCount}/${MAX_SUBMISSIONS} zgłoszeń w ciągu godziny.`);
+                }
+
+                setTimeout(() => setMessageSent(false), 5000); // Hide success message after 5 seconds
+
             }, (error) => {
                 console.error('Błąd podczas wysyłania formularza:', error.text);
+                setCooldownMessage('Wystąpił błąd podczas wysyłania. Spróbuj ponownie.');
             });
     };
 
