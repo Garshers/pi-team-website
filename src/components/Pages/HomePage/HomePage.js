@@ -9,7 +9,7 @@ function HomePage() {
     return (
         <div style={{
             width: '100%',
-            minHeight: '100vh',
+            minHeight: '100svh',
             height: 'fit-content',
             justifyContent: 'center',
             alignItems: 'center',

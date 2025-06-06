@@ -1,7 +1,7 @@
 
 
 .policyMainBox{
-  min-height: 100vh;
+  min-height: 100svh;
   height: fit-content;
   padding: 108px 10vw;
   gap: 10px;

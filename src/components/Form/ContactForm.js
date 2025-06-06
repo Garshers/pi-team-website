@@ -107,7 +107,7 @@ function ContactForm() {
 
                 if (newSubmissionsCount >= MAX_SUBMISSIONS) {
                     setCanSubmit(false);
-                    setCooldownMessage(`Osiągnięto limit wysyłek. Spróbuj ponownie za około ${Math.ceil(COOLDOWN_DURATION / (60 * 1000))} minut.`);
+                    setCooldownMessage(`Osiągnięto limit zgłoszeń. Spróbuj ponownie za około ${Math.ceil(COOLDOWN_DURATION / (60 * 1000))} minut.`);
                     setTimeout(() => {
                         setCanSubmit(true);
                         setCooldownMessage('');
@@ -117,7 +117,7 @@ function ContactForm() {
                     }, COOLDOWN_DURATION);
                 } else {
                     // Message for successful submission within the limit
-                    setCooldownMessage(`Wysłano ${newSubmissionsCount}/${MAX_SUBMISSIONS} zgłoszeń w ciągu godziny.`);
+                    setCooldownMessage(`Wykorzystano ${newSubmissionsCount} z ${MAX_SUBMISSIONS} dostępnych zgłoszeń w bieżącej godzinie.`);
                 }
 
                 setTimeout(() => setMessageSent(false), 5000); // Hide success message after 5 seconds

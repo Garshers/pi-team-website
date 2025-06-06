@@ -1,6 +1,6 @@
 .mainContactBox{
   width: 100%;
-  min-height: calc(100vh - 100px);
+  min-height: calc(100svh - 100px);
   height: fit-content;
   padding-top: 100px;
   gap: 10px;

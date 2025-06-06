@@ -94,7 +94,7 @@
 .mobile-menu {
     position: absolute;
     right: 0;
-    padding: max(108px, 10vh) 0 15px 0;
+    padding: max(108px, 10svh) 0 15px 0;
     gap: 5px;
     background-color: rgba(10, 10, 10, 0.8);
     width: 100%;

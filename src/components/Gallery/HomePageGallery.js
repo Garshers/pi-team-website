@@ -1,19 +1,24 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './homeGalleryStyle.css';
+
 import gymImage from '../../assets/HomePage/HomePage3.jpeg';
 import gymImage_Small from '../../assets/HomePage/HomePage3_Small.jpeg';
 import gymImage_Mid from '../../assets/HomePage/HomePage3_Mid.jpeg';
+
 import poolImage from '../../assets/HomePage/HomePage1.jpeg';
 import poolImage_Small from '../../assets/HomePage/HomePage1_Small.jpeg';
 import poolImage_Mid from '../../assets/HomePage/HomePage1_Mid.jpeg';
+
 import courseImage from '../../assets/HomePage/CourseImg.jpeg';
-import courseImage_Small from '../../assets/HomePage/CourseImg.jpeg';
+import courseImage_Small from '../../assets/HomePage/CourseImg_Small.jpeg';
 import courseImage_Mid from '../../assets/HomePage/CourseImg.jpeg';
+
 import massageImage from '../../assets/HomePage/MassageImg.jpeg';
-import massageImage_Small from '../../assets/HomePage/MassageImg.jpeg';
+import massageImage_Small from '../../assets/HomePage/MassageImg_Small.jpeg';
 import massageImage_Mid from '../../assets/HomePage/MassageImg.jpeg';
+
 import campImage from '../../assets/HomePage/CampImg.jpeg';
-import campImage_Small from '../../assets/HomePage/CampImg.jpeg';
+import campImage_Small from '../../assets/HomePage/CampImg_Small.jpeg';
 import campImage_Mid from '../../assets/HomePage/CampImg.jpeg';
 
 const galleryItems = [
@@ -160,18 +165,18 @@ function HomePageGallery() {
           style={
               isTablet
                   ? (isMobile
-                      ? { flexDirection: 'column', height: 'calc(50vh - 7.5px)' } // If tablet BUT NOT mobile
-                      : { width: '100%', height: 'calc(50vh - 7.5px)' }) // If tablet AND mobile
+                      ? { flexDirection: 'column', height: 'calc(50svh - 7.5px)' } // If tablet BUT NOT mobile
+                      : { width: '100%', height: 'calc(50svh - 7.5px)' }) // If tablet AND mobile
                   : { width: '20%' } // If desktop
           }
       >
         {renderGalleryItem(galleryItems[0], 0, secondaryTextRefs[0])}
       </div>
-      <div className='galleryRow' style={isTablet ? { width: '100%', height: 'calc(100vh-15px)'} : { width: '40%' }}>
+      <div className='galleryRow' style={isTablet ? { width: '100%', height: 'calc(100svh-15px)'} : { width: '40%' }}>
         {renderGalleryItem(galleryItems[1], 1, secondaryTextRefs[1])}
         {renderGalleryItem(galleryItems[2], 2, secondaryTextRefs[2])}
       </div>
-      <div className='galleryRow' style={isTablet ? { width: '100%', height: 'calc(100vh-15px)'} : { width: '40%' }}>
+      <div className='galleryRow' style={isTablet ? { width: '100%', height: 'calc(100svh-15px)'} : { width: '40%' }}>
         {renderGalleryItem(galleryItems[3], 3, secondaryTextRefs[3])}
         {renderGalleryItem(galleryItems[4], 4, secondaryTextRefs[4])}
       </div>

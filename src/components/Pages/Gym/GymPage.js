@@ -5,7 +5,7 @@ import ContactForm from '../../Form/ContactForm.js'
 import MainPageImage from '../../MainPageImage/MainPageImage.js'
 
 import background from '../../../assets/Gym/background.jpg';
-import gymImage from '../../../assets/Gym/HomePage3_GymPage.jpeg';
+import gymImage from '../../../assets/Gym/HomePage3.jpeg';
 
 /**
  * @function GymPage

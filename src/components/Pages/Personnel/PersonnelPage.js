@@ -9,7 +9,7 @@ import imgIza from '../../../assets/Personnel/imgIzaRemoved.png';
 import imgPiotr from '../../../assets/Personnel/imgPiotrRemoved.png';
 import imgNatalia from '../../../assets/Personnel/imgNataliaRemoved.png';
 import imgMilena from '../../../assets/Personnel/imgMilenaRemoved.png';
-
+import imgDawid from '../../../assets/Personnel/imgDawidRemoved.png';
 
 const trainersData = [
   { src: imgPatryk, name: 'PATRYK',
@@ -28,7 +28,7 @@ const trainersData = [
     description: 'Poznajcie Milenę - niesamowicie zaangażowaną i pełną pasji trenerkę, która od 3 lat specjalizuje się w treningu siłowym. Ze sportem związana jest od najmłodszych lat.',
     LearnMore: 'Poznaj Milenę!'},
 
-  { src: imgPatryk, name: 'DAWID',
+  { src: imgDawid, name: 'DAWID',
     description: 'Poznajcie Dawida - naszego specjalistę od fizjoterapii ortopedycznej i treningu medycznego!',
     LearnMore: 'Skonsultuj się z Dawidem!'},
 

@@ -1,5 +1,5 @@
 .gymMainBox{
-  min-height: 100vh;
+  min-height: 100svh;
   width: 100%;
   height: fit-content;
   gap: 10px;
@@ -45,7 +45,7 @@
 
 .gymCheckAlsoBox {
     width: 100%;
-    min-height: min(104px, 10vh);
+    min-height: min(104px, 10svh);
     height: fit-content;
     box-sizing: border-box;
     align-content: center;
@@ -71,7 +71,7 @@
 
 @media (max-width: 768px) {
   .gymImageBox {
-    height: 100vh;
+    height: 100svh;
     padding: 0;
   }
   .gymFormWrapper{
@@ -89,7 +89,7 @@
     flex-direction: column;
     background: rgba(0, 0, 0, 1);
     border-radius: 10px 10px 0px 0px;
-    margin-top: 10vh;
+    margin-top: 10svh;
   }
 
   .gymCheckAlsoBox {

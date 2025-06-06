@@ -9,7 +9,7 @@
 }
 
 .galleryRow{
-    height: calc(100vh - 10px);
+    height: calc(100svh - 10px);
     display: flex;
     flex-direction: row;
     gap: 5px;
@@ -17,7 +17,7 @@
 
 .galleryBox{
     flex: 1;
-    height: calc(100vh - 10px);
+    height: calc(100svh - 10px);
     overflow: hidden;
     display: flex; 
     justify-content: center;
@@ -64,7 +64,7 @@
 .galleryBoxName {
     width: 80%;
     height: 100%;
-    padding: 70vh 20% 0;
+    padding: 70svh 20% 0;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -81,6 +81,10 @@
     background-color: rgba(0, 0, 0, 0.3);
 }
 
+.galleryBoxName p{
+    color: rgb(173, 173, 173);
+}
+
 .galleryBoxName__primary {
     font-size: 1.5rem;
     font-weight: 900;
@@ -88,7 +92,7 @@
     transition: font-size 0.3s ease-in-out;
     padding-bottom: 20px;
     color: transparent;
-    -webkit-text-stroke: 1px #696969;
+    -webkit-text-stroke: 1px #505050;
     position: relative;
     font-style: oblique;
     width: 100%;
@@ -99,12 +103,14 @@
     top: -5px;
     left: -4px;
     color: white;
-    -webkit-text-stroke: 1px #696969;
     z-index: 0;
     font-size: inherit;
     font-weight: inherit;
     font-style: inherit;
     width: 100%;
+    text-shadow:
+        -1px 1px 0 #505050,
+        1px 1px 0 #505050;
 }
 
 .galleryBoxName__secondary {
@@ -125,12 +131,12 @@
         flex-direction: column;
     }
     .galleryRow{
-        height: calc(50vh - 7.5px);
+        height: calc(50svh - 7.5px);
     }
     .galleryBox{
         width: 100%;
-        height: calc(50vh - 7.5px);
-        /*height: calc(100vh - 10px);*/
+        height: calc(50svh - 7.5px);
+        /*height: calc(100svh - 10px);*/
     }
     .galleryBoxName {
         width: 85%;
@@ -151,7 +157,7 @@
 @media (max-width: 900px) {
     .galleryRow{
         flex-direction: column;
-        height: calc(100vh - 15px);
+        height: calc(100svh - 15px);
     }
 }
 

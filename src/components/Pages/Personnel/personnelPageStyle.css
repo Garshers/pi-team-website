@@ -1,6 +1,6 @@
 .mainPersonnelBox{
   width: 100%;
-  min-height: 100vh;
+  min-height: 100svh;
   height: fit-content;
   margin-top: 100px;
   display: flex;
@@ -149,6 +149,7 @@
   width: 60px;
   height: 60px;
   object-fit: cover;
+  object-position: 50% 10%;
   cursor: pointer;
   border: 2px solid transparent;
   border-radius: 50%;
@@ -161,10 +162,6 @@
   transform: scale(1.1);
 }
 
-.thumbnail:hover {
-  border-color: rgba(255, 255, 255, 0.5);
-  transform: scale(1.05);
-}
 /* --------------------------------------------------- Description styles for desktop and mobile --------------------------------------------------- */
 .desktopDescriptionBox, .mobileDescriptionBox {
   width: 100%;

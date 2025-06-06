@@ -1,6 +1,6 @@
 /* --------- Image box for the gym section --------- */
 .gymImageBox {
-  height: calc(100vh - 108px);
+  height: calc(100svh - 108px);
   width: 100%;
   padding-top: 108px;
   background-size: cover;
