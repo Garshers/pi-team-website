@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './homeGalleryStyle.css';
 
+// Image imports for different screen sizes and quality levels
 import gymImage from '../../assets/HomePage/GymImg_Mid.jpeg';
 import gymImage_Minature from '../../assets/HomePage/GymImg_Minature.jpeg';
 import gymImage_Mid from '../../assets/HomePage/GymImg_Mid.jpeg';
@@ -26,6 +27,7 @@ import campImage_Minature from '../../assets/HomePage/CampImg_Minature.jpeg';
 import campImage_Mid from '../../assets/HomePage/CampImg_Mid.jpeg';
 import campImage_Small from '../../assets/HomePage/CampImg_Small.jpeg';
 
+// Gallery data configuration for fitness services
 const galleryItems = [
   {
     image: gymImage,
@@ -33,10 +35,20 @@ const galleryItems = [
     midImage: gymImage_Mid,
     smallImage: gymImage_Small,
     href: '/treningi-personalne',
-    alt: 'Treningi Parsonalne',
+    alt: 'Treningi personalne - profesjonalna siłownia z nowoczesnym sprzętem treningowym',
+    title: 'Treningi Personalne - Indywidualne Podejście do Treningów',
     key: 'gym1',
     primary: 'TRENINGI PERSONALNE',
-    secondary: 'Chcesz, by Twoja determinacja, charakter i upór była zauważana i interpretowana już przez pryzmat samego wyglądu? Jak bardzo wygląd przekłada się na postrzeganie Ciebie jako osoby? Zapraszamy do współpracy'
+    secondary: 'Chcesz, by Twoja determinacja, charakter i upór była zauważana i interpretowana już przez pryzmat samego wyglądu? Jak bardzo wygląd przekłada się na postrzeganie Ciebie jako osoby? Zapraszamy do współpracy',
+    schema: {
+      "@type": "Service",
+      "name": "Treningi Personalne",
+      "description": "Profesjonalne treningi personalne dostosowane do indywidualnych potrzeb",
+      "provider": {
+        "@type": "Organization",
+        "name": "PITEAM"
+      }
+    }
   },
   {
     image: poolImage,
@@ -44,10 +56,16 @@ const galleryItems = [
     midImage: poolImage_Mid,
     smallImage: poolImage_Small,
     href: '/basen',
-    alt: 'Basen',
+    alt: 'Basen - Spersonalizowane treningi rekreacyjne oraz sportowe',
+    title: 'Basen - Pływanie',
     key: 'pool1',
     primary: 'BASEN',
-    secondary: 'Chcesz się czuć jak ryba w wodzie dosłownie i w przenośni? Lepiej nie trafisz!'
+    secondary: 'Chcesz się czuć jak ryba w wodzie dosłownie i w przenośni? Lepiej nie trafisz!',
+    schema: {
+      "@type": "SportsActivityLocation",
+      "name": "Basen",
+      "description": "Profesjonalne treningi pływania"
+    }
   },
   {
     image: courseImage,
@@ -55,10 +73,20 @@ const galleryItems = [
     midImage: courseImage_Mid,
     smallImage: courseImage_Small,
     href: '/kurs-trenera-personalnego',
-    alt: 'Kurs Trenera Personalnego',
+    alt: 'Kurs trenera personalnego - szkolenie z certyfikatem dla przyszłych trenerów personalnych',
+    title: 'Kurs Trenera Personalnego - Zostań Certyfikowanym Trenerem',
     key: 'course',
     primary: 'KURS TRENERA PERSONALNEGO',
-    secondary: 'Marzysz o pracy, która łączy sport, rozwój i poczucie satysfakcji? Zostań trenerem personalnym! Potężna dawka nowoczesnej wiedzy, działającej praktyki i skutecznej motywacji. Nauczysz się, jak planować treningi, budować relacje z klientem i być najlepszym w swoim fachu. Tylko z PITEAM.'
+    secondary: 'Marzysz o pracy, która łączy sport, rozwój i poczucie satysfakcji? Zostań trenerem personalnym! Potężna dawka nowoczesnej wiedzy, działającej praktyki i skutecznej motywacji. Nauczysz się, jak planować treningi, budować relacje z klientem i być najlepszym w swoim fachu. Tylko z PITEAM.',
+    schema: {
+      "@type": "Course",
+      "name": "Kurs Trenera Personalnego",
+      "description": "Profesjonalny kurs trenera personalnego z certyfikatem",
+      "provider": {
+        "@type": "Organization",
+        "name": "PITEAM"
+      }
+    }
   },
   {
     image: massageImage,
@@ -66,10 +94,16 @@ const galleryItems = [
     midImage: massageImage_Mid,
     smallImage: massageImage_Small,
     href: '/masaz',
-    alt: 'Masaż',
+    alt: 'Masaż sportowy i relaksacyjny - profesjonalne usługi masażu relaksacyjnego',
+    title: 'Masaż Sportowy i Relaksacyjny - Regeneracja po Treningu',
     key: 'massage',
     primary: 'MASAŻ',
-    secondary: 'Potrzebujesz odprężenia po treningu lub szukasz ulgi w napięciach mięśniowych? Skorzystaj z naszych profesjonalnych usług masażu! Oferujemy masaż relaksacyjny, sportowy i leczniczy, dopasowany do Twoich potrzeb, aby zapewnić pełną regenerację i dobre samopoczucie.'
+    secondary: 'Potrzebujesz odprężenia po treningu lub szukasz ulgi w napięciach mięśniowych? Skorzystaj z naszych profesjonalnych usług masażu! Oferujemy masaż relaksacyjny, sportowy i leczniczy, dopasowany do Twoich potrzeb, aby zapewnić pełną regenerację i dobre samopoczucie.',
+    schema: {
+      "@type": "Service",
+      "name": "Masaż Sportowy i Relaksacyjny",
+      "description": "Profesjonalne usługi masażu sportowego, relaksacyjnego i leczniczego"
+    }
   },
   {
     image: campImage,
@@ -77,20 +111,63 @@ const galleryItems = [
     midImage: campImage_Mid,
     smallImage: campImage_Small,
     href: '/obozy-sportowe',
-    alt: 'Obozy Sportowe',
+    alt: 'Obozy sportowe - letnie i zimowe obozy sportowe z profesjonalnymi trenerami',
+    title: 'Obozy Sportowe - Wakacyjny Reset Formy',
     key: 'camp',
     primary: 'OBOZY SPORTOWE',
-    secondary: 'Wakacje, które robią formę - sportowy reset i piękna pogoda.'
+    secondary: 'Wakacje, które robią formę - sportowy reset i piękna pogoda.',
+    schema: {
+      "@type": "Event",
+      "name": "Obozy Sportowe",
+      "description": "Letnie i zimowe obozy sportowe połączące wypoczynek z treningiem"
+    }
   }
 ];
 
 function HomePageGallery() {
+  // State management for image loading, animations and responsive design
   const [loadedStates, setLoadedStates] = useState(galleryItems.map(() => false));
   const secondaryTextRefs = [useRef(null), useRef(null), useRef(null), useRef(null), useRef(null)];
   const [isVisible, setIsVisible] = useState(galleryItems.map(() => false));
   const [isTablet, setIsTablet] = useState(window.innerWidth < 1400);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 900);
 
+  // SEO structured data injection
+  useEffect(() => {
+    const schemaScript = document.createElement('script');
+    schemaScript.type = 'application/ld+json';
+    schemaScript.innerHTML = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "PITEAM",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Usługi Fitness i Sportu",
+        "itemListElement": galleryItems.map((item, index) => ({
+          "@type": "Offer",
+          "position": index + 1,
+          "itemOffered": item.schema
+        }))
+      }
+    });
+    
+    const existingScript = document.querySelector('script[type="application/ld+json"][data-component="gallery"]');
+    if (existingScript) {
+      existingScript.remove();
+    }
+    
+    schemaScript.setAttribute('data-component', 'gallery');
+    document.head.appendChild(schemaScript);
+    
+    return () => {
+      const scriptToRemove = document.querySelector('script[type="application/ld+json"][data-component="gallery"]');
+      if (scriptToRemove) {
+        scriptToRemove.remove();
+      }
+    };
+  }, []);
+
+  // Responsive design breakpoint detection
   useEffect(() => {
     const handleResize = () => {
       setIsTablet(window.innerWidth < 1400);
@@ -104,6 +181,7 @@ function HomePageGallery() {
     };
   }, []);
 
+  // Progressive image loading handler
   const handleImageLoad = (index) => {
     setLoadedStates(prevLoadedStates => {
       const newLoadedStates = [...prevLoadedStates];
@@ -112,6 +190,7 @@ function HomePageGallery() {
     });
   };
 
+  // Intersection Observer for scroll-triggered animations
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -136,9 +215,18 @@ function HomePageGallery() {
     return () => observer.disconnect();
   }, [secondaryTextRefs]);
 
+  // Gallery item render function with accessibility and SEO optimization
   const renderGalleryItem = (item, index, ref) => {
     return (
-      <a href={item.href} className='galleryBox' key={item.key}>
+      <a 
+        href={item.href} 
+        className='galleryBox' 
+        key={item.key}
+        title={item.title}
+        aria-label={`Przejdź do sekcji: ${item.primary}`}
+        itemScope 
+        itemType="https://schema.org/Service"
+      >
         <div
           className="blurred-img"
           style={{ backgroundImage: `url(${item.minatureImage})`, filter: loadedStates[index] ? 'none' : 'blur(10px)' }}
@@ -150,22 +238,33 @@ function HomePageGallery() {
               <img
                   src={item.midImage}
                   alt={item.alt}
+                  title={item.title}
                   className='galleryImageStyle'
-                  loading="lazy"
+                  loading={index < 2 ? "eager" : "lazy"}
+                  fetchPriority={index === 0 ? "high" : "auto"}
                   onLoad={() => handleImageLoad(index)}
                   onError={() => {
                       console.warn(`Failed to load image: ${item.alt}`);
                       handleImageLoad(index);
                   }}
                   style={{ opacity: loadedStates[index] ? 1 : 0 }}
+                  width="800"
+                  height="600"
+                  itemProp="image"
               />
           </picture>
         </div>
         <div className='galleryBoxName'>
-          <h1 className='galleryBoxName__primary' data-text={item.primary}>{item.primary}</h1>
+          <h1 
+            data-text={item.primary}
+            itemProp="name"
+          >
+            {item.primary}
+          </h1>
           <h2
-            className={`galleryBoxName__secondary ${isVisible[index] ? 'animate' : ''}`}
+            className={`${isVisible[index] ? 'animate' : ''}`}
             ref={ref}
+            itemProp="description"
           >
             {item.secondary}
           </h2>
@@ -174,16 +273,21 @@ function HomePageGallery() {
     );
   };
 
+  // Responsive layout with dynamic column arrangement
   return (
-    <div className='galleryMainFrame'>
+    <section 
+      className='galleryMainFrame'
+      role="main"
+      aria-label="Galeria usług fitness i sportu"
+    >
       <div
           className='galleryRow'
           style={
               isTablet
                   ? (isMobile
-                      ? { flexDirection: 'column', height: 'calc(50svh - 5px)' } // If tablet BUT NOT mobile
-                      : { width: '100%', height: 'calc(50svh - 5px)' }) // If tablet AND mobile
-                  : { width: '20%' } // If desktop
+                      ? { flexDirection: 'column', height: 'calc(50svh - 5px)' }
+                      : { width: '100%', height: 'calc(50svh - 5px)' })
+                  : { width: '20%' }
           }
       >
         {renderGalleryItem(galleryItems[0], 0, secondaryTextRefs[0])}
@@ -196,7 +300,7 @@ function HomePageGallery() {
         {renderGalleryItem(galleryItems[3], 3, secondaryTextRefs[3])}
         {renderGalleryItem(galleryItems[4], 4, secondaryTextRefs[4])}
       </div>
-    </div>
+    </section>
   );
 }
 
