@@ -24,10 +24,6 @@ const trainersData = [
     description: 'Poznajcie Piotrka - jednego z naszych trenerów personalnych w Katowicach!',
     LearnMore: 'Dowiedz się więcej o Piotrze!'},
 
-  { src: imgMilena, name: 'MILENA',
-    description: 'Poznajcie Milenę - niesamowicie zaangażowaną i pełną pasji trenerkę, która od 3 lat specjalizuje się w treningu siłowym. Ze sportem związana jest od najmłodszych lat.',
-    LearnMore: 'Poznaj Milenę!'},
-
   { src: imgDawid, name: 'DAWID',
     description: 'Poznajcie Dawida - naszego specjalistę od fizjoterapii ortopedycznej i treningu medycznego!',
     LearnMore: 'Skonsultuj się z Dawidem!'},
@@ -104,22 +100,24 @@ function PersonnelPage() {
                 </>
             ) : (
                 <div className='desktopGalleryWrapper'>
-                {[0, 1].map((rowIndex) => (
-                    <div className='desktopGalleryRow' key={rowIndex}>
-                    {trainersData.slice(rowIndex * 3, (rowIndex + 1) * 3).map((trainer, colIndex) => (
-                        <div className='desktopGalleryBox' key={rowIndex * 3 + colIndex}>
-                            <img src={trainer.src} alt={`Trener Personalny ${trainer.name}`} />
-                            <div className='desktopDescriptionBox'>
-                                <h2 className='desktopGalleryName'>{trainer.name}</h2>
-                                <p className='desktopGalleryDescription'>{trainer.description}</p>
-                                <a href="/kontakt" className='desktopLearnMore'>{trainer.LearnMore || 'Dowiedz się więcej'}</a>
-                            </div>
+                    {[2, 3].map((count, rowIndex) => (
+                        <div className='desktopGalleryRow' key={rowIndex}>
+                            {trainersData.slice(
+                                rowIndex === 0 ? 0 : 2, // Start index: 0 for first row, 2 for second
+                                rowIndex === 0 ? 2 : 5  // End index: 2 for first row, 5 for second
+                            ).map((trainer, colIndex) => (
+                                <div className='desktopGalleryBox' key={rowIndex * 10 + colIndex}>
+                                    <img src={trainer.src} alt={`Trener Personalny ${trainer.name}`} />
+                                    <div className='desktopDescriptionBox'>
+                                        <h2 className='desktopGalleryName'>{trainer.name}</h2>
+                                        <p className='desktopGalleryDescription'>{trainer.description}</p>
+                                        <a href="/kontakt" className='desktopLearnMore'>{trainer.LearnMore || 'Dowiedz się więcej'}</a>
+                                    </div>
+                                </div>
+                            ))}
                         </div>
                     ))}
-                    </div>
-                ))}
                 </div>
-                
             )}
         </div>
         </>

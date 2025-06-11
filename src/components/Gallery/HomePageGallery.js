@@ -1,31 +1,37 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './homeGalleryStyle.css';
 
-import gymImage from '../../assets/HomePage/HomePage3.jpeg';
-import gymImage_Small from '../../assets/HomePage/HomePage3_Small.jpeg';
-import gymImage_Mid from '../../assets/HomePage/HomePage3_Mid.jpeg';
+import gymImage from '../../assets/HomePage/GymImg_Mid.jpeg';
+import gymImage_Minature from '../../assets/HomePage/GymImg_Minature.jpeg';
+import gymImage_Mid from '../../assets/HomePage/GymImg_Mid.jpeg';
+import gymImage_Small from '../../assets/HomePage/GymImg_Small.jpeg';
 
-import poolImage from '../../assets/HomePage/HomePage1.jpeg';
-import poolImage_Small from '../../assets/HomePage/HomePage1_Small.jpeg';
-import poolImage_Mid from '../../assets/HomePage/HomePage1_Mid.jpeg';
+import poolImage from '../../assets/HomePage/PoolImg.jpeg';
+import poolImage_Minature from '../../assets/HomePage/PoolImg_Minature.jpeg';
+import poolImage_Mid from '../../assets/HomePage/PoolImg_Mid.jpeg';
+import poolImage_Small from '../../assets/HomePage/PoolImg_Small.jpeg';
 
 import courseImage from '../../assets/HomePage/CourseImg.jpeg';
+import courseImage_Minature from '../../assets/HomePage/CourseImg_Minature.jpeg';
+import courseImage_Mid from '../../assets/HomePage/CourseImg_Mid.jpeg';
 import courseImage_Small from '../../assets/HomePage/CourseImg_Small.jpeg';
-import courseImage_Mid from '../../assets/HomePage/CourseImg.jpeg';
 
 import massageImage from '../../assets/HomePage/MassageImg.jpeg';
+import massageImage_Minature from '../../assets/HomePage/MassageImg_Minature.jpeg';
+import massageImage_Mid from '../../assets/HomePage/MassageImg_Mid.jpeg';
 import massageImage_Small from '../../assets/HomePage/MassageImg_Small.jpeg';
-import massageImage_Mid from '../../assets/HomePage/MassageImg.jpeg';
 
 import campImage from '../../assets/HomePage/CampImg.jpeg';
+import campImage_Minature from '../../assets/HomePage/CampImg_Minature.jpeg';
+import campImage_Mid from '../../assets/HomePage/CampImg_Mid.jpeg';
 import campImage_Small from '../../assets/HomePage/CampImg_Small.jpeg';
-import campImage_Mid from '../../assets/HomePage/CampImg.jpeg';
 
 const galleryItems = [
   {
     image: gymImage,
-    smallImage: gymImage_Small,
+    minatureImage: gymImage_Minature,
     midImage: gymImage_Mid,
+    smallImage: gymImage_Small,
     href: '/treningi-personalne',
     alt: 'Treningi Parsonalne',
     key: 'gym1',
@@ -34,8 +40,9 @@ const galleryItems = [
   },
   {
     image: poolImage,
-    smallImage: poolImage_Small,
+    minatureImage: poolImage_Minature,
     midImage: poolImage_Mid,
+    smallImage: poolImage_Small,
     href: '/basen',
     alt: 'Basen',
     key: 'pool1',
@@ -44,8 +51,9 @@ const galleryItems = [
   },
   {
     image: courseImage,
-    smallImage: courseImage_Small,
+    minatureImage: courseImage_Minature,
     midImage: courseImage_Mid,
+    smallImage: courseImage_Small,
     href: '/kurs-trenera-personalnego',
     alt: 'Kurs Trenera Personalnego',
     key: 'course',
@@ -54,18 +62,20 @@ const galleryItems = [
   },
   {
     image: massageImage,
-    smallImage: massageImage_Small,
+    minatureImage: massageImage_Minature,
     midImage: massageImage_Mid,
+    smallImage: massageImage_Small,
     href: '/masaz',
     alt: 'Masaż',
     key: 'massage',
     primary: 'MASAŻ',
-    secondary: 'Marzysz o pracy, która łączy sport, rozwój i poczucie satysfakcji? Zostań trenerem personalnym! Potężna dawka nowoczesnej wiedzy, działającej praktyki i skutecznej motywacji. Nauczysz się, jak planować treningi, budować relacje z klientem i być najlepszym w swoim fachu. Tylko z PITEAM.'
+    secondary: 'Potrzebujesz odprężenia po treningu lub szukasz ulgi w napięciach mięśniowych? Skorzystaj z naszych profesjonalnych usług masażu! Oferujemy masaż relaksacyjny, sportowy i leczniczy, dopasowany do Twoich potrzeb, aby zapewnić pełną regenerację i dobre samopoczucie.'
   },
   {
     image: campImage,
-    smallImage: campImage_Small,
+    minatureImage: campImage_Minature,
     midImage: campImage_Mid,
+    smallImage: campImage_Small,
     href: '/obozy-sportowe',
     alt: 'Obozy Sportowe',
     key: 'camp',
@@ -127,32 +137,38 @@ function HomePageGallery() {
   }, [secondaryTextRefs]);
 
   const renderGalleryItem = (item, index, ref) => {
-    const imageSrc = isTablet ? item.midImage : item.image;
-
     return (
       <a href={item.href} className='galleryBox' key={item.key}>
         <div
           className="blurred-img"
-          style={{ backgroundImage: `url(${item.smallImage})`, filter: loadedStates[index] ? 'none' : 'blur(10px)' }}
+          style={{ backgroundImage: `url(${item.minatureImage})`, filter: loadedStates[index] ? 'none' : 'blur(10px)' }}
         >
-          <img
-            src={imageSrc}
-            alt={item.alt}
-            className='galleryImageStyle'
-            loading="lazy"
-            key={item.key}
-            onLoad={() => handleImageLoad(index)}
-            style={{ opacity: loadedStates[index] ? 1 : 0 }}
-          />
+          <picture>
+              <source media="(max-width: 900px)" srcSet={item.smallImage} type="image/jpeg" />
+              <source media="(max-width: 1400px)" srcSet={item.midImage} type="image/jpeg" />
+              <source media="(min-width: 1400px)" srcSet={item.image} type="image/jpeg" />
+              <img
+                  src={item.midImage}
+                  alt={item.alt}
+                  className='galleryImageStyle'
+                  loading="lazy"
+                  onLoad={() => handleImageLoad(index)}
+                  onError={() => {
+                      console.warn(`Failed to load image: ${item.alt}`);
+                      handleImageLoad(index);
+                  }}
+                  style={{ opacity: loadedStates[index] ? 1 : 0 }}
+              />
+          </picture>
         </div>
         <div className='galleryBoxName'>
-          <div className='galleryBoxName__primary' data-text={item.primary}>{item.primary}</div>
-          <div
+          <h1 className='galleryBoxName__primary' data-text={item.primary}>{item.primary}</h1>
+          <h2
             className={`galleryBoxName__secondary ${isVisible[index] ? 'animate' : ''}`}
             ref={ref}
           >
             {item.secondary}
-          </div>
+          </h2>
         </div>
       </a>
     );
@@ -165,8 +181,8 @@ function HomePageGallery() {
           style={
               isTablet
                   ? (isMobile
-                      ? { flexDirection: 'column', height: 'calc(50svh - 7.5px)' } // If tablet BUT NOT mobile
-                      : { width: '100%', height: 'calc(50svh - 7.5px)' }) // If tablet AND mobile
+                      ? { flexDirection: 'column', height: 'calc(50svh - 5px)' } // If tablet BUT NOT mobile
+                      : { width: '100%', height: 'calc(50svh - 5px)' }) // If tablet AND mobile
                   : { width: '20%' } // If desktop
           }
       >

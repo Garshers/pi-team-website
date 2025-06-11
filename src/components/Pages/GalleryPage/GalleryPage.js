@@ -5,8 +5,8 @@ import { ImageGallery } from "react-image-grid-gallery";
 
 import background from '../../../assets/Gym/background.jpg';
 
-import gymImage_Mid from '../../../assets/HomePage/HomePage3_Mid.jpeg';
-import poolImage_Mid from '../../../assets/HomePage/HomePage1_Mid.jpeg';
+import gymImage_Mid from '../../../assets/HomePage/GymImg_Mid.jpeg';
+import poolImage_Mid from '../../../assets/HomePage/PoolImg_Mid.jpeg';
 import courseImage_Mid from '../../../assets/HomePage/CourseImg.jpeg';
 import massageImage_Mid from '../../../assets/HomePage/MassageImg.jpeg';
 import campImage_Mid from '../../../assets/HomePage/CampImg.jpeg';

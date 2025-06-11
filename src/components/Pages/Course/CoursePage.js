@@ -8,8 +8,8 @@ import { ImageGallery } from "react-image-grid-gallery";
 import background from '../../../assets/Gym/background.jpg';
 import courseImage from '../../../assets/Course/CourseImg.jpeg';
 
-import gymImage_Mid from '../../../assets/HomePage/HomePage3_Mid.jpeg';
-import poolImage_Mid from '../../../assets/HomePage/HomePage1_Mid.jpeg';
+import gymImage_Mid from '../../../assets/HomePage/GymImg_Mid.jpeg';
+import poolImage_Mid from '../../../assets/HomePage/PoolImg_Mid.jpeg';
 import courseImage_Mid from '../../../assets/HomePage/CourseImg.jpeg';
 import massageImage_Mid from '../../../assets/HomePage/MassageImg.jpeg';
 import campImage_Mid from '../../../assets/HomePage/CampImg.jpeg';
@@ -66,7 +66,7 @@ function CoursePage() {
   return (
     <>
     <Header />
-    <div className="courseMainBox" style={{ backgroundImage: `url(${background})` }}>
+    <div className="courseMainBox" style={{ backgroundImage: `url(${background})`}}>
         <MainPageImage 
             Image={courseImage}
             Title={'Kurs Trenera Personalnego'}
