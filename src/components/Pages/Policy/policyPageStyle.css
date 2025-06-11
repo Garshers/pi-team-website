@@ -36,10 +36,7 @@
   margin-bottom: 10px;
   text-align: justify;
 }
-.policyMainBox a {
-  color: lightgray;
-  text-decoration: none;
-}
+
 .policyMainBox a:hover {
   text-decoration: underline;
 }

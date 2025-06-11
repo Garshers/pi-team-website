@@ -88,6 +88,7 @@
 .galleryBoxName h1 {
     font-size: 1.5rem;
     font-weight: 900;
+    margin: 0 5px;
     text-align: center;
     transition: font-size 0.3s ease-in-out;
     color: transparent;
@@ -113,17 +114,18 @@
 }
 
 .galleryBoxName h2{
+    margin: 0;
     opacity: 0;
     transition: transform 0.5s ease-out, opacity 0.3s ease-out;
     transform: translateY(-20px);
     font-size: 1.1rem;
     font-style: oblique;
-    color: white;
+    color: rgba(255, 255, 255, 0.8);
     text-shadow:
-        -1px -1px 0 black,
-        2px -2px 0 black,
-        -2px 2px 0 black,
-        2px 2px 0 black;
+        -1px -1px 0 rgba(0, 0, 0, 0.3),
+        2px -2px 0 rgba(0, 0, 0, 0.3),
+        -2px 2px 0 rgba(0, 0, 0, 0.3),
+        2px 2px 0 rgba(0, 0, 0, 0.3);
 }
 
 @media (max-width: 1400px) {
@@ -162,7 +164,10 @@
 }
 
 @media (min-width: 1400px) {
-    .galleryBoxName:hover .galleryBoxName h2 {
+    .galleryBoxName:hover h2 {
+        margin-bottom: 10px;
+    }
+    .galleryBoxName:hover h2 {
         opacity: 1;
         transform: translateX(0);
     }

@@ -128,11 +128,6 @@
     color: gray;
 }
 
-.privacy-checkbox-container label a {
-    color: lightgray;
-    text-decoration: none;
-}
-
 .privacy-checkbox-container label a:hover {
     text-decoration: underline;
     color: white;
