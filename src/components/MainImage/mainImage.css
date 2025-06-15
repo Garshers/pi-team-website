@@ -1,25 +1,32 @@
-/* --------- Image box for the gym section --------- */
-.gymImageBox {
-  height: calc(100svh - 108px);
+/* --------- Image box for the main section --------- */
+.mainImageBox {
+  height: 100svh;
   width: 100%;
-  padding-top: 108px;
-  background-size: cover;
-  background-position: center;
   position: relative;
   text-align: center;
   display: flex;
   flex-direction: column;
-  transition: height 0.8s ease-in-out;
+  background-size: cover;
+  background-position: center;
+  background-repeat: 'no-repeat';
 }
 
-.gymImageBox::after {
+.mainImageBox-img {
+  height: 100svh;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+
+.mainImageBox::after, .mainImageBox-img::after {
   content: '';
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   height: 50%;
-
   background: linear-gradient(to top,
         rgba(10, 10, 10, 0.8) 0%,
         rgba(10, 10, 10, 0.2) 10%,
@@ -28,15 +35,15 @@
   pointer-events: none;
 }
 
-.gymOverlay{
+.mainOverlay{
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 25vh;
+  margin-top: 40vh;
 }
 
-.gymTitle {
+.mainTitle {
   font-size: clamp(1.8em, 3.3vw, 3em);
   font-weight: 900;
   text-align: center;
@@ -48,7 +55,7 @@
   font-style: oblique;
 }
 
-.gymTitle::before {
+.mainTitle::before {
   content: attr(data-text);
   position: absolute;
   top: -2px;
@@ -62,7 +69,7 @@
   width: 100%;
 }
 
-.gymDescription {
+.mainDescription {
     transition: transform 0.5s ease-out, opacity 0.3s ease-out;
     transform: translateY(-20px);
     color: white;
@@ -72,15 +79,25 @@
     font-style: oblique;
 }
 
-.gymSubtitle {
-  top: 80vh;
+.mainSubtitle {
+  top: 90vh;
   position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   transition: transform 0.3s ease-in-out;
   font-style: oblique;
 }
 
-.gymSubtitle:hover{
-  color: grey;
-  transform: translateY(5px);
+.mainSubtitle:hover{
+  color: white;
+  transform: translateY(5px) translateX(-50%);
   cursor: pointer;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    color: lightgray;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
 }

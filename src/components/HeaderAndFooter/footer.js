@@ -9,6 +9,12 @@ import mail from "../../assets/mail.png";
 function Footer() {
     return (
         <footer role="contentinfo" className="site-footer">
+            <div className="gymCheckAlsoContainer">
+                <a href="/treningi-plywackie" className="gymCheckAlsoBox">Treningi Pływackie</a>
+                <a href="/kurs-trenera-personalnego" className="gymCheckAlsoBox">Kursy Trenera Personalnego</a>
+                <a href="/obozy-sportowe" className="gymCheckAlsoBox">Obozy Sportowe</a>
+                <a href="/masaze" className="gymCheckAlsoBox">Masaże</a>
+            </div>
             <div className="footer-frame">
                 <div className="box1-3">
                     <div className="footerText">

@@ -1,7 +1,6 @@
 import React from 'react';
 import './coursePageStyle.css';
 import { Header } from '../../HeaderAndFooter/header.js';
-import MainPageImage from '../../MainPageImage/MainPageImage.js'
 import ContactForm from '../../Form/ContactForm.js'
 import { ImageGallery } from "react-image-grid-gallery";
 
@@ -67,11 +66,6 @@ function CoursePage() {
     <>
     <Header />
     <div className="courseMainBox" style={{ backgroundImage: `url(${background})`}}>
-        <MainPageImage 
-            Image={courseImage}
-            Title={'Kurs Trenera Personalnego'}
-            Description={'Chcesz przekształcić swoją pasję do fitnessu w profesjonalną karierę i pomagać innym w osiąganiu ich celów? Nasz Kurs Trenera Personalnego to kompleksowe szkolenie, które wyposaży Cię w niezbędną wiedzę i praktyczne umiejętności. Nauczysz się planowania treningów, zasad żywienia, motywowania klientów i budowania autorytetu. Z nami Twoja determinacja i wiedza staną się Twoją najlepszą wizytówką, a Ty będziesz inspirować innych do zmian!'}
-        />
         <ContactForm/>
         <div className='imageGalleryWrapper'>
             <ImageGallery
