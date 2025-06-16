@@ -5,7 +5,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.7) 65%, rgba(0,0,0,0.5) 80%, rgba(0,0,0,0.3) 90%, rgba(0,0,0,0) 100%);
+    background: linear-gradient(180deg, var(--) 0%, rgba(0,0,0,0.7) 65%, rgba(0,0,0,0.5) 80%, rgba(0,0,0,0.3) 90%, rgba(0,0,0,0) 100%);
     opacity: 1;
     position: fixed;
     top: 0;
@@ -118,7 +118,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    background: rgba(0,0,0,1);
+    background: var(--headerFooterBackgroundColor);
     z-index: 1000;
     margin-bottom: 0px;
 }
@@ -229,11 +229,7 @@
     text-decoration: none;
     flex-wrap: wrap;
     color: white;
-    background: linear-gradient(to bottom,
-        rgba(0, 0, 0, 0.6) 0%,
-        rgba(0, 0, 0, 0.7) 80%,
-        rgba(0, 0, 0, 1) 100%
-        );
+    background: var(--headerFooterBackgroundColor);
     border-radius: 10px 10px 0px 0px;
     transition: background 0.5s ease-in-out, transform 0.5s ease-in-out, color 0.3s ease-in-out;
     border-top: 1px solid rgba(255,255,255,0.2);
@@ -249,7 +245,7 @@
 @media (max-width: 768px) {
     .gymCheckAlsoContainer {
         flex-direction: column;
-        background: rgba(0, 0, 0, 1);
+        background: var(--headerFooterBackgroundColor);
         border-radius: 10px 10px 0px 0px;
         margin-top: 10svh;
     }

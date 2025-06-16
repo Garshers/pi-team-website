@@ -24,3 +24,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+:root {
+  --headerFooterBackgroundColor: rgba(20, 20, 20, 1);
+  --secondary-color: #6c757d;
+  --text-color: #333;
+  --spacing-unit: 16px;
+  --border-radius-base: 8px;
+}

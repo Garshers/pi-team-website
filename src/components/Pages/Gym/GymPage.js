@@ -2,7 +2,7 @@ import React from 'react';
 import './gymPageStyle.css';
 import { Header } from '../../HeaderAndFooter/header.js';
 import ContactForm from '../../Form/ContactForm.js'
-import MainImage from '../../MainImage/MainImage.js'
+import MainImage from '../../MainImage/MainImage.js';
 
 import background from '../../../assets/Gym/background.jpg';
 import gymImageBlurred from '../../../assets/Gym/GymImgBackground_Blurred.jpeg';
