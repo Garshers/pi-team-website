@@ -13,7 +13,7 @@ function Footer() {
                 <a href="/treningi-plywackie" className="gymCheckAlsoBox">Treningi Pływackie</a>
                 <a href="/kurs-trenera-personalnego" className="gymCheckAlsoBox">Kursy Trenera Personalnego</a>
                 <a href="/obozy-sportowe" className="gymCheckAlsoBox">Obozy Sportowe</a>
-                <a href="/masaze" className="gymCheckAlsoBox">Masaże</a>
+                <a href="/masaz" className="gymCheckAlsoBox">Masaż</a>
             </div>
             <div className="footer-frame">
                 <div className="box1-3">

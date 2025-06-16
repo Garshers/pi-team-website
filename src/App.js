@@ -4,12 +4,12 @@ import Footer from './components/HeaderAndFooter/footer.js';
 import './components/HeaderAndFooter/headerFooter.css';
 
 import HomePage from './components/Pages/HomePage/HomePage.js';
-import GymPage from './components/Pages/Gym/GymPage.js';
-import CoursePage from './components/Pages/Course/CoursePage.js';
-import GalleryPage from './components/Pages/GalleryPage/GalleryPage.js';
-
 import PersonnelPage from './components/Pages/Personnel/PersonnelPage.js';
 import ContactPage from './components/Pages/Contact/ContactPage.js';
+import GalleryPage from './components/Pages/GalleryPage/GalleryPage.js';
+
+import GymPage from './components/Pages/Gym/GymPage.js';
+import CoursePage from './components/Pages/Course/CoursePage.js';
 
 import PolicyPage from './components/Pages/Policy/PolicyPage.js';
 import NotFoundPage from './NotFoundPage';
@@ -26,14 +26,19 @@ function App() {
       }}>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/treningi-personalne" element={<GymPage />} />
-          <Route path="/kurs-trenera-personalnego" element={<CoursePage />} />
-          <Route path="/galeria" element={<GalleryPage />} />
-
+          <Route path="/o-nas" element={<NotFoundPage />} />
           <Route path="/kadra" element={<PersonnelPage />} />
           <Route path="/kontakt" element={<ContactPage />} />
+          <Route path="/galeria" element={<GalleryPage />} />
+
+          <Route path="/treningi-personalne" element={<GymPage />} />
+          <Route path="/basen" element={<NotFoundPage />} />
+          <Route path="/kurs-trenera-personalnego" element={<CoursePage />} />
+          <Route path="/masaz" element={<NotFoundPage />} />
+          <Route path="/obozy-sportowe" element={<NotFoundPage />} />
 
           <Route path="polityka-prywatnosci" element={<PolicyPage />} />
+
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       <Footer />

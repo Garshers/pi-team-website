@@ -5,14 +5,17 @@ import ContactForm from '../../Form/ContactForm.js'
 import MainImage from '../../MainImage/MainImage.js';
 
 import background from '../../../assets/Gym/background.jpg';
-import gymImageBlurred from '../../../assets/Gym/GymImgBackground_Blurred.jpeg';
+
 import gymImage from '../../../assets/Gym/GymImgBackground.jpeg';
+import gymImageBlurred from '../../../assets/Gym/GymImgBackground_Blurred.jpeg';
+import gymImageMid from '../../../assets/Gym/GymImgBackground_Mid.jpeg';
+import gymImageSmall from '../../../assets/Gym/GymImgBackground_Small.jpeg';
 
 const item = {
     image: gymImage,
     minatureImage: gymImageBlurred,
-    midImage: gymImage,
-    smallImage: gymImage,
+    midImage: gymImageMid,
+    smallImage: gymImageSmall,
     alt: 'Treningi personalne - profesjonalna siłownia z nowoczesnym sprzętem treningowym',
     title: 'Treningi Personalne - Indywidualne Podejście do Treningów',
     key: 'gym1',
