@@ -227,7 +227,7 @@
 
 .gymCheckAlsoBox {
     width: 100%;
-    min-height: min(104px, 10svh);
+    min-height: min(80px, 10svh);
     height: fit-content;
     box-sizing: border-box;
     align-content: center;
@@ -252,7 +252,6 @@
         flex-direction: column;
         background: var(--headerFooterBackgroundColor);
         border-radius: 10px 10px 0px 0px;
-        margin-top: 10svh;
     }
 
     .gymCheckAlsoBox {

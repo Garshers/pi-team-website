@@ -1,4 +1,4 @@
-.gymFormWrapper{
+.FormWrapper{
   width: 80%;
   max-width: 600px;
   background-color: rgba(0,0,0,0.3);;
@@ -8,10 +8,11 @@
   color: #fff;
   border-radius: 10px;
   padding: 30px 40px;
-  margin: 50px auto;
+  margin: 5svh auto;
   box-sizing: border-box;
+  border: 1px solid red;
 }
-.gymForm {
+.Form {
     width: 100%;
     height: fit-content;
     display: flex;
@@ -20,7 +21,7 @@
     gap: 20px;
 }
 
-.gymFormTitle {
+.FormTitle {
     text-align: center;
     color: white;
     margin-bottom: 25px;
@@ -28,7 +29,7 @@
     font-weight: bold;
 }
 
-.gymForm input, .gymForm textarea, .gymForm select {
+.Form input, .Form textarea, .Form select {
     padding: 12px 10px;
     border: 2px solid rgba(255,255,255,0.2);
     box-shadow: 0 0 10px rgba(255,255,255,0.2);
@@ -39,14 +40,14 @@
     transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-.gymForm input {
+.Form input {
     width: calc(100% - 20px);
 }
 
-.gymForm input:-webkit-autofill,
-.gymForm input:-webkit-autofill:hover,
-.gymForm input:-webkit-autofill:focus,
-.gymForm input:-webkit-autofill:active {
+.Form input:-webkit-autofill,
+.Form input:-webkit-autofill:hover,
+.Form input:-webkit-autofill:focus,
+.Form input:-webkit-autofill:active {
     -webkit-box-shadow: 0 0 0px 1000px transparent inset; /* Big transparent shadow to cover autofill background */
     -webkit-text-fill-color: white !important; /* Keep text color white */
     background-color: transparent !important; /* Ensure background is transparent */
@@ -54,7 +55,7 @@
     transition: background-color 50000s ease-in-out 0s; /* Long transition to prevent background change */
 }
 
-.gymForm textarea {
+.Form textarea {
     font-family: 'Arial', sans-serif;
     width: calc(100% - 20px);
     min-height: 120px;
@@ -83,19 +84,19 @@
 }
 
 
-.gymForm input::placeholder, .gymForm textarea::placeholder, .gymForm select::placeholder{
+.Form input::placeholder, .Form textarea::placeholder, .Form select::placeholder{
     color: rgba(255,255,255,0.5);
     background: none;
 }
 
-.gymForm input:focus, .gymForm textarea:focus, .gymForm select:focus{
+.Form input:focus, .Form textarea:focus, .Form select:focus{
     border: 2px solid rgba(255,255,255,0.6);
     box-shadow: 0 0 10px rgba(255,255,255,0.6);
     outline: none;
     color: white;
 }
 
-.gymForm select {
+.Form select {
     background: rgba(0,0,0,1);
     width: 100%;
     -webkit-appearance: none;
@@ -104,7 +105,7 @@
 }
 
 
-/* Privacy checkbox styles for gym page */
+/* Privacy checkbox styles for  page */
 .privacy-checkbox-container {
     display: flex;
     flex-direction: row;
@@ -133,8 +134,8 @@
     color: white;
 }
 
-/* Button styles for the gym section */
-.gymButton {
+/* Button styles for the  section */
+.Button {
     background-color: rgba(255, 255, 255, 0.9);
     color: black;
     padding: 12px 20px;
@@ -148,19 +149,26 @@
     width: 100%;
 }
 
-.gymButton:disabled {
+.Button:disabled {
     background-color: gray; 
     color: white;
     cursor: not-allowed; 
     opacity: 0.7;
 }
 
-.gymButton:hover:not(:disabled) {
+.Button:hover:not(:disabled) {
     background-color: rgba(255, 255, 255, 1);
     transform: scale(1.01);
 }
 
-.gymButton:active {
+.Button:active {
     background-color: rgba(255, 255, 255, 0.5);
     transform: scale(0.99);
+}
+
+@media (max-width: 768px) {
+    .FormWrapper{
+        width: 90%;
+        padding: 20px 20px;
+    }
 }

@@ -80,7 +80,7 @@
 }
 
 .mainSubtitle {
-  top: 90vh;
+  bottom: 5svh;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -91,6 +91,7 @@
 .mainSubtitle:hover{
   color: white;
   transform: translateY(5px) translateX(-50%);
+  padding-top: 20px;
   cursor: pointer;
 }
 

@@ -3,56 +3,57 @@ import './galleryPageStyle.css';
 import { Header } from '../../HeaderAndFooter/header.js';
 import { ImageGallery } from "react-image-grid-gallery";
 
-import background from '../../../assets/Gym/background.jpg';
-
-import gymImage_Mid from '../../../assets/HomePage/GymImg_Mid.jpeg';
-import poolImage_Mid from '../../../assets/HomePage/PoolImg_Mid.jpeg';
-import courseImage_Mid from '../../../assets/HomePage/CourseImg.jpeg';
-import massageImage_Mid from '../../../assets/HomePage/MassageImg.jpeg';
-import campImage_Mid from '../../../assets/HomePage/CampImg.jpeg';
+import DSC2943 from '../../../assets/Oryginals/_DSC2943.jpg';
+import DSC2954 from '../../../assets/Oryginals/_DSC2954.jpg';
+import DSC3526 from '../../../assets/Oryginals/_DSC3526.jpg';
+import DSC3651 from '../../../assets/Oryginals/_DSC3651.jpg';
+import CampImgOryginal from '../../../assets/Oryginals/CampImg_Oryginal.jpg';
+import CourseImgOryginal from '../../../assets/Oryginals/CourseImg_Oryginal.jpg';
+import GymImgOryginal from '../../../assets/Oryginals/GymImgIza_Oryginal.jpg';
+import MassageImgOryginal from '../../../assets/Oryginals/MassageImg_Oryginal.jpeg';
+import PoolImgOryginal from '../../../assets/Oryginals/PoolImg_Oryginal.jpeg';
 
 const imagesArray = [
   {
-    id: "patryk-uniqueid111",
-    alt: "Zdjęcie Patryka",
-    src: courseImage_Mid,
+    id: "course-training-uniqueid445",
+    alt: "Kurs trenera personalnego - szkolenie teoretyczne",
+    src: DSC2943,
   },
   {
-    id: "iza-uniqueid222",
-    alt: "Zdjęcie Izy",
-    src: poolImage_Mid,
+    id: "personal-training-course-uniqueid446",
+    alt: "Kurs trenera personalnego - praktyczne zajęcia",
+    src: DSC2954,
   },
   {
-    id: "piotr-uniqueid333",
-    alt: "Zdjęcie Piotra",
-    src: gymImage_Mid,
+    id: "course-instruction-uniqueid450",
+    alt: "Kurs trenera personalnego - instrukcja z ekspertem",
+    src: CourseImgOryginal,
   },
   {
-    id: "piotr2-uniqueid333",
-    alt: "Zdjęcie Piotra",
-    src: massageImage_Mid,
+    id: "personal-training-uniqueid451",
+    alt: "Trening personalny na nowoczesnej siłowni",
+    src: GymImgOryginal,
   },
   {
-    id: "iza2-uniqueid222",
-    alt: "Zdjęcie Izy",
-    src: campImage_Mid,
+    id: "swimming-training-uniqueid454",
+    alt: "Treningi pływackie - profesjonalna strefa basenowa",
+    src: PoolImgOryginal,
   },
   {
-    id: "piotr3-uniqueid333",
-    alt: "Zdjęcie Piotra",
-    src: poolImage_Mid,
+    id: "sports-camp-outdoor-uniqueid447",
+    alt: "Obóz sportowy - treningi na świeżym powietrzu",
+    src: DSC3526,
   },
   {
-    id: "piotr4-uniqueid333",
-    alt: "Zdjęcie Piotra",
-    src: gymImage_Mid,
+    id: "sports-camp-pool-uniqueid448",
+    alt: "Obóz sportowy - zajęcia przy basenie",
+    src: DSC3651,
   },
   {
-    id: "iza3-uniqueid222",
-    alt: "Zdjęcie Izy",
-    src: courseImage_Mid,
+    id: "sports-camp-activities-uniqueid449",
+    alt: "Obóz sportowy - różnorodne zajęcia fitness",
+    src: CampImgOryginal,
   },
-  
 ];
 
 /**
@@ -69,6 +70,7 @@ function GalleryPage() {
                 imagesInfoArray={imagesArray}
                 columnCount={4}
                 gapSize={5}
+                style='visible grid'
             />
         </div>
     </div>

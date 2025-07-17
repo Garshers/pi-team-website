@@ -26,7 +26,7 @@ code {
 }
 
 :root {
-  --headerFooterBackgroundColor: rgba(0, 0, 0, 1);
+  --headerFooterBackgroundColor: rgba(0, 0, 0, 0.8);
   --secondary-color: #6c757d;
   --text-color: #333;
   --spacing-unit: 16px;

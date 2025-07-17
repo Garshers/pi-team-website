@@ -47,14 +47,12 @@ function GymPage() {
             itemID="gymPageBackground"
         >
             <MainImage item={item} />
-            <div className="gymTextBox">
-                <p className="gymText">
-                    Rozpocznij swoją przygodę ze zdrowiem i kondycją! 
-                    Oferujemy najnowocześniejszy sprzęt, zajęcia prowadzone przez doświadczonych instruktorów 
-                    oraz wspierającą społeczność. Dołącz do nas i przekonaj się, jak łatwo 
-                    możesz osiągnąć swoje cele treningowe!
-                </p>
-            </div>
+            <p className="gymTextBox">
+                Rozpocznij swoją przygodę ze zdrowiem i kondycją! 
+                Oferujemy najnowocześniejszy sprzęt, zajęcia prowadzone przez doświadczonych instruktorów 
+                oraz wspierającą społeczność. Dołącz do nas i przekonaj się, jak łatwo 
+                możesz osiągnąć swoje cele treningowe!
+            </p>
             <ContactForm/>
         </div>
         </>

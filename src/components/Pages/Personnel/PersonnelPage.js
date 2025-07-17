@@ -2,7 +2,8 @@ import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import './personnelPageStyle.css';
 import { Header } from '../../HeaderAndFooter/header.js';
 
-import blackCurtain from '../../../assets/Personnel/blackCurtain.jpg';
+import blackCurtainMobile from '../../../assets/Personnel/blackCurtainMobile.jpg';
+import blackCurtainDesktop from '../../../assets/Personnel/blackCurtainDesktop1080p.jpg';
 
 import personnelBackground0 from '../../../assets/Personnel/personnelBackground0.jpg';
 import personnelBackground1 from '../../../assets/Personnel/personnelBackground1.jpg';
@@ -83,7 +84,8 @@ const MobileGallery = React.memo(({
   isPersonLoaded, 
   onImageLoad, 
   onPrevious, 
-  onNext 
+  onNext,
+  isMobile
 }) => (
   <div className="mobileGalleryWrapper" style={{ backgroundImage: `url(${currentTrainer.background})`}}>
     <img 
@@ -92,7 +94,7 @@ const MobileGallery = React.memo(({
         loading="lazy"
         style={{ 
             opacity: isPersonLoaded ? 0 : 1 ,
-            transition: 'opacity 0.5s ease-in-out 1s'
+            transition: 'opacity 0.3s ease-in-out 1.0s'
         }}
     />
     <img
@@ -209,14 +211,10 @@ function PersonnelPage() {
 
   const currentTrainer = useMemo(() => trainersData[currentIndex], [currentIndex]);
 
-  const mainBoxStyle = useMemo(() => ({
-    backgroundImage: `url(${blackCurtain})`
-  }), []);
-
   return (
     <>
       <Header/>
-      <div className="mainPersonnelBox" style={mainBoxStyle}>
+      <div className="mainPersonnelBox" style={{backgroundImage: isMobile ? `url(${blackCurtainMobile})` : `url(${blackCurtainDesktop})`}}>
         <h1 data-text="NASZ TEAM">NASZ TEAM</h1>
         {isMobile ? (
           <>
@@ -226,6 +224,7 @@ function PersonnelPage() {
               onImageLoad={handleImageLoad}
               onPrevious={goToPrevious}
               onNext={goToNext}
+              isMobile={isMobile}
             />
             <Thumbnails
               trainersData={trainersData}

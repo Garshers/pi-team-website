@@ -6,15 +6,13 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /*border: 1px solid red;
-  background-color: black;*/
   background: #000000;
   background: -webkit-linear-gradient(195deg, #000000 0%, #656565 50%, #000000 100%);
   background: linear-gradient(195deg, #000000 0%, #656565 50%, #000000 100%);
 }
 
 .imageGalleryWrapper{
-  padding-top: 100px;
+  padding-top: 20svh;
   width: 95%;
 }
 

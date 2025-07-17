@@ -2,30 +2,30 @@ import React, { useState, useEffect, useRef } from 'react';
 import './homeGalleryStyle.css';
 
 // Image imports for different screen sizes and quality levels
-import gymImage from '../../assets/HomePage/GymImg_Mid.jpeg';
-import gymImage_Minature from '../../assets/HomePage/GymImg_Minature.jpeg';
-import gymImage_Mid from '../../assets/HomePage/GymImg_Mid.jpeg';
-import gymImage_Small from '../../assets/HomePage/GymImg_Small.jpeg';
+import gymImage from '../../assets/HomePage/GymImgIza_768_2160.jpg';
+import gymImage_Minature from '../../assets/HomePage/GymImgIza_Minature.jpg';
+import gymImage_Mid from '../../assets/HomePage/GymImgIza_1440_1080.jpg';
+import gymImage_Small from '../../assets/HomePage/GymImgIza_450_540.jpg';
 
-import poolImage from '../../assets/HomePage/PoolImg.jpeg';
+import poolImage from '../../assets/HomePage/PoolImg_768_2160.jpeg';
 import poolImage_Minature from '../../assets/HomePage/PoolImg_Minature.jpeg';
-import poolImage_Mid from '../../assets/HomePage/PoolImg_Mid.jpeg';
-import poolImage_Small from '../../assets/HomePage/PoolImg_Small.jpeg';
+import poolImage_Mid from '../../assets/HomePage/PoolImg_1440_1080.jpeg';
+import poolImage_Small from '../../assets/HomePage/PoolImg_450_540.jpeg';
 
-import courseImage from '../../assets/HomePage/CourseImg.jpeg';
-import courseImage_Minature from '../../assets/HomePage/CourseImg_Minature.jpeg';
-import courseImage_Mid from '../../assets/HomePage/CourseImg_Mid.jpeg';
-import courseImage_Small from '../../assets/HomePage/CourseImg_Small.jpeg';
+import courseImage from '../../assets/HomePage/CourseImg_768_2160.jpg';
+import courseImage_Minature from '../../assets/HomePage/CourseImg_Minature.jpg';
+import courseImage_Mid from '../../assets/HomePage/CourseImg_1440_1080.jpg';
+import courseImage_Small from '../../assets/HomePage/CourseImg_450_540.jpg';
 
-import massageImage from '../../assets/HomePage/MassageImg.jpeg';
+import massageImage from '../../assets/HomePage/MassageImg_668_1880.jpeg';
 import massageImage_Minature from '../../assets/HomePage/MassageImg_Minature.jpeg';
-import massageImage_Mid from '../../assets/HomePage/MassageImg_Mid.jpeg';
-import massageImage_Small from '../../assets/HomePage/MassageImg_Small.jpeg';
+import massageImage_Mid from '../../assets/HomePage/MassageImg_1440_1080.jpeg';
+import massageImage_Small from '../../assets/HomePage/MassageImg_450_540.jpeg';
 
-import campImage from '../../assets/HomePage/CampImg.jpeg';
-import campImage_Minature from '../../assets/HomePage/CampImg_Minature.jpeg';
-import campImage_Mid from '../../assets/HomePage/CampImg_Mid.jpeg';
-import campImage_Small from '../../assets/HomePage/CampImg_Small.jpeg';
+import campImage from '../../assets/HomePage/CampImg_768_2160.jpg';
+import campImage_Minature from '../../assets/HomePage/CampImg_Minature.jpg';
+import campImage_Mid from '../../assets/HomePage/CampImg_1440_1080.jpg';
+import campImage_Small from '../../assets/HomePage/CampImg_450_540.jpg';
 
 // Gallery data configuration for fitness services
 const galleryItems = [
@@ -62,9 +62,13 @@ const galleryItems = [
     primary: 'BASEN',
     secondary: 'Chcesz się czuć jak ryba w wodzie dosłownie i w przenośni? Lepiej nie trafisz!',
     schema: {
-      "@type": "SportsActivityLocation",
+      "@type": "Service",
       "name": "Basen",
-      "description": "Profesjonalne treningi pływania"
+      "description": "Profesjonalne treningi pływania dla osób w każdym wieku",
+      "provider": {
+        "@type": "Organization",
+        "name": "PITEAM"
+      }
     }
   },
   {
@@ -79,13 +83,50 @@ const galleryItems = [
     primary: 'KURS TRENERA PERSONALNEGO',
     secondary: 'Marzysz o pracy, która łączy sport, rozwój i poczucie satysfakcji? Zostań trenerem personalnym! Potężna dawka nowoczesnej wiedzy, działającej praktyki i skutecznej motywacji. Nauczysz się, jak planować treningi, budować relacje z klientem i być najlepszym w swoim fachu. Tylko z PITEAM.',
     schema: {
+      "@context": "https://schema.org",
       "@type": "Course",
       "name": "Kurs Trenera Personalnego",
-      "description": "Profesjonalny kurs trenera personalnego z certyfikatem",
+      "description": "Profesjonalny kurs trenera personalnego z certyfikatem. Kompleksowe szkolenie obejmujące planowanie treningów, budowanie relacji z klientem i profesjonalne prowadzenie zajęć fitness.",
       "provider": {
         "@type": "Organization",
-        "name": "PITEAM"
-      }
+        "name": "PITEAM",
+        "url": "https://piteam.pl"
+      },
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseWorkload": "PT40H", // Course workload <-----------
+        "courseSchedule": {
+          "@type": "Schedule",
+          "duration": "P4W" // duration <-----------
+        },
+        "courseMode": "blended",
+        "instructor": {
+          "@type": "Person",
+          "name": "Zespół PITEAM"
+        }
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "1299", // Price in PLN <-----------
+        "priceCurrency": "PLN",
+        "availability": "https://schema.org/InStock",
+        "validFrom": "2024-01-01",
+        "category": "Szkolenie zawodowe"
+      },
+      "educationalCredentialAwarded": "Certyfikat Trenera Personalnego",
+      "audience": {
+        "@type": "EducationalAudience",
+        "audienceType": "Osoby chcące zostać trenerami personalnymi"
+      },
+      "coursePrerequisites": "Brak wymagań wstępnych",
+      "teaches": [
+        "Planowanie treningów personalnych",
+        "Anatomia i fizjologia w treningu",
+        "Budowanie relacji z klientem",
+        "Techniki motywacji",
+        "Zasady bezpieczeństwa w treningu"
+      ],
+      "url": "https://piteam.pl/kurs-trenera-personalnego"
     }
   },
   {
@@ -106,22 +147,35 @@ const galleryItems = [
     }
   },
   {
-    image: campImage,
-    minatureImage: campImage_Minature,
-    midImage: campImage_Mid,
-    smallImage: campImage_Small,
-    href: '/obozy-sportowe',
-    alt: 'Obozy sportowe - letnie i zimowe obozy sportowe z profesjonalnymi trenerami',
-    title: 'Obozy Sportowe - Wakacyjny Reset Formy',
-    key: 'camp',
-    primary: 'OBOZY SPORTOWE',
-    secondary: 'Wakacje, które robią formę - sportowy reset i piękna pogoda.',
-    schema: {
-      "@type": "Event",
-      "name": "Obozy Sportowe",
-      "description": "Letnie i zimowe obozy sportowe połączące wypoczynek z treningiem"
-    }
-  }
+   image: campImage,
+   minatureImage: campImage_Minature,
+   midImage: campImage_Mid,
+   smallImage: campImage_Small,
+   href: '/obozy-sportowe',
+   alt: 'Obozy sportowe - letnie i zimowe obozy sportowe z profesjonalnymi trenerami',
+   title: 'Obozy Sportowe - Wakacyjny Reset Formy',
+   key: 'camp',
+   primary: 'OBOZY SPORTOWE',
+   secondary: 'Wakacje, które robią formę - sportowy reset i piękna pogoda.',
+   schema: {
+     "@type": "Event",
+     "name": "Obozy Sportowe",
+     "description": "Letnie i zimowe obozy sportowe połączone z wypoczynkiem i treningiem",
+     "startDate": "2025-07-01",
+     "location": {
+       "@type": "Place",
+       "name": "Ośrodek Sportowy PITEAM",
+       "address": {
+         "@type": "PostalAddress",
+         "streetAddress": "Francuska 184",
+         "addressLocality": "Katowice",
+         "addressRegion": "Śląsk",
+         "postalCode": "40-507",
+         "addressCountry": "PL"
+       }
+     }
+   }
+ }
 ];
 
 function HomePageGallery() {
@@ -142,7 +196,7 @@ function HomePageGallery() {
       "name": "PITEAM",
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
-        "name": "Usługi Fitness i Sportu",
+        "name": "Usługi Treningowe (Fitness) i Sportu",
         "itemListElement": galleryItems.map((item, index) => ({
           "@type": "Offer",
           "position": index + 1,
@@ -232,7 +286,7 @@ function HomePageGallery() {
           style={{ backgroundImage: `url(${item.minatureImage})`, filter: loadedStates[index] ? 'none' : 'blur(10px)' }}
         >
           <picture>
-              <source media="(max-width: 900px)" srcSet={item.smallImage} type="image/jpeg" />
+              <source media="(max-width: 450px)" srcSet={item.smallImage} type="image/jpeg" />
               <source media="(max-width: 1400px)" srcSet={item.midImage} type="image/jpeg" />
               <source media="(min-width: 1400px)" srcSet={item.image} type="image/jpeg" />
               <img

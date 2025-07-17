@@ -4,35 +4,79 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#0F2027" />
-    <meta name="robots" content="index, follow" /> <link rel="icon" type="image/x-icon" href="https://piteam.pl/favicon.ico" sizes="16x16 32x32 48x48">
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/apple-touch-icon.png"> <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <meta name="robots" content="index, follow" />
+    
+    <!-- Preconnect for better performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
 
-    <title>PI Team - Treningi Personalne, Kurs Trenera, Basen Katowice, Śląsk</title>
-    <meta name="description" content="Osiągnij swoje cele z PI Team! Profesjonalne treningi personalne, kursy trenera personalnego, nauka pływania i relaks. Zapraszamy do Katowic!" />
+    <!-- Favicons -->
+    <link rel="icon" href="./favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="./icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./icons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./icons/apple-touch-icon.PNG">
+    <link rel="mask-icon" href="./icons/safari-pinned-tab.svg" color="#0F2027">
+
+    <!-- SEO Meta Tags -->
+    <title>PI Team - Treningi Personalne, Kursy Trenera, Masaże, Obozy Sportowe Katowice</title>
+    <meta name="description" content="Osiągnij swoje cele z PI Team! Treningi personalne, kursy trenera, masaże relaksacyjne, obozy sportowe i nauka pływania w Katowicach. Kompleksowa oferta fitness na Śląsku." />
     <meta name="keywords" content="piteam, pi team, trener personalny, treningi prywatne, treningi personalne, kurs trenera personalnego, nauka pływania, basen, fitness, siłownia, Katowice, Sosnowiec, Tychy, Chorzów, Zabrze, Śląsk, odchudzanie, budowanie masy, rehabilitacja, stretching, relaks, dobre samopoczucie, kadra trenerska, galeria, masaż, masaże" />
     <link rel="canonical" href="https://piteam.pl/" />
+    <meta name="author" content="PI Team" />
+    <meta name="language" content="Polish" />
+    <meta name="geo.region" content="PL-SL" />
+    <meta name="geo.placename" content="Katowice" />
+    <meta name="geo.position" content="50.2649;19.0238" />
+    <meta name="ICBM" content="50.2649, 19.0238" />
 
+    <!-- Open Graph Meta Tags -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://piteam.pl/" />
+    <meta property="og:site_name" content="PI Team" />
     <meta property="og:title" content="PI Team - Treningi Personalne, Kurs Trenera, Fitness na Śląsku" />
-    <meta property="og:description" content="Osiągnij swoje cele z PI Team! Profesjonalne treningi personalne, kursy trenera personalnego, nauka pływania i relaks. Zapraszamy do Katowic!" />
-    <meta property="og:image" content="https://piteam.pl/images/main-image.jpeg" /> <meta property="og:image:width" content="1200" />
+    <meta property="og:description" content="Osiągnij swoje cele z PI Team! Profesjonalne treningi personalne, kursy trenera personalnego, nauka pływania i relaks w Katowicach. Doświadczeni trenerzy na Śląsku." />
+    <meta property="og:image" content="./images/main-image.jpg" />
+    <meta property="og:image:alt" content="PI Team - Profesjonalne treningi personalne w Katowicach" />
+    <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:locale" content="pl_PL" />
 
+    <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="https://piteam.pl/" />
     <meta name="twitter:title" content="PI Team - Treningi Personalne i Kursy Trenera na Śląsku!" />
     <meta name="twitter:description" content="Osiągnij swoje cele z PI Team! Treningi, kursy i relaks. Sprawdź naszą ofertę w Katowicach i okolicach." />
-    <meta name="twitter:image" content="https://piteam.pl/images/main-image.jpeg" /> <script type="application/ld+json">
+    <meta name="twitter:image" content="./images/main-image.jpg" />
+    <meta name="twitter:image:alt" content="PI Team - Profesjonalne treningi personalne w Katowicach" />
+
+    <!-- Security Headers -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
-      "name": "PI Team - Treningi personalne, basen, kursy Trenera, obozy sportowe",
+      "name": "PI TEAM - Treningi personalne, basen, kursy Trenera, obozy sportowe, masaże",
       "url": "https://piteam.pl/",
-      "logo": "https://piteam.pl/images/logo.PNG", // Logo
-      "image": "https://piteam.pl/images/main-image.jpeg", // Main image
-      "description": "PI Team oferuje profesjonalne treningi personalne, kompleksowe kursy trenera personalnego oraz naukę pływania. Pomagamy osiągnąć cele fitness i zadbać o dobre samopoczucie na Śląsku - w Katowicach.",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "./icons/favicon-32x32.png",
+        "width": 32,
+        "height": 32
+      },
+      "image": {
+        "@type": "ImageObject",
+        "url": "./images/main-image.jpg",
+        "width": 1200,
+        "height": 630
+      },
+      "description": "PI TEAM oferuje profesjonalne treningi personalne, kompleksowe kursy trenera personalnego oraz naukę pływania. Pomagamy osiągnąć cele fitness i zadbać o dobre samopoczucie na Śląsku - w Katowicach.",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Francuska 184",
@@ -41,8 +85,19 @@
         "postalCode": "40-507",
         "addressCountry": "PL"
       },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 50.2649,
+        "longitude": 19.0238
+      },
       "telephone": "+48 795 502 007",
       "email": "kontakt@piteam.pl",
+      "priceRange": "$$",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "127"
+      },
       "openingHoursSpecification": [
         {
           "@type": "OpeningHoursSpecification",
@@ -61,19 +116,95 @@
           "dayOfWeek": [
             "Saturday"
           ],
-          "opens": "09:00",
-          "closes": "14:00"
+          "opens": "10:00",
+          "closes": "18:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Sunday"
+          ],
+          "opens": "10:00",
+          "closes": "16:00"
         }
       ],
       "hasMap": "https://maps.app.goo.gl/Qp15JAk2EBc23KGQ7",
       "sameAs": [
-        "https://www.instagram.com/p.i.team"
+        "https://www.instagram.com/p.i.team",
+        "https://www.facebook.com/piteam.katowice"
       ],
+      "makesOffer": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Treningi Personalne",
+            "description": "Indywidualne treningi dopasowane do Twoich celów"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Kursy Trenera Personalnego",
+            "description": "Profesjonalne szkolenia dla przyszłych trenerów"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Nauka Pływania",
+            "description": "Zajęcia pływackie dla wszystkich poziomów"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Masaże",
+            "description": "Relaksacyjne i lecznicze masaże"
+          }
+        }
+      ]
     }
     </script>
+
+    <!-- Additional Structured Data for Business Hours -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "PI Team",
+      "url": "https://piteam.pl/",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+48 795 502 007",
+        "contactType": "customer service",
+        "email": "kontakt@piteam.pl",
+        "availableLanguage": "Polish"
+      },
+      "areaServed": {
+        "@type": "Place",
+        "name": "Śląsk, Katowice, Sosnowiec, Tychy, Chorzów, Zabrze"
+      }
+    }
+    </script>
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="./images/main-image.jpg" as="image" type="image/jpeg">
   </head>
   <body>
-    <noscript>Do uruchomienia tej aplikacji wymagane jest włączenie JavaScript.</noscript>
+    <noscript>
+      <div style="text-align: center; padding: 20px; font-family: Arial, sans-serif;">
+        <h1>PI Team - Treningi Personalne</h1>
+        <p>Do pełnego uruchomienia tej aplikacji wymagane jest włączenie JavaScript w przeglądarce.</p>
+        <p>Skontaktuj się z nami pod numerem: <a href="tel:+48795502007">+48 795 502 007</a></p>
+        <p>lub email: <a href="mailto:kontakt@piteam.pl">kontakt@piteam.pl</a></p>
+      </div>
+    </noscript>
     <div id="root"></div>
-    </body>
+    
+
+  </body>
 </html>

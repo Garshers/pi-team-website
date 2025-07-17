@@ -12,7 +12,7 @@
 }
 
 .mainPersonnelBox h1 {
-  font-size: 3.5em;
+  font-size: clamp(2em, 3vw + 2em, 3.5em);
   font-weight: 900;
   padding: 0 30px;
   color: transparent;
@@ -88,7 +88,7 @@
   width: 100%;
   max-width: 500px;
   aspect-ratio: 4/5;
-  margin: auto;
+  margin: 40px auto 10px;
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -157,7 +157,7 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  margin-bottom: 40px;
+  margin: 40px 0;
   gap: 10px;
   padding: 0 10px;
 }

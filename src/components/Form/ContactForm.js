@@ -147,9 +147,9 @@ function ContactForm() {
 
     return (
         <>
-        <div className='gymFormWrapper'>
-            <form id='ContactForm' className="gymForm" onSubmit={handleSubmit}>
-                <h1 className="gymFormTitle">Formularz zgłoszeniowy</h1>
+        <div className='FormWrapper'>
+            <form id='ContactForm' className="Form" onSubmit={handleSubmit}>
+                <h1 className="FormTitle">Formularz zgłoszeniowy</h1>
 
                 <input type="text" name="Imię" placeholder="Imię" required />
                 <input type="text" name="Nazwisko" placeholder="Nazwisko" required />
@@ -199,7 +199,7 @@ function ContactForm() {
                     <label htmlFor="privacyPolicy">Wyrażam zgodę na przetwarzanie moich danych osobowych zgodnie z <a href="/polityka-prywatnosci" target="_blank" rel="noopener noreferrer">polityką prywatności</a>.</label>
                 </div>
 
-                <button type="submit" className="gymButton" disabled={!privacyAccepted || !canSubmit}>Wyślij</button>
+                <button type="submit" className="Button" disabled={!privacyAccepted || !canSubmit}>Wyślij</button>
             </form>
 
             {messageSent && (

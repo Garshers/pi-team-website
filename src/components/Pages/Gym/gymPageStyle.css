@@ -1,8 +1,10 @@
 .gymMainBox{
   min-height: 100svh;
+  padding: 20px auto;
   width: 100%;
   height: fit-content;
   gap: 10px;
+  padding-bottom: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -14,21 +16,19 @@
 
 /* --------- Text box for the gym section --------- */
 .gymTextBox{
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2em;
-  margin-top: -11px;
-  padding: 30px 5px;
-  background-color: rgba(0, 0, 0, 0.6);
-  border: 1px solid rgba(255,255,255,0.2);
-  box-shadow: 0 5px 10px rgba(255,255,255,0.2);
-}
-.gymText{
   width: 80%;
   max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 1.2em;
+  padding: 20px 5px;
+  background-color: rgba(0,0,0,0.3);;
+  border: 1px solid rgba(255,255,255,0.2);
+  box-shadow: 0 0 10px rgba(255,255,255,0.2);
+  backdrop-filter: blur(4px);
+  border-radius: 10px;
+  margin-top: 10svh;
 }
 
 @media (max-width: 768px) {
@@ -41,5 +41,9 @@
   .gymDescription {
     font-size: 1em;
     line-height: 1.5;
+  }
+
+  .gymTextBox{
+    width: 90%;
   }
 }
