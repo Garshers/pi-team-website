@@ -1,6 +1,7 @@
 import React from 'react';
 import './gymPageStyle.css';
 import { Header } from '../../HeaderAndFooter/header.js';
+import CheckAlsoSection from '../../HeaderAndFooter/CheckAlsoSection.js';
 import ContactForm from '../../Form/ContactForm.js'
 import MainImage from '../../MainImage/MainImage.js';
 
@@ -54,6 +55,7 @@ function GymPage() {
                 możesz osiągnąć swoje cele treningowe!
             </p>
             <ContactForm/>
+            <CheckAlsoSection />
         </div>
         </>
     );

@@ -1,5 +1,6 @@
 import React from 'react';
 import HomePageGallery from '../../Gallery/HomePageGallery.js';
+import { Header } from '../../HeaderAndFooter/header.js';
 
 /**
  * @function HomePage
@@ -7,6 +8,7 @@ import HomePageGallery from '../../Gallery/HomePageGallery.js';
  */
 function HomePage() {
     return (
+        <><Header/>
         <div style={{
             width: '100%',
             minHeight: '100svh',
@@ -16,6 +18,7 @@ function HomePage() {
         }}>
             <HomePageGallery />
         </div>
+        </>
     );
 }
 

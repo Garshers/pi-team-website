@@ -86,6 +86,9 @@
   transform: translateX(-50%);
   transition: transform 0.3s ease-in-out;
   font-style: oblique;
+  color: white;
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  width: 100svw;
 }
 
 .mainSubtitle:hover{

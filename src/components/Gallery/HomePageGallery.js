@@ -55,7 +55,7 @@ const galleryItems = [
     minatureImage: poolImage_Minature,
     midImage: poolImage_Mid,
     smallImage: poolImage_Small,
-    href: '/basen',
+    href: '/treningi-plywackie',
     alt: 'Basen - Spersonalizowane treningi rekreacyjne oraz sportowe',
     title: 'Basen - Pływanie',
     key: 'pool1',
@@ -76,7 +76,7 @@ const galleryItems = [
     minatureImage: courseImage_Minature,
     midImage: courseImage_Mid,
     smallImage: courseImage_Small,
-    href: '/kurs-trenera-personalnego',
+    href: '/kursy-na-trenera-personalnego',
     alt: 'Kurs trenera personalnego - szkolenie z certyfikatem dla przyszłych trenerów personalnych',
     title: 'Kurs Trenera Personalnego - Zostań Certyfikowanym Trenerem',
     key: 'course',
@@ -126,7 +126,7 @@ const galleryItems = [
         "Techniki motywacji",
         "Zasady bezpieczeństwa w treningu"
       ],
-      "url": "https://piteam.pl/kurs-trenera-personalnego"
+      "url": "https://piteam.pl/kursy-na-trenera-personalnego"
     }
   },
   {
@@ -134,7 +134,7 @@ const galleryItems = [
     minatureImage: massageImage_Minature,
     midImage: massageImage_Mid,
     smallImage: massageImage_Small,
-    href: '/masaz',
+    href: '/masaze',
     alt: 'Masaż sportowy i relaksacyjny - profesjonalne usługi masażu relaksacyjnego',
     title: 'Masaż Sportowy i Relaksacyjny - Regeneracja po Treningu',
     key: 'massage',

@@ -179,16 +179,6 @@
     outline-offset: 2px;
 }
 
-.footer-mainText {
-    font-style: normal;
-    font-weight: 650;
-    font-size: 40px;
-    line-height: 100%;
-    color: white;
-    text-align: center;
-    margin: 0;
-}
-
 .logo{
     height: 30px;
     width: 30px;
@@ -212,20 +202,19 @@
     border-radius: 4px;
 }
 
-/* --------- Chcek Also styles for the gym section --------- */
-.gymCheckAlsoContainer {
-    width: calc(100% - 20px);
+/* --------- Chcek Also styles section --------- */
+.checkAlsoContainer {
+    width: 100%;
     height: fit-content;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    gap: 10px;
-    padding: 0 10px;
-    background-color: rgba(0,0,0,0);
+    gap: 5px;
+    padding: 0 5px;
 }
 
-.gymCheckAlsoBox {
+.checkAlsoBox {
     width: 100%;
     min-height: min(80px, 10svh);
     height: fit-content;
@@ -234,27 +223,27 @@
     text-decoration: none;
     flex-wrap: wrap;
     color: white;
-    background: var(--headerFooterBackgroundColor);
+    background: linear-gradient(to bottom, var(--headerFooterBackgroundColor), black);
     border-radius: 10px 10px 0px 0px;
     transition: background 0.5s ease-in-out, transform 0.5s ease-in-out, color 0.3s ease-in-out;
     border-top: 1px solid rgba(255,255,255,0.2);
     padding: 5px;
 }
 
-.gymCheckAlsoBox:hover {
+.checkAlsoBox:hover {
     background-color: black;
     transform: scale(1.02);
     color: gray;
 }
 
 @media (max-width: 768px) {
-    .gymCheckAlsoContainer {
+    .checkAlsoContainer {
         flex-direction: column;
         background: var(--headerFooterBackgroundColor);
         border-radius: 10px 10px 0px 0px;
     }
 
-    .gymCheckAlsoBox {
+    .checkAlsoBox {
         color: white;
         border: none;
         background: none;

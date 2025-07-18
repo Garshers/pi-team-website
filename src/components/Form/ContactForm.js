@@ -4,34 +4,31 @@ import './contactFormStyle.css';
 
 const services = [
     { label: 'Wybierz usługę', value: '' },
-    { label: 'Siłownia', value: 'silownia' },
-    { label: 'Basen', value: 'basen' },
-    { label: 'Masaż', value: 'masaz' },
-    { label: 'Kurs Trenera Personalnego', value: 'kurs_trenera_personalnego' },
-    { label: 'Obóz sportowy', value: 'oboz_sportowy' },
+    { label: 'Treningi Personalne', value: 'treningi_personalne' },
+    { label: 'Basen (Treningi pływackie)', value: 'basen_treningi_plywackie' },
+    { label: 'Kursy na Trenera Personalnego', value: 'kursy_na_trenera_personalnego' },
+    { label: 'Masaże relaksacyjne', value: 'masaze_relaksacyjne' },
+    { label: 'Fizjoterapia', value: 'fizjoterapia' },
+    { label: 'Obozy sportowe', value: 'obozy_sportowe' },
 ];
 
 const specialists = {
-    silownia: [
-        { label: 'Wybierz trenera', value: '' },
-        { label: 'Patryk Iwaszczyszyn', value: 'Patryk Iwaszczyszyn' },
-        { label: 'Izabela Pawik', value: 'Izabela Pawik' },
-        { label: 'Piotr Labojko', value: 'Piotr Labojko' },
-        { label: 'Milena Kuczyk', value: 'Milena Kuczyk' },
-    ],
-    basen: [
-        { label: 'Wybierz trenera', value: '' },
-        { label: 'Izabela Pawik', value: 'Izabela Pawik' },
-    ],
-    kurs_trenera_personalnego: [
+    treningi_personalne: [
         { label: 'Wybierz trenera', value: '' },
         { label: 'Patryk Iwaszczyszyn', value: 'Patryk Iwaszczyszyn' },
         { label: 'Izabela Pawik', value: 'Izabela Pawik' },
     ],
-    masaz: [
+    basen_treningi_plywackie: [
+        { label: 'Wybierz trenera', value: '' },
+        { label: 'Izabela Pawik', value: 'Izabela Pawik' },
+    ],
+    masaze_relaksacyjne: [
         { label: 'Wybierz masażystę', value: '' },
-        { label: 'Dawid Słonina (fizjoterapeuta)', value: 'Dawid Słonina' },
-        { label: 'Natalia Polaczek (masażystka)', value: 'Natalia Polaczek' },
+        { label: 'Natalia Polaczek', value: 'Natalia Polaczek' },
+    ],
+    fizjoterapia: [
+        { label: 'Wybierz fizjoterapeutę', value: '' },
+        { label: 'Dawid Słonina', value: 'Dawid Słonina' },
     ],
   };
 
@@ -88,7 +85,7 @@ function ContactForm() {
             return;
         }
 
-        emailjs.sendForm('service_xqlzr6l', 'template_nipqukd', event.target, 'T7YNx0b5GFz5-aLZr')
+        emailjs.sendForm('service_pz3h6vb', 'template_nipqukd', event.target, 'T7YNx0b5GFz5-aLZr')
             .then((result) => {
                 console.log('Formularz został wysłany!:', result.text);
                 setMessageSent(true);
@@ -141,7 +138,7 @@ function ContactForm() {
         setPrivacyAccepted(event.target.checked);
     };
 
-    const currentSpecialists = selectedService && selectedService !== 'oboz_sportowy'
+    const currentSpecialists = selectedService && (selectedService !== 'obozy_sportowe' || selectedService !== 'kursy_na_trenera_personalnego')
         ? specialists[selectedService] || []
         : [];
 
@@ -154,7 +151,7 @@ function ContactForm() {
                 <input type="text" name="Imię" placeholder="Imię" required />
                 <input type="text" name="Nazwisko" placeholder="Nazwisko" required />
                 <input type="email" name="Email" placeholder="Email" required />
-                <input type="tel" name="Telefon" placeholder="Telefon" required />
+                <input type="tel" name="Telefon" placeholder="Telefon" required pattern="[0-9]{9}" maxLength="9" title="Nieprawidłowy numer. Wprowadź 9 cyfr" />
 
                 {/* Services list */}
                 <select
@@ -171,7 +168,7 @@ function ContactForm() {
                 </select>
 
                 {/* Conditional specialist list rendering */}
-                {selectedService && selectedService !== '' && selectedService !== 'oboz_sportowy' && (
+                {selectedService && selectedService !== '' && selectedService !== 'obozy_sportowe' && selectedService !== 'kursy_na_trenera_personalnego' && (
                     <select name="Specjalista"
                       value={selectedSpecialist}
                       onChange={handleSpecialistChange}
@@ -185,7 +182,7 @@ function ContactForm() {
                     </select>
                 )}
 
-                <textarea name="Uwagi" placeholder="Uwagi" ></textarea>
+                <textarea name="Uwagi" placeholder="Treść wiadomości" ></textarea>
 
                 {/* Privacy Policy Checkbox */}
                 <div className="privacy-checkbox-container">

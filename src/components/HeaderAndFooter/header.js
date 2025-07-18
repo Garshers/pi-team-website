@@ -10,8 +10,7 @@ export function Header() {
         { label: 'Oferta', path: '/', ariaLabel: 'Przejdź na stronę oferty' },
         { label: 'O Nas', path: '/o-nas', ariaLabel: 'Przejdź na stronę o nas' },
         { label: 'Kadra', path: '/kadra', ariaLabel: 'Przejdź na stronę kadry' },
-        { label: 'Kontakt', path: '/kontakt', ariaLabel: 'Przejdź na stronę kontaktu' },
-        { label: 'Galeria', path: '/galeria', ariaLabel: 'Przejdź do galerii' },
+        { label: 'Kontakt', path: '/kontakt', ariaLabel: 'Przejdź na stronę kontaktu' }
     ];
 
     useEffect(() => {

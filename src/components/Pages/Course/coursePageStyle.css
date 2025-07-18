@@ -124,15 +124,5 @@
   font-style: normal;
 }
 
-.imageGalleryWrapper{
-  width: 90svw;
-  margin: auto;
-}
-
-@media (max-width: 900px) {
-  .imageGalleryWrapper{
-    width: 98svw;
-  }
-}
 
 

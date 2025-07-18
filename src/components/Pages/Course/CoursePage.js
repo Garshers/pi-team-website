@@ -1,9 +1,9 @@
 import React from 'react';
 import './coursePageStyle.css';
 import { Header } from '../../HeaderAndFooter/header.js';
+import CheckAlsoSection from '../../HeaderAndFooter/CheckAlsoSection.js';
 import ContactForm from '../../Form/ContactForm.js'
 import MainImage from '../../MainImage/MainImage.js';
-import { ImageGallery } from "react-image-grid-gallery";
 
 import background from '../../../assets/Gym/background.jpg';
 import courseImage from '../../../assets/Course/CourseImg.jpeg';
@@ -125,36 +125,30 @@ function CoursePage() {
     <Header />
     <div className="courseMainBox" style={{ backgroundImage: `url(${background})`}}>
         <MainImage item={item} />
-        <div className="main-container"> <div className="courseTextBox">
-        <h2>Uczymy przez Doświadczenie</h2>
-        <h1>Twoja Droga do Sukcesu w Fitnessie z Ekspertami Branży</h1>
-        <p>
-            Zapomnij o suchych wykładach i przestarzałych podręcznikach. W PI TEAM zmieniamy zasady gry.
-            Zamiast teorii, oferujemy bezpośredni dostęp do wiedzy i doświadczenia czołowych postaci polskiej branży fitness.
-            To oni, Twoi przyszli mentorzy, dzielą się sprawdzonymi ścieżkami, które sami przeszli, budując swoje imperia trenerskie.
-        </p>
-        <div className="coursePoint">
-            <span className="coursePointIcon">&#10532;</span>
-            <div className="coursePointText">
-                <h3>Dlaczego warto wybrać nasz kurs?</h3>
-                <p>
-                    Chcesz wiedzieć, jak zbudować markę osobistą, prowadzić dochodowy biznes trenerski, czy zarządzać topowym klubem fitness?
-                    Uczysz się od tych, którzy to osiągnęli.
-                    Nasi eksperci to aktywni gracze na rynku, którzy na co dzień pracują z wymagającymi klientami i znają branżę od podszewki.
-                    Ich praktyczne spojrzenie to Twój największy atut.
-                </p>
-            </div>
-        </div>
-    </div>
-    <ContactForm className="contact-form-absolute"/> </div>
-        <div className='imageGalleryWrapper'>
-            <ImageGallery
-                imagesInfoArray={imagesArray}
-                columnCount={4}
-                gapSize={5}
-                style='visible grid'
-            />
-        </div>
+        <div className="main-container"> 
+          <div className="courseTextBox">
+              <h2>Uczymy przez Doświadczenie</h2>
+              <h1>Twoja Droga do Sukcesu w Fitnessie z Ekspertami Branży</h1>
+              <p>
+                  Zapomnij o suchych wykładach i przestarzałych podręcznikach. W PI TEAM zmieniamy zasady gry.
+                  Zamiast teorii, oferujemy bezpośredni dostęp do wiedzy i doświadczenia czołowych postaci polskiej branży fitness.
+                  To oni, Twoi przyszli mentorzy, dzielą się sprawdzonymi ścieżkami, które sami przeszli, budując swoje imperia trenerskie.
+              </p>
+              <div className="coursePoint">
+                  <span className="coursePointIcon">&#10532;</span>
+                  <div className="coursePointText">
+                      <h3>Dlaczego warto wybrać nasz kurs?</h3>
+                      <p>
+                          Chcesz wiedzieć, jak zbudować markę osobistą, prowadzić dochodowy biznes trenerski, czy zarządzać topowym klubem fitness?
+                          Uczysz się od tych, którzy to osiągnęli.
+                          Nasi eksperci to aktywni gracze na rynku, którzy na co dzień pracują z wymagającymi klientami i znają branżę od podszewki.
+                          Ich praktyczne spojrzenie to Twój największy atut.
+                      </p>
+                  </div>
+              </div>
+          </div>
+          <ContactForm className="contact-form-absolute"/> </div>
+          <CheckAlsoSection></CheckAlsoSection>
     </div>
     </>
   );

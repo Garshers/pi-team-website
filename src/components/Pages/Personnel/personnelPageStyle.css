@@ -1,12 +1,11 @@
 .mainPersonnelBox{
   width: 100%;
-  min-height: 100svh;
+  min-height: 90svh;
   height: fit-content;
   margin-top: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  /*border: 1px solid red;*/
   background-size: cover;
   background-position: center;
 }
@@ -19,6 +18,7 @@
   -webkit-text-stroke: 1px #696969;
   position: relative;
   font-style: oblique;
+  margin-bottom: 0;
 }
 
 .mainPersonnelBox h1::before {
@@ -38,7 +38,7 @@
 
 .desktopGalleryWrapper{
   min-width: 1200px;
-  width: 70%;
+  width: 90%;
   height: fit-content;
   display: flex;
   flex-direction: column;
@@ -79,8 +79,17 @@
   transform-origin: bottom center;
 }
 
+.desktopGalleryBox .desktopGalleryMinature{
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  background-size: cover;
+  background-position: bottom center;
+  transition: scale 0.5s ease-in-out, background-image 1s ease-in-out, opacity 0.3s ease-in-out;
+}
+
 .desktopGalleryBox:hover img {
-  scale: 1.1;
+  scale: 1.2;
 }
 
 /* --------------------------------------------------- Mobile gallery styles --------------------------------------------------- */
@@ -88,7 +97,7 @@
   width: 100%;
   max-width: 500px;
   aspect-ratio: 4/5;
-  margin: 40px auto 10px;
+  margin: 80px auto 10px;
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -187,7 +196,7 @@
   flex-direction: column;
   justify-items: center;
   position: absolute;
-  padding: 10px 20px 10px 20px;
+  padding: 10px 20px 10px 10px;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
@@ -199,7 +208,7 @@
 }
 
 .desktopGalleryBox:hover .desktopDescriptionBox {
-  height: 30%;
+  height: 40%;
 }
 
 .desktopGalleryName, .mobileGalleryName{

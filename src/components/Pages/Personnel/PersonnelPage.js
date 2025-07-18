@@ -1,31 +1,28 @@
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import './personnelPageStyle.css';
 import { Header } from '../../HeaderAndFooter/header.js';
+import CheckAlsoSection from '../../HeaderAndFooter/CheckAlsoSection.js';
 
 import blackCurtainMobile from '../../../assets/Personnel/blackCurtainMobile.jpg';
 import blackCurtainDesktop from '../../../assets/Personnel/blackCurtainDesktop1080p.jpg';
 
 import personnelBackground0 from '../../../assets/Personnel/personnelBackground0.jpg';
 import personnelBackground1 from '../../../assets/Personnel/personnelBackground1.jpg';
-import personnelBackground2 from '../../../assets/Personnel/personnelBackground2.jpg';
 import personnelBackground3 from '../../../assets/Personnel/personnelBackground3.jpg';
 import personnelBackground4 from '../../../assets/Personnel/personnelBackground4.jpg';
 
 import imgPatrykDesktop from '../../../assets/Personnel/imgPatrykDesktop.png';
 import imgIzaDesktop from '../../../assets/Personnel/imgIzaDesktop.png';
-import imgPiotrDesktop from '../../../assets/Personnel/imgPiotrDesktop.png';
 import imgNataliaDesktop from '../../../assets/Personnel/imgNataliaDesktop.png';
 import imgDawidDesktop from '../../../assets/Personnel/imgDawidDesktop.png';
 
 import imgPatrykMobile from '../../../assets/Personnel/imgPatrykMobile.png';
 import imgIzaMobile from '../../../assets/Personnel/imgIzaMobile.png';
-import imgPiotrMobile from '../../../assets/Personnel/imgPiotrMobile.png';
 import imgNataliaMobile from '../../../assets/Personnel/imgNataliaMobile.png';
 import imgDawidMobile from '../../../assets/Personnel/imgDawidMobile.png';
 
 import imgPatrykMinature from '../../../assets/Personnel/imgPatrykMinature.png';
 import imgIzaMinature from '../../../assets/Personnel/imgIzaMinature.png';
-import imgPiotrMinature from '../../../assets/Personnel/imgPiotrMinature.png';
 import imgNataliaMinature from '../../../assets/Personnel/imgNataliaMinature.png';
 import imgDawidMinature from '../../../assets/Personnel/imgDawidMinature.png';
 
@@ -49,15 +46,6 @@ const trainersData = [
     LearnMore: 'Dowiedz się więcej o Izie!'
   },
   { 
-    srcDesktop: imgPiotrDesktop,
-    srcMobile: imgPiotrMobile,
-    srcMinature: imgPiotrMinature,
-    name: 'PIOTR',
-    background: personnelBackground2,
-    description: 'Poznajcie Piotrka - jednego z naszych trenerów personalnych w Katowicach!',
-    LearnMore: 'Dowiedz się więcej o Piotrze!'
-  },
-  { 
     srcDesktop: imgNataliaDesktop,
     srcMobile: imgNataliaMobile,
     srcMinature: imgNataliaMinature,
@@ -78,14 +66,14 @@ const trainersData = [
 ];
 
 const MOBILE_BREAKPOINT = 900;
+const LARGE_SCREEN_BREAKPOINT = 1400;
 
 const MobileGallery = React.memo(({ 
   currentTrainer, 
   isPersonLoaded, 
   onImageLoad, 
   onPrevious, 
-  onNext,
-  isMobile
+  onNext
 }) => (
   <div className="mobileGalleryWrapper" style={{ backgroundImage: `url(${currentTrainer.background})`}}>
     <img 
@@ -131,30 +119,79 @@ const Thumbnails = React.memo(({ trainersData, currentIndex, onThumbnailClick })
   </div>
 ));
 
-const DesktopGallery = React.memo(({ trainersData }) => (
+const TrainerDisplayBox = React.memo(({ trainer }) => {
+  const [isTrainerImageLoaded, setIsTrainerImageLoaded] = useState(false);
+
+  const handleTrainerImageLoad = () => {
+    setIsTrainerImageLoaded(true);
+  };
+
+  return (
+    <div
+      className='desktopGalleryBox'
+      // `key` jest przekazywany w komponencie nadrzędnym (DesktopGallery) podczas mapowania
+      style={{ backgroundImage: `url(${trainer.background})` }}
+    >
+      {/* Miniatura, która znika po załadowaniu głównego obrazu */}
+      <img
+        className='desktopGalleryMinature'
+        src={trainer.srcMinature}
+        alt={`Miniatura zdjęcia trenera personalnego ${trainer.name} z PITEAM`}
+        loading="lazy"
+        style={{ opacity: isTrainerImageLoaded ? 0 : 1 }}
+      />
+      {/* Główny obraz trenera, który pojawia się po załadowaniu */}
+      <img
+        src={trainer.srcDesktop}
+        alt={`Zdjęcie trenera personalnego ${trainer.name} z PITEAM`}
+        loading="lazy"
+        onLoad={handleTrainerImageLoad} // Wywołaj funkcję po załadowaniu obrazu
+        style={{ opacity: isTrainerImageLoaded ? 1 : 0 }} // Animacja dla głównego obrazu
+      />
+      <div className='desktopDescriptionBox'>
+        <h2 className='desktopGalleryName'>{trainer.name}</h2>
+        <p className='desktopGalleryDescription'>{trainer.description}</p>
+        <a href="/kontakt" className='desktopLearnMore'>{trainer.LearnMore}</a>
+      </div>
+    </div>
+  );
+});
+
+// Główny komponent DesktopGallery
+const DesktopGallery = React.memo(({ trainersData, isLargeScreen }) => (
   <div className='desktopGalleryWrapper'>
-    {[0, 2].map((startIndex, rowIndex) => (
-      <div className='desktopGalleryRow' key={rowIndex}>
-        {trainersData.slice(startIndex, startIndex + (rowIndex === 0 ? 2 : 3)).map((trainer) => (
-          <div 
-            className='desktopGalleryBox' 
+    {isLargeScreen ? (
+      // Układ dla dużych ekranów: wszyscy trenerzy w jednym rzędzie
+      <div className='desktopGalleryRow' style={{ gap: '20px' }}> {/* Dodany gap dla odstępów */}
+        {trainersData.map((trainer) => (
+          <TrainerDisplayBox
             key={trainer.name}
-            style={{ backgroundImage: `url(${trainer.background})` }}
-          >
-            <img 
-              src={trainer.srcDesktop} 
-              alt={`Zdjęcie trenera personalnego ${trainer.name} z PITEAM`}
-              loading="lazy"
-            />
-            <div className='desktopDescriptionBox'>
-              <h2 className='desktopGalleryName'>{trainer.name}</h2>
-              <p className='desktopGalleryDescription'>{trainer.description}</p>
-              <a href="/kontakt" className='desktopLearnMore'>{trainer.LearnMore}</a>
-            </div>
-          </div>
+            trainer={trainer} // Przekazujemy dane trenera do podkomponentu
+          />
         ))}
       </div>
-    ))}
+    ) : (
+      // Układ dla mniejszych ekranów: dwa rzędy po dwie osoby
+      // Zakładam, że trainersData ma co najmniej 4 elementy dla tego układu
+      <>
+        <div className='desktopGalleryRow'>
+          {trainersData.slice(0, 2).map((trainer) => (
+            <TrainerDisplayBox
+              key={trainer.name}
+              trainer={trainer}
+            />
+          ))}
+        </div>
+        <div className='desktopGalleryRow'>
+          {trainersData.slice(2, 4).map((trainer) => (
+            <TrainerDisplayBox
+              key={trainer.name}
+              trainer={trainer}
+            />
+          ))}
+        </div>
+      </>
+    )}
   </div>
 ));
 
@@ -164,15 +201,29 @@ const DesktopGallery = React.memo(({ trainersData }) => (
  */
 function PersonnelPage() {
   const [isMobile, setIsMobile] = useState(window.innerWidth < MOBILE_BREAKPOINT);
+  const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth > LARGE_SCREEN_BREAKPOINT);
   const [isPersonLoaded, setIsPersonLoaded] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   
   const handleResize = useCallback(() => {
     const newIsMobile = window.innerWidth < MOBILE_BREAKPOINT;
+    const newIsLargeScreen = window.innerWidth > LARGE_SCREEN_BREAKPOINT;
+
     if (newIsMobile !== isMobile) {
       setIsMobile(newIsMobile);
     }
-  }, [isMobile]);
+    if (newIsLargeScreen !== isLargeScreen) {
+      setIsLargeScreen(newIsLargeScreen);
+    }
+  }, [isMobile, isLargeScreen]);
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [handleResize]);
 
   useEffect(() => {
     let timeoutId;
@@ -224,7 +275,6 @@ function PersonnelPage() {
               onImageLoad={handleImageLoad}
               onPrevious={goToPrevious}
               onNext={goToNext}
-              isMobile={isMobile}
             />
             <Thumbnails
               trainersData={trainersData}
@@ -233,8 +283,12 @@ function PersonnelPage() {
             />
           </>
         ) : (
-          <DesktopGallery trainersData={trainersData} />
+          <DesktopGallery 
+            trainersData={trainersData} 
+            isLargeScreen={isLargeScreen}
+          />
         )}
+        <CheckAlsoSection></CheckAlsoSection>
       </div>
     </>
   );
