@@ -7,20 +7,20 @@ import gymImage_Minature from '../../assets/HomePage/GymImgIza_Minature.jpg';
 import gymImage_Mid from '../../assets/HomePage/GymImgIza_1440_1080.jpg';
 import gymImage_Small from '../../assets/HomePage/GymImgIza_450_540.jpg';
 
-import poolImage from '../../assets/HomePage/PoolImg_768_2160.jpeg';
-import poolImage_Minature from '../../assets/HomePage/PoolImg_Minature.jpeg';
-import poolImage_Mid from '../../assets/HomePage/PoolImg_1440_1080.jpeg';
-import poolImage_Small from '../../assets/HomePage/PoolImg_450_540.jpeg';
+import poolImage from '../../assets/HomePage/PoolImg_428_1200.jpg';
+import poolImage_Minature from '../../assets/HomePage/PoolImg_Minature.jpg';
+import poolImage_Mid from '../../assets/HomePage/PoolImg_1440_1080.jpg';
+import poolImage_Small from '../../assets/HomePage/PoolImg_450_540.jpg';
 
 import courseImage from '../../assets/HomePage/CourseImg_768_2160.jpg';
 import courseImage_Minature from '../../assets/HomePage/CourseImg_Minature.jpg';
 import courseImage_Mid from '../../assets/HomePage/CourseImg_1440_1080.jpg';
 import courseImage_Small from '../../assets/HomePage/CourseImg_450_540.jpg';
 
-import massageImage from '../../assets/HomePage/MassageImg_668_1880.jpeg';
-import massageImage_Minature from '../../assets/HomePage/MassageImg_Minature.jpeg';
-import massageImage_Mid from '../../assets/HomePage/MassageImg_1440_1080.jpeg';
-import massageImage_Small from '../../assets/HomePage/MassageImg_450_540.jpeg';
+import massageImage from '../../assets/HomePage/MassageImg_768_2160.jpg';
+import massageImage_Minature from '../../assets/HomePage/MassageImg_Minature.jpg';
+import massageImage_Mid from '../../assets/HomePage/MassageImg_1440_1080.jpg';
+import massageImage_Small from '../../assets/HomePage/MassageImg_450_540.jpg';
 
 import campImage from '../../assets/HomePage/CampImg_768_2160.jpg';
 import campImage_Minature from '../../assets/HomePage/CampImg_Minature.jpg';

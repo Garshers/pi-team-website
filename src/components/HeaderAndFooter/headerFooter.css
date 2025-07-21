@@ -241,12 +241,13 @@
         flex-direction: column;
         background: var(--headerFooterBackgroundColor);
         border-radius: 10px 10px 0px 0px;
+        gap: 0;
     }
 
     .checkAlsoBox {
         color: white;
         border: none;
-        background: none;
+        background: black;
         border-radius: 0;
         min-height: 5vh;
     }

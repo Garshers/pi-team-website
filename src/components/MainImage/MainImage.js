@@ -36,6 +36,7 @@ function MainImage({ item }) {
   };
 
   return (
+    <>
     <section
       className="mainImageBox"
       style={{
@@ -90,9 +91,11 @@ function MainImage({ item }) {
         aria-label="Przewiń do następnej sekcji"
         type="button"
       >
-        &#8595; Zapisz się już dziś! &#8595;
+        &#10533; Zapisz się już dziś! &#10534;
       </button>
     </section>
+    <div className="mainGradient"></div>
+    </>
   );
 }
 

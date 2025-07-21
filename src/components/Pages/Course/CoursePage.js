@@ -7,17 +7,7 @@ import MainImage from '../../MainImage/MainImage.js';
 
 import background from '../../../assets/Gym/background.jpg';
 import courseImage from '../../../assets/Course/CourseImg.jpeg';
-
-
-import DSC2943 from '../../../assets/Oryginals/_DSC2943.jpg';
-import DSC2954 from '../../../assets/Oryginals/_DSC2954.jpg';
-import DSC3526 from '../../../assets/Oryginals/_DSC3526.jpg';
-import DSC3651 from '../../../assets/Oryginals/_DSC3651.jpg';
-import CampImgOryginal from '../../../assets/Oryginals/CampImg_Oryginal.jpg';
-import CourseImgOryginal from '../../../assets/Oryginals/CourseImg_Oryginal.jpg';
-import GymImgOryginal from '../../../assets/Oryginals/GymImgIza_Oryginal.jpg';
-import MassageImgOryginal from '../../../assets/Oryginals/MassageImg_Oryginal.jpeg';
-import PoolImgOryginal from '../../../assets/Oryginals/PoolImg_Oryginal.jpeg';
+import courseTextBoxImage from '../../../assets/Course/CourseTextBoxImage.jpg';
 
 const item = {
     image: courseImage,
@@ -27,7 +17,7 @@ const item = {
     alt: 'Kurs Trenera Personalnego PITEAM - kompleksowe szkolenie online i stacjonarne w Katowicach',
     title: 'Zostań Certyfikowanym Trenerem Personalnym z PITEAM - Szkolenie Katowice',
     key: 'personalTrainerCourse',
-    primary: 'KURS TRENERA PERSONALNEGO',
+    primary: 'KURS NA TRENERA PERSONALNEGO',
     secondary: 'Zdobądź certyfikat i wiedzę niezbędną do pracy jako profesjonalny trener personalny. Nasz kurs obejmuje anatomię, fizjologię, metodykę treningu, dietetykę i psychologię sportu. Przygotuj się do zawodu z najlepszymi!',
     schema: {
         "@context": "https://schema.org",
@@ -72,49 +62,6 @@ const item = {
     }
 };
 
-const imagesArray = [
-  {
-    id: "course-training-uniqueid445",
-    alt: "Kurs trenera personalnego - szkolenie teoretyczne",
-    src: DSC2943,
-  },
-  {
-    id: "personal-training-course-uniqueid446",
-    alt: "Kurs trenera personalnego - praktyczne zajęcia",
-    src: DSC2954,
-  },
-  {
-    id: "course-instruction-uniqueid450",
-    alt: "Kurs trenera personalnego - instrukcja z ekspertem",
-    src: CourseImgOryginal,
-  },
-  {
-    id: "personal-training-uniqueid451",
-    alt: "Trening personalny na nowoczesnej siłowni",
-    src: GymImgOryginal,
-  },
-  {
-    id: "swimming-training-uniqueid454",
-    alt: "Treningi pływackie - profesjonalna strefa basenowa",
-    src: PoolImgOryginal,
-  },
-  {
-    id: "sports-camp-outdoor-uniqueid447",
-    alt: "Obóz sportowy - treningi na świeżym powietrzu",
-    src: DSC3526,
-  },
-  {
-    id: "sports-camp-pool-uniqueid448",
-    alt: "Obóz sportowy - zajęcia przy basenie",
-    src: DSC3651,
-  },
-  {
-    id: "sports-camp-activities-uniqueid449",
-    alt: "Obóz sportowy - różnorodne zajęcia fitness",
-    src: CampImgOryginal,
-  },
-];
-
 /**
  * @function CoursePage
  * @returns {JSX.Element} - Component representing the course page of the application.
@@ -126,29 +73,64 @@ function CoursePage() {
     <div className="courseMainBox" style={{ backgroundImage: `url(${background})`}}>
         <MainImage item={item} />
         <div className="main-container"> 
-          <div className="courseTextBox">
+          <div className="arrowSection">
+            <div className='arrowSectionBox'>
+              <span className="arrow">&#10132;</span>
+              <h2 className="arrowText">WIEDZĄ WYPRZEDZAMY INNYCH</h2>
+              <p>Bazujemy wyłącznie na metodach potwierdzonych naukowo. Nasi wykładowcy to praktycy z wieloletnim doświadczeniem i tytułami naukowymi, którzy łączą teorię z praktyką.</p>
+            </div>
+            <div className='arrowSectionBox'>
+              <span className="arrow">&#10132;</span>
+              <h2 className="arrowText">JEDYNY TAKI CERTYFIKAT W POLSCE</h2>   
+              <p>Bazujemy wyłącznie na metodach potwierdzonych naukowo. Nasi wykładowcy to praktycy z wieloletnim doświadczeniem i tytułami naukowymi, którzy łączą teorię z praktyką.</p>
+            </div>
+            <div className='arrowSectionBox'>
+              <span className="arrow">&#10132;</span>
+              <h2 className="arrowText">17 000 ZADOWOLONYCH ABSOLWENTÓW</h2>
+              <p>Bazujemy wyłącznie na metodach potwierdzonych naukowo. Nasi wykładowcy to praktycy z wieloletnim doświadczeniem i tytułami naukowymi, którzy łączą teorię z praktyką.</p>
+            </div>
+          </div>
+
+          <div className='courseMainContainer'>
+            <div className="courseTextBox">
+              <img src={courseTextBoxImage} alt="Kurs Trenera Personalnego PITEAM" />
               <h2>Uczymy przez Doświadczenie</h2>
               <h1>Twoja Droga do Sukcesu w Fitnessie z Ekspertami Branży</h1>
-              <p>
-                  Zapomnij o suchych wykładach i przestarzałych podręcznikach. W PI TEAM zmieniamy zasady gry.
+              <p className='courseTextBoxDescription'>
+                  Zapomnij o suchych wykładach i przestarzałych podręcznikach. W PITEAM zmieniamy zasady gry.
                   Zamiast teorii, oferujemy bezpośredni dostęp do wiedzy i doświadczenia czołowych postaci polskiej branży fitness.
                   To oni, Twoi przyszli mentorzy, dzielą się sprawdzonymi ścieżkami, które sami przeszli, budując swoje imperia trenerskie.
               </p>
               <div className="coursePoint">
-                  <span className="coursePointIcon">&#10532;</span>
-                  <div className="coursePointText">
-                      <h3>Dlaczego warto wybrać nasz kurs?</h3>
-                      <p>
-                          Chcesz wiedzieć, jak zbudować markę osobistą, prowadzić dochodowy biznes trenerski, czy zarządzać topowym klubem fitness?
-                          Uczysz się od tych, którzy to osiągnęli.
-                          Nasi eksperci to aktywni gracze na rynku, którzy na co dzień pracują z wymagającymi klientami i znają branżę od podszewki.
-                          Ich praktyczne spojrzenie to Twój największy atut.
-                      </p>
-                  </div>
+                <span className="coursePointIcon">&#10532;</span>
+                <div className="coursePointText">
+                  <h3>Dlaczego warto wybrać nasz kurs?</h3>
+                  <p>
+                      Chcesz wiedzieć, jak zbudować markę osobistą, prowadzić dochodowy biznes trenerski, czy zarządzać topowym klubem fitness?
+                      Uczysz się od tych, którzy to osiągnęli.
+                      Nasi eksperci to aktywni gracze na rynku, którzy na co dzień pracują z wymagającymi klientami i znają branżę od podszewki.
+                      Ich praktyczne spojrzenie to Twój największy atut.
+                  </p>
+                </div>
               </div>
+              <div className="coursePoint">
+                <span className="coursePointIcon">&#10532;</span>
+                <div className="coursePointText">
+                  <h3>Dlaczego warto wybrać nasz kurs?</h3>
+                  <p>
+                      Chcesz wiedzieć, jak zbudować markę osobistą, prowadzić dochodowy biznes trenerski, czy zarządzać topowym klubem fitness?
+                      Uczysz się od tych, którzy to osiągnęli.
+                      Nasi eksperci to aktywni gracze na rynku, którzy na co dzień pracują z wymagającymi klientami i znają branżę od podszewki.
+                      Ich praktyczne spojrzenie to Twój największy atut.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
-          <ContactForm className="contact-form-absolute"/> </div>
-          <CheckAlsoSection></CheckAlsoSection>
+          
+          <ContactForm/>
+        </div>
+        <CheckAlsoSection></CheckAlsoSection>
     </div>
     </>
   );
