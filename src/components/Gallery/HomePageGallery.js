@@ -7,10 +7,10 @@ import gymImage_Minature from '../../assets/HomePage/GymImgIza_Minature.jpg';
 import gymImage_Mid from '../../assets/HomePage/GymImgIza_1440_1080.jpg';
 import gymImage_Small from '../../assets/HomePage/GymImgIza_450_540.jpg';
 
-import poolImage from '../../assets/HomePage/PoolImg_428_1200.jpg';
-import poolImage_Minature from '../../assets/HomePage/PoolImg_Minature.jpg';
-import poolImage_Mid from '../../assets/HomePage/PoolImg_1440_1080.jpg';
-import poolImage_Small from '../../assets/HomePage/PoolImg_450_540.jpg';
+import poolImage from '../../assets/HomePage/PoolImg_428_1200.jpeg';
+import poolImage_Minature from '../../assets/HomePage/PoolImg_Minature.jpeg';
+import poolImage_Mid from '../../assets/HomePage/PoolImg_1440_1080.jpeg';
+import poolImage_Small from '../../assets/HomePage/PoolImg_450_540.jpeg';
 
 import courseImage from '../../assets/HomePage/CourseImg_768_2160.jpg';
 import courseImage_Minature from '../../assets/HomePage/CourseImg_Minature.jpg';

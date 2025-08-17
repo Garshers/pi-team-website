@@ -1,0 +1,57 @@
+﻿/* --------- Arrow section --------- */
+.arrowSection {
+  width: 90svw;
+  max-width: 1100px;
+  margin: 40px auto 20px;
+  min-height: 200px;
+  height: fit-content;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.arrowSectionBox {
+  flex: 1;
+  min-height: 230px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(0,0,0,0.5);
+  border: 1px solid rgba(255,255,255,0.2);
+  box-shadow: 0 0 10px rgba(255,255,255,0.2);
+  backdrop-filter: blur(15px);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.arrowSectionBox h2{
+  letter-spacing: 4px;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 600;
+  font-size: 1.5em;
+  font-style: normal;
+  margin: 0;
+}
+
+.arrowSectionBox span{
+  font-size: 2em;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.arrowSectionBox p {
+  text-shadow: none;
+}
+
+@media screen and (max-width: 700px) {
+  .arrowSection {
+    flex-direction: column;
+  }
+  .arrowSectionBox {
+    min-height: 100px;
+    width: 98%;
+    padding: 1%;
+  }
+}

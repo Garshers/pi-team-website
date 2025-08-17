@@ -4,7 +4,7 @@ import { Header } from '../../HeaderAndFooter/header.js';
 import CheckAlsoSection from '../../HeaderAndFooter/CheckAlsoSection.js';
 
 import blackCurtainMobile from '../../../assets/Personnel/blackCurtainMobile.jpg';
-import blackCurtainDesktop from '../../../assets/Personnel/blackCurtainDesktop1080p.jpg';
+import blackCurtainDesktop from '../../../assets/Personnel/blackCurtainDesktop240p.jpg';
 
 import personnelBackground0 from '../../../assets/Personnel/personnelBackground0.jpg';
 import personnelBackground1 from '../../../assets/Personnel/personnelBackground1.jpg';

@@ -4,6 +4,8 @@ import { Header } from '../../HeaderAndFooter/header.js';
 import CheckAlsoSection from '../../HeaderAndFooter/CheckAlsoSection.js';
 import ContactForm from '../../Form/ContactForm.js'
 import MainImage from '../../MainImage/MainImage.js';
+import ArrowSection from '../../Content/ArrowSection.js';
+import TextBlockWithPoints from '../../Content/TextBlockWithPoints.js';
 
 import background from '../../../assets/Gym/background.jpg';
 import courseImage from '../../../assets/Course/CourseImg.jpeg';
@@ -62,6 +64,50 @@ const item = {
     }
 };
 
+const arrowSectionData = [
+    {
+      title: 'WIEDZA W OPARCIU O NAUKĘ',
+      description: {
+        pre: 'Opieramy się wyłącznie na ',
+        bold: 'sprawdzonych naukowo metodach',
+        post: '. Nasi wykładowcy to doświadczeni praktycy z imponującymi osiągnięciami naukowymi, którzy skutecznie łączą teorię z praktyką.',
+      },
+    },
+    {
+      title: 'WYJĄTKOWY CERTYFIKAT',
+      description: {
+        pre: 'Otrzymujesz ',
+        bold: 'unikalny certyfikat',
+        post: ', który wyróżni Cię na tle konkurencji. Jest to potwierdzenie najwyższych kwalifikacji, cenione w całej branży.',
+      },
+    },
+    {
+      title: 'NA BIEŻĄCO Z TRENDAMI',
+      description: {
+        pre: 'Nasze programy są ',
+        bold: 'stale aktualizowane',
+        post: ' o najnowsze badania i trendy w branży. Zawsze będziesz mieć dostęp do najbardziej aktualnej wiedzy i narzędzi.',
+      },
+    },
+  ];
+
+  const pointSectionData = {
+    title: 'Uczymy przez Doświadczenie',
+    heading: 'Twoja Droga do Sukcesu w Branży Fitnessu',
+    paragraph: 'Zapomnij o suchych wykładach i przestarzałych podręcznikach. W PITEAM zmieniamy zasady gry. Zamiast teorii, oferujemy bezpośredni dostęp do wiedzy i doświadczenia czołowych postaci polskiej branży fitness. To oni, Twoi przyszli mentorzy, dzielą się sprawdzonymi ścieżkami, które sami przeszli, budując swoje imperia trenerskie.',
+    image: courseTextBoxImage,
+    points: [
+      {
+        title: 'Dlaczego warto wybrać nasz kurs?',
+        text: 'Chcesz wiedzieć, jak zbudować markę osobistą oraz prowadzić dochodowy biznes trenerski? Uczysz się od tych, którzy to osiągnęli. Nasi eksperci to aktywni gracze na rynku, którzy na co dzień pracują z wymagającymi klientami i znają branżę od podszewki. Ich praktyczne spojrzenie to Twój największy atut.',
+      },
+      {
+        title: 'Ulepszone Metody Treningowe',
+        text: 'Otrzymasz skuteczne protokoły treningowe, poparte najnowszymi badaniami. Eliminujemy zgadywanie, dając Ci gotowe do wdrożenia rozwiązania dla Twoich klientów.',
+      },
+    ],
+  };
+
 /**
  * @function CoursePage
  * @returns {JSX.Element} - Component representing the course page of the application.
@@ -72,61 +118,17 @@ function CoursePage() {
     <Header />
     <div className="courseMainBox" style={{ backgroundImage: `url(${background})`}}>
         <MainImage item={item} />
+        
         <div className="main-container"> 
-          <div className="arrowSection">
-            <div className='arrowSectionBox'>
-              <span className="arrow">&#10132;</span>
-              <h2 className="arrowText">WIEDZĄ WYPRZEDZAMY INNYCH</h2>
-              <p>Bazujemy wyłącznie na metodach potwierdzonych naukowo. Nasi wykładowcy to praktycy z wieloletnim doświadczeniem i tytułami naukowymi, którzy łączą teorię z praktyką.</p>
-            </div>
-            <div className='arrowSectionBox'>
-              <span className="arrow">&#10132;</span>
-              <h2 className="arrowText">JEDYNY TAKI CERTYFIKAT W POLSCE</h2>   
-              <p>Bazujemy wyłącznie na metodach potwierdzonych naukowo. Nasi wykładowcy to praktycy z wieloletnim doświadczeniem i tytułami naukowymi, którzy łączą teorię z praktyką.</p>
-            </div>
-            <div className='arrowSectionBox'>
-              <span className="arrow">&#10132;</span>
-              <h2 className="arrowText">17 000 ZADOWOLONYCH ABSOLWENTÓW</h2>
-              <p>Bazujemy wyłącznie na metodach potwierdzonych naukowo. Nasi wykładowcy to praktycy z wieloletnim doświadczeniem i tytułami naukowymi, którzy łączą teorię z praktyką.</p>
-            </div>
-          </div>
+          <ArrowSection sections={arrowSectionData} />
 
-          <div className='courseMainContainer'>
-            <div className="courseTextBox">
-              <img src={courseTextBoxImage} alt="Kurs Trenera Personalnego PITEAM" />
-              <h2>Uczymy przez Doświadczenie</h2>
-              <h1>Twoja Droga do Sukcesu w Fitnessie z Ekspertami Branży</h1>
-              <p className='courseTextBoxDescription'>
-                  Zapomnij o suchych wykładach i przestarzałych podręcznikach. W PITEAM zmieniamy zasady gry.
-                  Zamiast teorii, oferujemy bezpośredni dostęp do wiedzy i doświadczenia czołowych postaci polskiej branży fitness.
-                  To oni, Twoi przyszli mentorzy, dzielą się sprawdzonymi ścieżkami, które sami przeszli, budując swoje imperia trenerskie.
-              </p>
-              <div className="coursePoint">
-                <span className="coursePointIcon">&#10532;</span>
-                <div className="coursePointText">
-                  <h3>Dlaczego warto wybrać nasz kurs?</h3>
-                  <p>
-                      Chcesz wiedzieć, jak zbudować markę osobistą, prowadzić dochodowy biznes trenerski, czy zarządzać topowym klubem fitness?
-                      Uczysz się od tych, którzy to osiągnęli.
-                      Nasi eksperci to aktywni gracze na rynku, którzy na co dzień pracują z wymagającymi klientami i znają branżę od podszewki.
-                      Ich praktyczne spojrzenie to Twój największy atut.
-                  </p>
-                </div>
-              </div>
-              <div className="coursePoint">
-                <span className="coursePointIcon">&#10532;</span>
-                <div className="coursePointText">
-                  <h3>Dlaczego warto wybrać nasz kurs?</h3>
-                  <p>
-                      Chcesz wiedzieć, jak zbudować markę osobistą, prowadzić dochodowy biznes trenerski, czy zarządzać topowym klubem fitness?
-                      Uczysz się od tych, którzy to osiągnęli.
-                      Nasi eksperci to aktywni gracze na rynku, którzy na co dzień pracują z wymagającymi klientami i znają branżę od podszewki.
-                      Ich praktyczne spojrzenie to Twój największy atut.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+          <TextBlockWithPoints
+            title={pointSectionData.title}
+            heading={pointSectionData.heading}
+            paragraph={pointSectionData.paragraph}
+            points={pointSectionData.points}
+            imageSrc={pointSectionData.image}
+          />
           
           <ContactForm/>
         </div>

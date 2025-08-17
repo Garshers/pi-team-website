@@ -18,7 +18,7 @@ function ContactForm() {
         {/* Second form: General contact form without service selection */}
         <SingleContactForm
           formId="GeneralContactForm"
-          formTitle="Napisz do nas!"
+          formTitle="Zadaj nam pytanie"
           showServiceSelect={false}
           formLocalStorageKeyPrefix="general_contact"
         />
