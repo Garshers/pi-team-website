@@ -1,7 +1,7 @@
 
 
 .policyMainBox{
-  min-height: 100svh;
+  min-height: 100vh;
   height: fit-content;
   padding: 108px 10vw;
   gap: 10px;
@@ -9,7 +9,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
   background: #000000;
   background: -webkit-linear-gradient(195deg, #000000 0%, #656565 50%, #000000 100%);
   background: linear-gradient(195deg, #000000 0%, #656565 50%, #000000 100%);

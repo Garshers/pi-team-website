@@ -1,10 +1,11 @@
 .mainPersonnelBox{
   width: 100%;
-  min-height: 100svh;
+  min-height: 100vh;
   height: fit-content;
   padding-top: 100px;
   display: flex;
   flex-direction: column;
+  justify-content:space-between;
   align-items: center;
   background-size: cover;
   background-position: center;

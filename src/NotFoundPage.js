@@ -7,7 +7,7 @@ function NotFoundPage() {
     <><Header/>
     <div style={{ 
           backgroundImage: `url(${background})`,
-          minHeight: '100svh', 
+          minHeight: '100vh', 
           display: 'flex', 
           justifyContent: 'center', 
           alignItems: 'center', 

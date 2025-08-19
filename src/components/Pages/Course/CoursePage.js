@@ -1,13 +1,17 @@
 import React from 'react';
 import './coursePageStyle.css';
 import { Header } from '../../HeaderAndFooter/header.js';
-import CheckAlsoSection from '../../HeaderAndFooter/CheckAlsoSection.js';
-import ContactForm from '../../Form/ContactForm.js'
+
+
 import MainImage from '../../MainImage/MainImage.js';
+import PromoBanner from '../../Content/PromoBanner.js';
 import ArrowSection from '../../Content/ArrowSection.js';
 import TextBlockWithPoints from '../../Content/TextBlockWithPoints.js';
+import ContactForm from '../../Form/ContactForm.js'
+import CheckAlsoSection from '../../HeaderAndFooter/CheckAlsoSection.js';
 
 import background from '../../../assets/Gym/background.jpg';
+import offerImage from '../../../assets/Course/IMG_4249_400_320.jpg';
 import courseImage from '../../../assets/Course/CourseImg.jpeg';
 import courseTextBoxImage from '../../../assets/Course/CourseTextBoxImage.jpg';
 
@@ -108,6 +112,14 @@ const arrowSectionData = [
     ],
   };
 
+  const scrollToContactForm = () => {
+    const contactForm = document.getElementById('contactFormSection');
+    if (contactForm) {
+      contactForm.scrollIntoView({ behavior: 'smooth' });
+      console.log('Scrolling to contact form section');
+    }
+  };
+
 /**
  * @function CoursePage
  * @returns {JSX.Element} - Component representing the course page of the application.
@@ -116,9 +128,29 @@ function CoursePage() {
   return (
     <>
     <Header />
+    <PromoBanner />
     <div className="courseMainBox" style={{ backgroundImage: `url(${background})`}}>
-        <MainImage item={item} />
-        
+        <MainImage item={item}> 
+          <div className="courseNextSession">
+            <div className='courseBox'>
+              <img src={offerImage} alt={item.alt} />
+            </div>
+            <div className='courseBox' style={{ width: '100%'}}>
+              <h2>Kurs na Trenera Personalnego</h2>
+              <p>
+                Zapisz się na nasz kurs trenera personalnego i zdobądź wiedzę oraz umiejętności niezbędne do pracy w branży fitness.
+              </p>
+              <p style={{ color: 'orange', fontWeight: 'bold' }}>
+                Katowice, 1 września 2025
+              </p>
+            </div>
+            <div className='courseBox' id='courseButton' style={{ alignItems: 'center', padding: '0 20px', gap: '10px' }}>
+              <h3 style={{ width: '150px' }}>3299 PLN</h3>
+              <button onClick={scrollToContactForm}>Zapisz się</button>
+            </div>
+          </div>
+        </MainImage>
+
         <div className="main-container"> 
           <ArrowSection sections={arrowSectionData} />
 
@@ -130,6 +162,7 @@ function CoursePage() {
             imageSrc={pointSectionData.image}
           />
           
+          <div id="contactFormSection"></div>
           <ContactForm/>
         </div>
         <CheckAlsoSection></CheckAlsoSection>

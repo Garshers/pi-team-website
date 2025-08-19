@@ -37,4 +37,11 @@ button {
   --text-color: #333;
   --spacing-unit: 16px;
   --border-radius-base: 8px;
+
+  --glass-padding: max(15px, 2%);
+  --glass-bg: rgba(0,0,0,0.5);
+  --glass-border: 1px solid rgba(255,255,255,0.2);
+  --glass-shadow: 0 0 10px rgba(255,255,255,0.2);
+  --glass-blur: blur(15px);
+  --glass-radius: 10px;
 }

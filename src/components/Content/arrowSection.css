@@ -19,12 +19,12 @@
   height: fit-content;
   display: flex;
   flex-direction: column;
-  background-color: rgba(0,0,0,0.5);
-  border: 1px solid rgba(255,255,255,0.2);
-  box-shadow: 0 0 10px rgba(255,255,255,0.2);
-  backdrop-filter: blur(15px);
-  border-radius: 10px;
-  padding: 10px;
+  padding: var(--glass-padding);
+  background-color: var(--glass-bg);
+  border: var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: var(--glass-blur);
+  border-radius: var(--glass-radius);
 }
 
 .arrowSectionBox h2{
@@ -51,7 +51,7 @@
   }
   .arrowSectionBox {
     min-height: 100px;
-    width: 98%;
-    padding: 1%;
+    width: 96%;
+    margin: 1%;
   }
 }

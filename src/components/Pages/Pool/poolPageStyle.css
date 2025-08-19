@@ -1,5 +1,5 @@
-.gymMainBox{
-  min-height: 100svh;
+.poolMainBox{
+  min-height: 100vh;
   padding: 20px auto;
   width: 100%;
   height: fit-content;
@@ -13,8 +13,8 @@
   background-attachment: fixed;
 }
 
-/* --------- Text box for the gym section --------- */
-.gymTextBox{
+/* --------- Text box for the pool section --------- */
+.poolTextBox{
   width: 80%;
   max-width: 800px;
   display: flex;
@@ -31,18 +31,18 @@
 }
 
 @media (max-width: 768px) {
-  .gymFormWrapper{
+  .poolFormWrapper{
     width: 90%;
     padding: 15px 20px;
     margin: 0 auto;
   }
 
-  .gymDescription {
+  .poolDescription {
     font-size: 1em;
     line-height: 1.5;
   }
 
-  .gymTextBox{
+  .poolTextBox{
     width: 90%;
   }
 }

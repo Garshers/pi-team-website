@@ -9,18 +9,16 @@ import TextBlockWithPoints from '../../Content/TextBlockWithPoints.js';
 
 import background from '../../../assets/Gym/background.jpg';
 
-import poolImage from '../../../assets/Pool/poolImgBackground.jpg';
+import poolVideo from '../../../assets/Pool/poolVidBackground.mov';
 import poolImageBlurred from '../../../assets/Pool/poolImgBackground_blurred.jpg';
-import poolImageMid from '../../../assets/Pool/poolImgBackground.jpg';
-import poolImageSmall from '../../../assets/Pool/poolImgBackground_small.jpg';
+import poolVideoSmall from '../../../assets/Pool/poolVidBackground.mov';
 
 import swimmingTrainingImage from '../../../assets/Pool/swimmingKid.jpg';
 
 const item = {
-    image: poolImage,
+    video: poolVideo,
     minatureImage: poolImageBlurred,
-    midImage: poolImageMid,
-    smallImage: poolImageSmall,
+    smallVideo: poolVideoSmall,
     alt: 'Treningi pływackie - profesjonalne zajęcia w basenie dla każdego poziomu',
     title: 'Treningi Pływackie - Opanuj Wodę, Popraw Technikę',
     key: 'swimming1',
@@ -96,7 +94,7 @@ const pointSectionData = {
 function PoolPage() {
     return (
         <><Header/>
-        <div className="gymMainBox" 
+        <div className="poolMainBox" 
             style={{ backgroundImage: `url(${background})`, backdropFilter: 'blur(5px)' }}
             itemProp="image"
             itemScope

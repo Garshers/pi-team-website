@@ -13,7 +13,7 @@
   font-family: "Oswald", sans-serif;
 }
 
-.mainImageBox-img {
+.mainImageBox-media {
   height: 100svh;
   width: 100%;
   position: absolute;
@@ -77,12 +77,12 @@
   transform: translateY(-20px);
   color: white;
   font-weight: 600;
-  width: min(100%, 1100px);
+  width: min(90%, 1100px);
   font-size: clamp(1rem, 2vw, 1.2rem);
   letter-spacing: 2px;
   font-style: italic;
   padding: 20px 10px;
-  background: radial-gradient(ellipse at center, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.2) 20%, rgba(0,0,0,0) 100%);
+  /*background: radial-gradient(ellipse at center, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.2) 20%, rgba(0,0,0,0) 100%);*/
   font-family: 'Arial', sans-serif;
 }
 
