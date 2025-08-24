@@ -98,16 +98,17 @@ const MobileGallery = React.memo(({
           onLoad={onImageLoad}
           style={{ opacity: isPersonLoaded ? 1 : 0 }}
         />
-      <div className="galleryArrows">
-        <span className="leftArrow" onClick={onPrevious}>❮</span>
-        <span className="rightArrow" onClick={onNext}>❯</span>
-      </div>
       <div className='mobileDescriptionBox'>
         <h2 className='mobileGalleryName'>{currentTrainer.name}</h2>
         <p className='mobileGalleryDescription'>{currentTrainer.description}</p>
           {currentTrainer.LearnMore}
       </div>
     </Link>
+
+    <div className="galleryArrows">
+      <span className="leftArrow" onClick={onPrevious}>❮</span>
+      <span className="rightArrow" onClick={onNext}>❯</span>
+    </div>
   </div>
 ));
 

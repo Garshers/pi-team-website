@@ -21,7 +21,6 @@
   flex-direction: column;
   text-align: center;
   font-size: 1.2em;
-  margin-top: 10svh;
 
   padding: var(--glass-padding);
   background-color: var(--glass-bg);
@@ -41,9 +40,5 @@
   .gymDescription {
     font-size: 1em;
     line-height: 1.5;
-  }
-
-  .gymTextBox{
-    width: 90%;
   }
 }

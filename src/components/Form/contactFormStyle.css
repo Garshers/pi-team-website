@@ -191,6 +191,7 @@
 @media (max-width: 768px) {
     .FormWrapper{
         width: 90%;
+        margin: 10px 0;
         padding: 20px 20px;
     }
 }

@@ -39,7 +39,7 @@ const item = {
 function CampPage() {
     return (
         <><Header/>
-        <div className="gymMainBox" 
+        <div className="campMainBox" 
             style={{ backgroundImage: `url(${background})`, backdropFilter: 'blur(5px)' }}
             itemProp="image"
             itemScope

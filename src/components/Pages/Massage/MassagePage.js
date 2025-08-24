@@ -39,7 +39,7 @@ const item = {
 function MassagePage() {
     return (
         <><Header/>
-        <div className="gymMainBox" 
+        <div className="massageMainBox" 
             style={{ backgroundImage: `url(${background})`, backdropFilter: 'blur(5px)' }}
             itemProp="image"
             itemScope
