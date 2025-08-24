@@ -7,16 +7,16 @@ import MainImage from '../../MainImage/MainImage.js';
 
 import background from '../../../assets/Gym/background.jpg';
 
-import gymImage from '../../../assets/Gym/GymImgBackground.jpeg';
-import gymImageBlurred from '../../../assets/Gym/GymImgBackground_Blurred.jpeg';
-import gymImageMid from '../../../assets/Gym/GymImgBackground_Mid.jpeg';
-import gymImageSmall from '../../../assets/Gym/GymImgBackground_Small.jpeg';
+import campImage from '../../../assets/Camp/CampeImgBackground.jpg';
+import campImageBlurred from '../../../assets/Camp/CampeImgBackground.jpg';
+import campImageMid from '../../../assets/Camp/CampeImgBackground.jpg';
+import campImageSmall from '../../../assets/Camp/CampeImgBackground.jpg';
 
 const item = {
-    image: gymImage,
-    minatureImage: gymImageBlurred,
-    midImage: gymImageMid,
-    smallImage: gymImageSmall,
+    image: campImage,
+    minatureImage: campImageBlurred,
+    midImage: campImageMid,
+    smallImage: campImageSmall,
     alt: 'Obozy sportowe - intensywne treningi i rozwój umiejętności w zorganizowanej grupie',
     title: 'Obozy Sportowe - Rozwijaj Pasję, Buduj Formę',
     key: 'sportscamp1',

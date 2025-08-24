@@ -79,7 +79,7 @@ const PromoBanner = () => {
       </button>
       <div className="promo-content">
         <h3>Nie przegap! Tylko do 30 sierpnia!</h3>
-        <h2>Zapisz się teraz i odbierz rabat 300 zł + prezent od PI TEAM!</h2>
+        <h2>Zapisz się teraz i odbierz rabat <strong>300 zł + prezent</strong> od PI TEAM!</h2>
         
         {timerComponents.length ? (
           <div className="timer">
@@ -90,7 +90,7 @@ const PromoBanner = () => {
         )}
         
         <p>
-          W ofercie normalna cena wynosi 3299 zł, ale z nami masz możliwość rozbicia płatności na 3, 4, 8, 12 lub 24 raty.
+          Z nami masz możliwość rozbicia płatności na 3, 4, 8, 12 lub 24 raty.
         </p>
       </div>
     </div>

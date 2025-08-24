@@ -6,6 +6,7 @@ import './components/HeaderAndFooter/headerFooter.css';
 import HomePage from './components/Pages/HomePage/HomePage.js';
 import AboutUsPage from './components/Pages/AboutUs/AboutUsPage.js';
 import PersonnelPage from './components/Pages/Personnel/PersonnelPage.js';
+import IndividualPage from './components/Pages/Personnel/IndividualPage.js';
 import ContactPage from './components/Pages/Contact/ContactPage.js';
 
 import GymPage from './components/Pages/Gym/GymPage.js';
@@ -31,6 +32,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/o-nas" element={<AboutUsPage />} />
           <Route path="/kadra" element={<PersonnelPage />} />
+          <Route path="/kadra/:slug" element={<IndividualPage />} />
           <Route path="/kontakt" element={<ContactPage />} />
 
           <Route path="/treningi-personalne" element={<GymPage />} />

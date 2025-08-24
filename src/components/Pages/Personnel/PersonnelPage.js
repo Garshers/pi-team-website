@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
+import { Link } from 'react-router-dom';
 import './personnelPageStyle.css';
 import { Header } from '../../HeaderAndFooter/header.js';
 import CheckAlsoSection from '../../HeaderAndFooter/CheckAlsoSection.js';
@@ -31,6 +32,7 @@ const trainersData = [
     srcDesktop: imgPatrykDesktop,
     srcMobile: imgPatrykMobile,
     srcMinature: imgPatrykMinature,
+    slug: 'patryk-iwaszczyszyn',
     name: 'PATRYK',
     background: personnelBackground0,
     description: 'Cześć, tu Patryk Iwaszczyszyn - założyciel PITEAM, trener personalny, wielokrotny mistrz Polski i osoba, która stoi za tą firmą od pierwszego dnia.',
@@ -40,28 +42,31 @@ const trainersData = [
     srcDesktop: imgIzaDesktop,
     srcMobile: imgIzaMobile,
     srcMinature: imgIzaMinature,
+    slug: 'iza-pawik',
     name: 'IZA',
     background: personnelBackground1,
     description: 'Poznajcie Izę - pasjonatkę treningu siłowego, trenerkę kobiet oraz naszą specjalistkę od treningu pływackiego!',
-    LearnMore: 'Dowiedz się więcej o Izie!'
+    LearnMore: 'Kliknij, aby dowiedzieć się więcej o Izie!'
   },
   { 
     srcDesktop: imgNataliaDesktop,
     srcMobile: imgNataliaMobile,
     srcMinature: imgNataliaMinature,
+    slug: 'natalia-polaczek',
     name: 'NATALIA',
     background: personnelBackground4,
     description: 'Poznajcie Natalię - naszą utalentowaną masażystkę!',
-    LearnMore: 'Umów się na masaż!'
+    LearnMore: 'Kliknij i umów się na masaż!'
   },
   { 
     srcDesktop: imgDawidDesktop,
     srcMobile: imgDawidMobile,
     srcMinature: imgDawidMinature,
+    slug: 'dawid-slonina',
     name: 'DAWID',
     background: personnelBackground3,
     description: 'Poznajcie Dawida - naszego specjalistę od fizjoterapii ortopedycznej i treningu medycznego!',
-    LearnMore: 'Skonsultuj się z Dawidem!'
+    LearnMore: 'Kliknij, aby skonsultować się z Dawidem!'
   }
 ];
 
@@ -76,31 +81,33 @@ const MobileGallery = React.memo(({
   onNext
 }) => (
   <div className="mobileGalleryWrapper" style={{ backgroundImage: `url(${currentTrainer.background})`}}>
-    <img 
-        src={currentTrainer.srcMinature}
-        alt={`Miniatura zdjęcia trenera personalnego ${currentTrainer.name} z PITEAM`}
-        loading="lazy"
-        style={{ 
-            opacity: isPersonLoaded ? 0 : 1 ,
-            transition: 'opacity 0.3s ease-in-out 1.0s'
-        }}
-    />
-    <img
-        src={currentTrainer.srcMobile}
-        alt={`Zdjęcie trenera personalnego ${currentTrainer.name} z PITEAM`}
-        loading="lazy"
-        onLoad={onImageLoad}
-        style={{ opacity: isPersonLoaded ? 1 : 0 }}
+    <Link to={`/kadra/${currentTrainer.slug}`} className='mobileLearnMore'>
+      <img 
+          src={currentTrainer.srcMinature}
+          alt={`Miniatura zdjęcia trenera personalnego ${currentTrainer.name} z PITEAM`}
+          loading="lazy"
+          style={{ 
+              opacity: isPersonLoaded ? 0 : 1 ,
+              transition: 'opacity 0.3s ease-in-out 1.0s'
+          }}
       />
-    <div className="galleryArrows">
-      <span className="leftArrow" onClick={onPrevious}>❮</span>
-      <span className="rightArrow" onClick={onNext}>❯</span>
-    </div>
-    <div className='mobileDescriptionBox'>
-      <h2 className='mobileGalleryName'>{currentTrainer.name}</h2>
-      <p className='mobileGalleryDescription'>{currentTrainer.description}</p>
-      <a href="/kontakt" className='mobileLearnMore'>{currentTrainer.LearnMore}</a>
-    </div>
+      <img
+          src={currentTrainer.srcMobile}
+          alt={`Zdjęcie trenera personalnego ${currentTrainer.name} z PITEAM`}
+          loading="lazy"
+          onLoad={onImageLoad}
+          style={{ opacity: isPersonLoaded ? 1 : 0 }}
+        />
+      <div className="galleryArrows">
+        <span className="leftArrow" onClick={onPrevious}>❮</span>
+        <span className="rightArrow" onClick={onNext}>❯</span>
+      </div>
+      <div className='mobileDescriptionBox'>
+        <h2 className='mobileGalleryName'>{currentTrainer.name}</h2>
+        <p className='mobileGalleryDescription'>{currentTrainer.description}</p>
+          {currentTrainer.LearnMore}
+      </div>
+    </Link>
   </div>
 ));
 
@@ -132,27 +139,32 @@ const TrainerDisplayBox = React.memo(({ trainer }) => {
       // `key` jest przekazywany w komponencie nadrzędnym (DesktopGallery) podczas mapowania
       style={{ backgroundImage: `url(${trainer.background})` }}
     >
-      {/* Miniatura, która znika po załadowaniu głównego obrazu */}
-      <img
-        className='desktopGalleryMinature'
-        src={trainer.srcMinature}
-        alt={`Miniatura zdjęcia trenera personalnego ${trainer.name} z PITEAM`}
-        loading="lazy"
-        style={{ opacity: isTrainerImageLoaded ? 0 : 1 }}
-      />
-      {/* Główny obraz trenera, który pojawia się po załadowaniu */}
-      <img
-        src={trainer.srcDesktop}
-        alt={`Zdjęcie trenera personalnego ${trainer.name} z PITEAM`}
-        loading="lazy"
-        onLoad={handleTrainerImageLoad} // Wywołaj funkcję po załadowaniu obrazu
-        style={{ opacity: isTrainerImageLoaded ? 1 : 0 }} // Animacja dla głównego obrazu
-      />
-      <div className='desktopDescriptionBox'>
-        <h2 className='desktopGalleryName'>{trainer.name}</h2>
-        <p className='desktopGalleryDescription'>{trainer.description}</p>
-        <a href="/kontakt" className='desktopLearnMore'>{trainer.LearnMore}</a>
-      </div>
+      <Link to={`/kadra/${trainer.slug}`} className='desktopGalleryLink'>
+        {/* Miniatura, która znika po załadowaniu głównego obrazu */}
+        <img
+          className='desktopGalleryMinature'
+          src={trainer.srcMinature}
+          alt={`Miniatura zdjęcia trenera personalnego ${trainer.name} z PITEAM`}
+          loading="lazy"
+          style={{ opacity: isTrainerImageLoaded ? 0 : 1 }}
+        />
+        {/* Główny obraz trenera, który pojawia się po załadowaniu */}
+        <img
+          src={trainer.srcDesktop}
+          alt={`Zdjęcie trenera personalnego ${trainer.name} z PITEAM`}
+          loading="lazy"
+          onLoad={handleTrainerImageLoad} // Wywołaj funkcję po załadowaniu obrazu
+          style={{ opacity: isTrainerImageLoaded ? 1 : 0 }} // Animacja dla głównego obrazu
+        />
+      
+        <div className='desktopDescriptionBox'>
+          <h2 className='desktopGalleryName'>{trainer.name}</h2>
+          <p className='desktopGalleryDescription'>{trainer.description}</p>
+          <div className='desktopLearnMore'>
+            {trainer.LearnMore}
+          </div>
+        </div>
+      </Link>
     </div>
   );
 });

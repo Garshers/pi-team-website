@@ -6,7 +6,7 @@ const TextBlockWithPoints = ({ title, heading, paragraph, points, imageSrc }) =>
     <div className='text-block-container'>
       <div className="text-box">
         {imageSrc && <img src={imageSrc} alt={title} />}
-        <h2>{title}</h2>
+        <h2 data-text={title}>{title}</h2>
         <h1>{heading}</h1>
         <p className='text-box-description'>{paragraph}</p>
         {points.map((point, index) => (

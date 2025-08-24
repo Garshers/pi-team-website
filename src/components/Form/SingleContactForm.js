@@ -199,7 +199,7 @@ return (
         <label htmlFor={`privacyPolicy_${formId}`}>Wyrażam zgodę na przetwarzanie moich danych osobowych zgodnie z <a href="/polityka-prywatnosci" target="_blank" rel="noopener noreferrer">polityką prywatności</a>.</label>
         </div>
 
-        <button type="submit" className="Button" disabled={!privacyAccepted || !canSubmit}>Wyślij</button>
+        <button type="submit" className="Button" disabled={!privacyAccepted || !canSubmit}>WYŚLIJ</button>
     </form>
 
     {messageSent && (

@@ -10,7 +10,7 @@ function Footer() {
     return (
         <footer role="contentinfo" className="site-footer">
             <div className="footer-frame">
-                <div className="box1-3">
+                <div className="box1-3" style={{alignItems: 'start', paddingLeft: '5svw'}}>
                     <div className="footerText">
                         Skontaktuj się z nami:
                     </div>
@@ -20,8 +20,6 @@ function Footer() {
                             src={mail} 
                             alt="Ikona email" 
                             loading="lazy"
-                            width="24"
-                            height="24"
                         />
                         <div className="footerText">
                             <a 
@@ -39,8 +37,6 @@ function Footer() {
                             src={tel} 
                             alt="Ikona telefonu" 
                             loading="lazy"
-                            width="24"
-                            height="24"
                         />
                         <div className="footerText">
                             <a href="tel:+48795502007" aria-label="Zadzwoń do nas: +48 795 502 007">
@@ -49,7 +45,7 @@ function Footer() {
                         </div>
                     </div>
                 </div>
-                <div className="box1-3">
+                <div className="box1-3" style={{alignItems: 'center'}}>
                     <img 
                         src={Logo} 
                         alt="PITEAM - logo firmy" 
@@ -58,11 +54,11 @@ function Footer() {
                         height="auto"
                     />
                 </div>
-                <div className="box1-3">
-                    <div className="footerText">
+                <div className="box1-3" style={{alignItems: 'flex-end', paddingRight: '5svw'}}>
+                    <div className="footerText" style={{textAlign: 'end'}}>
                         Odwiedź nas na mediach społecznościowych:
                     </div>
-                    <div className='box1-3-row' role="navigation" aria-label="Media społecznościowe">
+                    <div className='box1-3-row' style={{justifyContent: 'end'}} role="navigation" aria-label="Media społecznościowe">
                         <a 
                             href="https://www.instagram.com/p.i.team" 
                             target="_blank" 
@@ -75,8 +71,6 @@ function Footer() {
                                 src={ig} 
                                 alt="Instagram PITEAM" 
                                 loading="lazy"
-                                width="24"
-                                height="24"
                             />
                         </a>
                         <a 

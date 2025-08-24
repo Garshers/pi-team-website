@@ -62,9 +62,9 @@
 
 /* Section containing styles for Text on top of images */
 .galleryBoxName {
-    width: 80%;
+    width: 90%;
     height: 100%;
-    padding: 80svh 20% 0;
+    padding: 80svh 10% 0;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -74,43 +74,50 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: background-color 0.4s ease-in-out;
+    transition: background-color 0.4s ease-in-out, backdrop-filter 0.5s ease-in-out;
 }
 
 .galleryBoxName:hover{
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: brightness(70%);
+    -webkit-backdrop-filter: saturate(50%);
 }
 
 .galleryBoxName p{
-    color: rgb(173, 173, 173);
+    color: white;
 }
 
 .galleryBoxName h1 {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     font-weight: 900;
     margin: 0 5px;
     text-align: center;
     transition: font-size 0.3s ease-in-out;
-    color: transparent;
-    -webkit-text-stroke: 1px #505050;
     position: relative;
-    font-style: oblique;
-    width: 100%;
+    width: 100%;   
+
+    letter-spacing: -1.5px;
+    color: black;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.8);
+    -webkit-transform: skewX(-10deg);
+    -moz-transform: skewX(-10deg);
+    -ms-transform: skewX(-10deg);
+    -o-transform: skewX(-10deg);
+    transform: skewX(-10deg);
 }
 .galleryBoxName h1::before {
     content: attr(data-text);
     position: absolute;
-    top: -5px;
-    left: -4px;
-    color: white;
-    z-index: 0;
     font-size: inherit;
     font-weight: inherit;
     font-style: inherit;
     width: 100%;
-    text-shadow:
-        -1px 1px 0 #505050,
-        1px 1px 0 #505050;
+    z-index: 0;
+
+    top: -0.5rem;
+    left: -0.5rem;
+    color: white;
+    -webkit-text-stroke: 2px black;
 }
 
 .galleryBoxName h2{
@@ -118,9 +125,11 @@
     opacity: 0;
     transition: transform 0.5s ease-out, opacity 0.3s ease-out;
     transform: translateY(-20px);
-    font-size: 1.1rem;
-    font-style: oblique;
-    color: rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-style: italic;
+    color: white;
     text-shadow:
         -1px -1px 0 rgba(0, 0, 0, 0.3),
         2px -2px 0 rgba(0, 0, 0, 0.3),

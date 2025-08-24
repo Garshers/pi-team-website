@@ -22,7 +22,7 @@ const item = {
     alt: 'Treningi pływackie - profesjonalne zajęcia w basenie dla każdego poziomu',
     title: 'Treningi Pływackie - Opanuj Wodę, Popraw Technikę',
     key: 'swimming1',
-    primary: 'TRENINGI PŁYWACKIE',
+    primary: 'TRENINGI PŁ YWACKIE',
     secondary: 'Chcesz nauczyć się pływać, podszlifować technikę lub szukasz efektywnej alternatywy dla siłowni? Zapraszamy na treningi pływackie na wszystkich poziomach zaawansowania – zarówno dla początkujących, jak i bardziej doświadczonych. ',
     schema: {
         "@type": "Service",

@@ -12,8 +12,8 @@
   transition: transform 0.5s ease-in-out;
   z-index: 1000;
   background-color: var(--glass-bg);
-  border: var(--glass-border);
-  box-shadow: var(--glass-shadow);
+  border-top: var(--glass-border);
+  border-left: var(--glass-border);
   backdrop-filter: blur(10px);
   border-radius: var(--glass-radius);
 }
@@ -30,17 +30,20 @@
   font-size: 1.2em;
   font-weight: 300;
   margin-bottom: 5px;
-  color: #a0a0a0;
+  color: #ffffff;
 }
 
 .promo-content h2 {
-  font-size: 1.8em;
+  font-size: 1.4em;
   margin: 0 0 10px;
   line-height: 1.2;
+  color: black;
+  -webkit-text-stroke: 0.5px white;
 }
 
 .promo-content h2 strong {
-  color: orange;
+  color: rgb(255, 255, 255);
+  -webkit-text-stroke: 1px black;
 }
 
 .promo-content p {

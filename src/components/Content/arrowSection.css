@@ -15,30 +15,30 @@
 
 .arrowSectionBox {
   flex: 1;
-  min-height: 230px;
+  min-height: 250px;
   height: fit-content;
   display: flex;
   flex-direction: column;
   padding: var(--glass-padding);
   background-color: var(--glass-bg);
-  border: var(--glass-border);
-  box-shadow: var(--glass-shadow);
+  border-top: var(--glass-border);
+  border-left: var(--glass-border);
   backdrop-filter: var(--glass-blur);
   border-radius: var(--glass-radius);
 }
 
 .arrowSectionBox h2{
-  letter-spacing: 4px;
-  font-family: "Bebas Neue", sans-serif;
-  font-weight: 600;
   font-size: 1.5em;
-  font-style: normal;
+  color: black;
+  -webkit-text-stroke: 1px white;
   margin: 0;
 }
 
 .arrowSectionBox span{
-  font-size: 2em;
-  color: rgba(255, 255, 255, 0.8);
+  color: black;
+  -webkit-text-stroke: 1px white;
+  font-size: 2.2em;
+  padding-bottom: 5px;
 }
 
 .arrowSectionBox p {

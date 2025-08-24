@@ -1,17 +1,18 @@
 /* Header styles */
 .header-frame {
-    height: max(108px, 8vh);
+    height: max(92px, 7vh);
     width: 100vw;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.7) 65%, rgba(0,0,0,0.5) 80%, rgba(0,0,0,0.3) 90%, rgba(0,0,0,0) 100%);
-    opacity: 1;
+    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 95%, rgba(0,0,0,0) 100%);
+    /*background-color: black;*/
+    opacity: 0.6;
     position: fixed;
     top: 0;
     z-index: 1000;
     transition: background 1s ease-in-out, opacity 0.5s ease-in-out;
-    font-family: "Oswald", sans-serif;
+    color: white;
 }
 
 .header-frame img{
@@ -25,19 +26,21 @@
 
 .header-frame:hover {
     opacity: 1;
+    background-color: black;
 }
 
 .header-frame.scrolled {
-    opacity: 0.5;
+    opacity: 0.6;
 }
 
 .header-frame.scrolled:hover {
     opacity: 1;
+    background-color: black;
 }
 
 .leftBox {
     /*border: 1px solid red;*/
-    height: 70%;
+    height: calc(100%-20px);
     aspect-ratio: 1/1;
     display: flex;
     justify-content: center;
@@ -47,9 +50,9 @@
 }
 
 .rightBox {
-    height: 70%;
+    height: calc(100%-20px);
     display: flex;
-    padding: 10px;
+    padding: 10px 20px;
     flex-direction: row-reverse;
     align-items: center;
     z-index: 3;
@@ -68,9 +71,10 @@
 }
 
 .menuText {
-    color: white;
     font-size: 1.3rem;
-    font-weight: bold;
+    font-weight: 900;
+    font-style: normal;
+    color: white;
     text-align: center;
     padding: 5px;
     transition: scale 0.3s ease, color 0.3s ease;
@@ -108,7 +112,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
 }
 
 /* Footer styles */
@@ -118,7 +121,7 @@
 
 .footer-frame {
     height: 200px;
-    width: 100vw;
+    width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -133,7 +136,6 @@
     flex-basis: 0;
     /*border: 1px solid red;*/
     display: flex;
-    align-items: center;
     justify-content: center;
     padding: 10px;
     gap: 10px;
@@ -145,8 +147,8 @@
     height: fit-content;
     display: flex;
     flex-direction: row;
+    justify-content: left;
     align-items: center;
-    justify-content: center;
     gap: 10px;
 }
 
@@ -156,7 +158,6 @@
     font-size: 16px;
     line-height: 140%;
     color: rgb(255,255,255);
-    text-align: center;
     max-width: 300px;
 }
 
@@ -212,6 +213,7 @@
     align-items: center;
     gap: 5px;
     padding: 0 5px;
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 5%, rgba(0,0,0,0) 100%);
 }
 
 .checkAlsoBox {
@@ -264,7 +266,7 @@
     }
 
     .box1-3 {
-        width: 70%;
+        width: 90%;
     }
 
     .menuButton {

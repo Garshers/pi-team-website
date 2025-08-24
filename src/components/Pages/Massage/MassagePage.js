@@ -7,16 +7,16 @@ import MainImage from '../../MainImage/MainImage.js';
 
 import background from '../../../assets/Gym/background.jpg';
 
-import gymImage from '../../../assets/Gym/GymImgBackground.jpeg';
-import gymImageBlurred from '../../../assets/Gym/GymImgBackground_Blurred.jpeg';
-import gymImageMid from '../../../assets/Gym/GymImgBackground_Mid.jpeg';
-import gymImageSmall from '../../../assets/Gym/GymImgBackground_Small.jpeg';
+import massageImage from '../../../assets/Massage/MassageImgBackground.jpg';
+import massageImageBlurred from '../../../assets/Massage/MassageImgBackground.jpg';
+import massageImageMid from '../../../assets/Massage/MassageImgBackground.jpg';
+import massageImageSmall from '../../../assets/Massage/MassageImgBackground.jpg';
 
 const item = {
-    image: gymImage,
-    minatureImage: gymImageBlurred,
-    midImage: gymImageMid,
-    smallImage: gymImageSmall,
+    image: massageImage,
+    minatureImage: massageImageBlurred,
+    midImage: massageImageMid,
+    smallImage: massageImageSmall,
     alt: 'Masaże relaksacyjne - chwila ukojenia i odprężenia dla ciała i umysłu',
     title: 'Masaże Relaksacyjne - Oaza Spokoju i Regeneracji',
     key: 'massage1',

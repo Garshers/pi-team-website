@@ -21,13 +21,14 @@
   flex-direction: column;
   text-align: center;
   font-size: 1.2em;
-  padding: 20px 5px;
-  background-color: rgba(0,0,0,0.3);;
-  border: 1px solid rgba(255,255,255,0.2);
-  box-shadow: 0 0 10px rgba(255,255,255,0.2);
-  backdrop-filter: blur(15px);
-  border-radius: 10px;
   margin-top: 10svh;
+
+  padding: var(--glass-padding);
+  background-color: var(--glass-bg);
+  border-top: var(--glass-border);
+  border-left: var(--glass-border);
+  backdrop-filter: var(--glass-blur);
+  border-radius: var(--glass-radius);
 }
 
 @media (max-width: 768px) {

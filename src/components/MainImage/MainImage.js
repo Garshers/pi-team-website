@@ -95,7 +95,6 @@ function MainImage({ item, children}) {
         <div className="mainOverlay">
           <h1
             id="main-title"
-            className="mainTitle"
             data-text={item.primary}
             itemProp="name"
           >
@@ -103,7 +102,6 @@ function MainImage({ item, children}) {
           </h1>
           <h2
             id="main-description"
-            className="mainDescription"
             itemProp="description"
           >
             {item.secondary}
@@ -111,7 +109,7 @@ function MainImage({ item, children}) {
         </div>
 
         <button
-          className="mainSubtitle"
+          className='mainImageBox-scrollButton'
           onClick={scrollToNextSection}
           aria-label="Przewiń do następnej sekcji"
           type="button"
