@@ -4,7 +4,7 @@ import { Header } from '../../HeaderAndFooter/header.js';
 
 
 import MainImage from '../../MainImage/MainImage.js';
-//import PromoBanner from '../../Content/PromoBanner.js';
+import PromoBanner from '../../Content/PromoBanner.js';
 import ArrowSection from '../../Content/ArrowSection.js';
 import TextBlockWithPoints from '../../Content/TextBlockWithPoints.js';
 import CourseForm from '../../Form/CourseForm.js'
@@ -100,19 +100,35 @@ const arrowSectionData = [
   ];
 
   const pointSectionData = {
-    title: 'UCZYMY PRZEZ DOŚWIADCZENIE',
+    title: 'CZEGO DOWIESZ SIĘ NA SZKOLENIU?',
     heading: 'TWOJA DROGA DO SUKCESU W BRANŻY FITNESS',
     paragraph: 'Zapomnij o suchych wykładach i przestarzałych podręcznikach. W PITEAM zmieniamy zasady gry. Zamiast teorii, oferujemy bezpośredni dostęp do wiedzy i doświadczenia czołowych postaci polskiej branży fitness. To oni, Twoi przyszli mentorzy, dzielą się sprawdzonymi ścieżkami, które sami przeszli, budując swoje imperia trenerskie.',
     image: courseTextBoxImage,
     points: [
-      {
-        title: 'DLACZEGO WARTO WYBRAĆ NASZ KURS?',
-        text: 'Chcesz wiedzieć, jak zbudować markę osobistą oraz prowadzić dochodowy biznes trenerski? Uczysz się od tych, którzy to osiągnęli. Nasi eksperci to aktywni gracze na rynku, którzy na co dzień pracują z wymagającymi klientami i znają branżę od podszewki. Ich praktyczne spojrzenie to Twój największy atut.',
-      },
-      {
-        title: 'ULEPSZONE METODY TRENINGOWE',
-        text: 'Otrzymasz skuteczne protokoły treningowe, poparte najnowszymi badaniami. Eliminujemy zgadywanie, dając Ci gotowe do wdrożenia rozwiązania dla Twoich klientów.',
-      },
+        {
+          title: 'Profesjonalne Prowadzenie Klienta',
+          text: 'Nauczymy Cię kompletnego procesu pracy z podopiecznym. Zaczniemy od tego, jak przeprowadzić skuteczną pierwszą konsultację, zdiagnozować potrzeby i ustalić realne cele. Dowiesz się, jak monitorować postępy i dostosowywać plan, aby zapewnić trwałe i widoczne rezultaty, budując długofalową relację opartą na zaufaniu.'
+        },
+        {
+          title: 'Solidne Fundamenty: Anatomia, Dietetyka, Trening',
+          text: 'Zdobędziesz niezbędną wiedzę merytoryczną stanowiącą filar pracy trenera. Opanujesz kluczowe zagadnienia z anatomii funkcjonalnej i fizjologii wysiłku, zrozumiesz podstawy bilansowania diety i suplementacji oraz nauczysz się, jak układać skuteczne i bezpieczne plany treningowe.'
+        },
+        {
+          title: 'Gotowy Warsztat Pracy i Narzędzia',
+          text: 'Nie zostaniesz z samą teorią. Otrzymasz od nas pakiet gotowych do użycia materiałów, które usprawnią Twoją codzienną pracę. Będą to m.in. profesjonalne formularze wywiadu z klientem, checklisty do oceny postępów oraz szablony planów treningowych i żywieniowych.'
+        },
+        {
+          title: 'Budowanie Marki Osobistej i Biznes',
+          text: 'Wiedza to jedno, ale trzeba jeszcze umieć ją sprzedać. Pokażemy Ci, jak krok po kroku zbudować silną markę osobistą w mediach społecznościowych. Dowiesz się, jakie treści tworzyć, jak docierać do potencjalnych klientów i przekuwać zainteresowanie w realną współpracę.'
+        },
+        {
+          title: 'Certyfikat i Nowe Możliwości Zawodowe',
+          text: 'Po ukończeniu kursu i zdaniu egzaminu otrzymasz oficjalny certyfikat trenera personalnego. To Twój klucz do rozpoczęcia pracy w zawodzie – dokument, który potwierdza Twoje kwalifikacje i jest honorowany w siłowniach, klubach fitness oraz przy prowadzeniu własnej działalności online.'
+        },
+        {
+          title: 'Wsparcie i Dostęp do Zamkniętej Społeczności',
+          text: 'Zyskasz dostęp do ekskluzywnej, zamkniętej grupy (Facebook lub WhatsApp) na 3 miesiące po kursie, gdzie będziesz mógł zadawać pytania szkoleniowcom i brać udział w specjalnych live streamach online, pogłębiających Twoją wiedzę.'
+        }
     ],
   };
 
@@ -165,7 +181,7 @@ function CoursePage() {
   return (
     <>
     <Header />
-    {/*<PromoBanner />*/}
+    <PromoBanner />
     <div className="courseMainBox" style={{ backgroundImage: `url(${background})`}}>
         <MainImage item={item}> 
           <div className="courseNextSession">

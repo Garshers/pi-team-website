@@ -18,7 +18,7 @@ const calculateTimeLeft = (targetDate) => {
 };
 
 const PromoBanner = () => {
-  const targetDate = '2025-08-30T23:59:59';
+  const targetDate = '2025-12-05T23:59:59';
   const [isActive, setIsActive] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft(targetDate));
@@ -78,8 +78,8 @@ const PromoBanner = () => {
         &times;
       </button>
       <div className="promo-content">
-        <h3>Nie przegap! Tylko do 30 sierpnia!</h3>
-        <h2>Zapisz się teraz i odbierz rabat <strong>300 zł + prezent</strong> od PI TEAM!</h2>
+        <h3>Nie przegap! Tylko do 6 grudnia</h3>
+        <h2>Zapisz się teraz! <br/>Ilość miejsc ograniczona <strong>17/20</strong><br/>Pierszeństwo według kolejności zgłoszeń!</h2>
         
         {timerComponents.length ? (
           <div className="timer">
@@ -90,8 +90,15 @@ const PromoBanner = () => {
         )}
         
         <p>
-          Z nami masz możliwość rozbicia płatności na 3, 4, 8, 12 lub 24 raty.
+          Z nami masz możliwość rozbicia płatności na 3, 4, 8, 12 lub 24 raty.<br/>
+          <a 
+            href="https://www.mediraty.pl/wspolpraca-piteam/" 
+            style={{ textDecoration: 'underline'}}
+          >
+            dowiedz się więcej!
+          </a>   
         </p>
+          
       </div>
     </div>
   );

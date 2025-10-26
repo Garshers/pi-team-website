@@ -138,9 +138,19 @@ return (
     <form id={formId} className="Form" onSubmit={handleSubmit}>
         <h1>{formTitle}</h1>
         <p> 
-            Kurs na trenera personalnego - Katowice - edycja Mikołajkowa, start 06.12.2025 <br/><br/>
+            Kurs na trenera personalnego - Katowice - edycja Mikołajkowa, start 06.12.2025 
+            <br/><br/>
             Ilość miejsc jest ograniczona, decyduje kolejność zgłoszeń.
             Po wypełnieniu formularza skontaktujemy się z Tobą, aby potwierdzić udział i przekazać dalsze szczegóły.
+            <br/><br/>
+            Z nami masz możliwość rozbicia płatności na 3, 4, 8, 12 lub 24 raty.<br/>
+            <a 
+                href="https://www.mediraty.pl/wspolpraca-piteam/" 
+                style={{ textDecoration: 'underline'}}
+            >
+                dowiedz się więcej!
+            </a>   
+
         </p>
 
         <input type="text" name="Imię" placeholder="Imię" required />
