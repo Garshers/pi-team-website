@@ -1,0 +1,269 @@
+﻿/* --------------------------------------------------- Desktop gallery styles --------------------------------------------------- */
+
+.desktopGalleryWrapper{
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  padding: 0 auto 0;
+  margin: 0px 0 40px;
+}
+
+.desktopGalleryRow{
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  /*border: 1px solid red;*/
+}
+.desktopGalleryBox {
+  min-height: 100px;
+  height: fit-content;
+  width: calc(33.33% - 5px);;
+  max-width: 300px;
+  flex: 0 0 calc(33.33% - 5px);
+  /*border: 1px solid red;*/
+  position: relative;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: contain;
+  background-position: bottom center;
+  background-repeat: no-repeat;
+}
+
+.desktopGalleryBox img {
+  width: 100%;
+  aspect-ratio: 2/3;
+  object-fit: cover;
+  transition: scale 0.5s ease-in-out;
+  transform-origin: bottom center;
+}
+
+.desktopGalleryBox .desktopGalleryMinature{
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  background-size: cover;
+  background-position: bottom center;
+  transition: scale 0.5s ease-in-out, background-image 1s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.desktopGalleryBox:hover img {
+  scale: 1.2;
+}
+
+/* --------------------------------------------------- Mobile gallery styles --------------------------------------------------- */
+.mobileGalleryWrapper {
+  width: 100%;
+  max-width: 500px;
+  aspect-ratio: 4/5;
+  margin: 80px auto 10px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-image 1s ease-in-out;
+  background-size: cover;
+  background-position: center;
+  box-sizing: border-box;
+  background-color: black;
+  box-shadow: 
+    0px -25px 50px 0px rgba(0, 0, 0, 1),
+    0px 25px 50px 0px rgba(0, 0, 0, 1),
+    inset 0px 25px 50px -60px rgba(0, 0, 0, 1),
+    inset 0px -100px 50px -60px rgba(0, 0, 0, 1);
+}
+
+.mobileGalleryWrapper img {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  background-size: cover;
+  background-position: bottom center;
+  transition: background-image 1s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+/* ---- Arrow styles ---- */
+
+.galleryArrows {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  padding: 0 10px;
+  box-sizing: border-box;
+  pointer-events: none;
+}
+
+.leftArrow,
+.rightArrow {
+  cursor: pointer;
+  height: 34px;
+  width: 24px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 50%;
+  font-size: 24px;
+  user-select: none;
+  /*border: 1px solid red;*/
+  transition: background-color 0.3s ease;
+  pointer-events: auto;
+}
+
+.leftArrow:hover,
+.rightArrow:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* ---- Thumbnail styles ---- */
+.thumbnails {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 40px 0;
+  gap: 10px;
+  padding: 0 10px;
+}
+
+.thumbnail {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  object-position: 50% 10%;
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  transition: border-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.thumbnail.active {
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: scale(1.1);
+}
+
+/* --------------------------------------------------- Description styles for desktop and mobile --------------------------------------------------- */
+.desktopDescriptionBox, .mobileDescriptionBox {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  position: absolute;
+  padding: 10px 20px 10px 10px;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  box-sizing: border-box;
+  transition: height 0.7s ease-in-out;
+}
+.desktopDescriptionBox {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.0) 0%, rgba(0, 0, 0, 0.7) 10%);
+}
+
+.desktopGalleryBox:hover .desktopDescriptionBox {
+  height: 40%;
+}
+
+.desktopGalleryName, .mobileGalleryName{
+  color: rgb(255, 255, 255);
+  font-style: normal;
+  -webkit-text-stroke: 1px black;
+  width: 100%;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  z-index: 10;
+  margin-top: 10px;
+  text-align: left;
+  transition: text-align 0.7s ease-in-out;
+  margin: auto 0 0;
+  /*border: 1px solid red;*/
+}
+
+.desktopGalleryDescription, .mobileGalleryDescription {
+  width: 100%;
+  color: white;
+  font-size: 0.9em;
+  text-align: left;
+  z-index: 10;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  margin-bottom: 5px;
+  /*border: 1px solid red;*/
+}
+
+.mobileGalleryName, .mobileGalleryDescription{
+  text-align: center;
+}
+
+.desktopGalleryBox:hover .desktopDescriptionBox .desktopGalleryDescription{
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0.5s;
+}
+
+.desktopLearnMore, .mobileLearnMore{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 11;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+  color: grey;
+  font-size: 0.8em;
+  margin: 10px 0;
+  text-decoration: none;
+  text-align: center;
+}
+
+.desktopLearnMore:hover {
+  color: white;
+  cursor: pointer;
+}
+
+.desktopGalleryBox:hover .desktopLearnMore{
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0.6s;
+}
+
+
+/* --------------------------------------------------- Distinct description styles for mobile --------------------------------------------------- */
+
+.mobileDescriptionBox {
+  height: fit-content;
+}
+
+.mobileGalleryName{
+  font-size: 2em;
+}
+
+.mobileGalleryDescription {
+  font-size: 1.1em;
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobileLearnMore {
+  font-size: 1em;
+  opacity: 1;
+  visibility: visible;
+}
+
+@media screen and (max-width: 900px) {
+
+}

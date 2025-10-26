@@ -23,11 +23,11 @@ function Footer() {
                         />
                         <div className="footerText">
                             <a 
-                                href="mailto:kontakt@piteam.pl" 
+                                href="mailto:poczta@piteam.pl" 
                                 itemProp="email"
-                                aria-label="Wyślij email na adres kontakt@piteam.pl"
+                                aria-label="Wyślij email na adres poczta@piteam.pl"
                             >
-                                kontakt@piteam.pl
+                                poczta@piteam.pl
                             </a>
                         </div>
                     </div>

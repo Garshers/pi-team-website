@@ -99,7 +99,7 @@
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  font-size: clamp(1.1rem, 1.8vw, 1.3rem);
   width: 100svw;
   transition: opacity 0.2s ease-in-out, transform 0.3s ease-in-out;
   text-shadow:

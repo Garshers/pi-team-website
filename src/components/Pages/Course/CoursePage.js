@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import './coursePageStyle.css';
 import { Header } from '../../HeaderAndFooter/header.js';
 
@@ -9,6 +9,9 @@ import ArrowSection from '../../Content/ArrowSection.js';
 import TextBlockWithPoints from '../../Content/TextBlockWithPoints.js';
 import CourseForm from '../../Form/CourseForm.js'
 import CheckAlsoSection from '../../HeaderAndFooter/CheckAlsoSection.js';
+import PersonnelGallery from '../../Content/PersonnelGallery.js';
+import { trainersData } from '../../Content/PersonnelData.js';
+import CourseTimeline from '../../Content/CourseTimeline.js';
 
 import background from '../../../assets/Gym/background.jpg';
 import offerImage from '../../../assets/Course/IMG_4249_400_320.jpg';
@@ -25,7 +28,7 @@ const item = {
     title: 'Zostań Certyfikowanym Trenerem Personalnym z PITEAM - Szkolenie Katowice',
     key: 'personalTrainerCourse',
     primary: 'KURS NA TRENERA PERSONALNEGO',
-    secondary: 'Zdobądź certyfikat i wiedzę niezbędną do pracy jako profesjonalny trener personalny. Nasz kurs obejmuje anatomię, fizjologię, metodykę treningu, dietetykę i psychologię sportu. Przygotuj się do zawodu z najlepszymi!',
+    secondary: 'Masz dość pracy, która Cię nie rozwija? Chcesz żyć z pasji, którą już masz (lub zawsze chciałeś/aś mieć)? Stwórz swoją nową rzeczywistość! Zdobądź certyfikat i wiedzę niezbędną do pracy jako profesjonalny trener personalny. Nasz kurs obejmuje anatomię, fizjologię, metodykę treningu, dietetykę i psychologię sportu. Przygotuj się do zawodu  z  najlepszymi!',
     schema: {
         "@context": "https://schema.org",
         "@type": "Course",
@@ -56,11 +59,11 @@ const item = {
                 "name": "Patryk Iwaszczyszyn",
                 "url": "https://www.piteam.pl/kadra/patryk-iwaszczyszyn"
             },
-            "startDate": "2025-09-01",
+            "startDate": "2025-12-06",
             "endDate": "2025-12-31",
             "offers": {
                 "@type": "Offer",
-                "price": "3500.00",
+                "price": "3299.00",
                 "priceCurrency": "PLN",
                 "url": "http://localhost:3000/kontakt"
             },
@@ -121,11 +124,44 @@ const arrowSectionData = [
     }
   };
 
+  const MOBILE_BREAKPOINT = 900;
+  const LARGE_SCREEN_BREAKPOINT = 1400;
+  const displayedTrainers = trainersData.filter(trainer => trainer.name !== 'NATALIA');
+
 /**
  * @function CoursePage
  * @returns {JSX.Element} - Component representing the course page of the application.
  */
 function CoursePage() {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < MOBILE_BREAKPOINT);
+  const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth > LARGE_SCREEN_BREAKPOINT);
+  
+  const handleResize = useCallback(() => {
+    const newIsMobile = window.innerWidth < MOBILE_BREAKPOINT;
+    const newIsLargeScreen = window.innerWidth > LARGE_SCREEN_BREAKPOINT;
+
+    if (newIsMobile !== isMobile) {
+      setIsMobile(newIsMobile);
+    }
+    if (newIsLargeScreen !== isLargeScreen) {
+      setIsLargeScreen(newIsLargeScreen);
+    }
+  }, [isMobile, isLargeScreen]);
+
+  useEffect(() => {
+    let timeoutId;
+    const debouncedResize = () => {
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(handleResize, 100);
+    };
+
+    window.addEventListener('resize', debouncedResize);
+    return () => {
+      window.removeEventListener('resize', debouncedResize);
+      clearTimeout(timeoutId);
+    };
+  }, [handleResize]);
+
   return (
     <>
     <Header />
@@ -141,8 +177,8 @@ function CoursePage() {
               <p>
                 Zapisz się na nasz kurs trenera personalnego i zdobądź wiedzę oraz umiejętności niezbędne do pracy w branży fitness.
               </p>
-              <p style={{ color: 'orange', fontWeight: 'bold' }}>
-                Katowice, 6 grudnia 2025
+              <p style={{ color: 'orange', fontWeight: 'bold', marginTop: '10px' }}>
+                Katowice, Francuska 184 - 6 grudnia 2025
               </p>
             </div>
             <div className='courseBox' id='courseButton' style={{ alignItems: 'center', padding: '0 20px', gap: '10px' }}>
@@ -153,6 +189,18 @@ function CoursePage() {
         </MainImage>
 
         <div className="main-container"> 
+
+          
+          <h2 className='header2' data-text={'3 WYKŁADOWCÓW, 1 KOMPLEKSOWY KURS'}>3 WYKŁADOWCÓW, 1 KOMPLEKSOWY KURS</h2>
+          <PersonnelGallery 
+            isMobile={isMobile}
+            isLargeScreen={isLargeScreen}
+            trainers={displayedTrainers}
+          />
+
+          <h2 className='header2' data-text={'TERMINARZ'}>TERMINARZ</h2>
+          <CourseTimeline />
+
           <ArrowSection sections={arrowSectionData} />
 
           <TextBlockWithPoints

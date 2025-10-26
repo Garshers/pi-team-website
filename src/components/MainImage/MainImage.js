@@ -114,7 +114,7 @@ function MainImage({ item, children}) {
           aria-label="Przewiń do następnej sekcji"
           type="button"
         >
-          &#10533; Zapisz się już dziś! &#10534;
+          &#10533; ZAPISZ SIĘ JUŻ DZIŚ! &#10534;
         </button>
       </section>
       <div className="mainGradient"></div>
