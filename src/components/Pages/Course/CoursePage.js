@@ -16,14 +16,17 @@ import CourseTimeline from '../../Content/CourseTimeline.js';
 import background from '../../../assets/Gym/background.jpg';
 import offerImage from '../../../assets/Course/IMG_4249_400_320.jpg';
 import courseImage from '../../../assets/Course/CourseImg.jpeg';
+import courseImageBlurred from '../../../assets/Course/CourseImgBackground_Blurred.jpeg';
+import courseImageMid from '../../../assets/Course/CourseImgBackground_Mid.jpeg';
+import courseImageSmall from '../../../assets/Course/CourseImgBackground_Small.jpeg';
 //import courseImage from '../../../assets/Course/CourseImg.png';
 import courseTextBoxImage from '../../../assets/Course/CourseTextBoxImage.jpg';
 
 const item = {
     image: courseImage,
-    minatureImage: courseImage,
-    midImage: courseImage,
-    smallImage: courseImage,
+    minatureImage: courseImageBlurred,
+    midImage: courseImageMid,
+    smallImage: courseImageSmall,
     alt: 'Kurs Trenera Personalnego PITEAM - kompleksowe szkolenie online i stacjonarne w Katowicach',
     title: 'Zostań Certyfikowanym Trenerem Personalnym z PITEAM - Szkolenie Katowice',
     key: 'personalTrainerCourse',
