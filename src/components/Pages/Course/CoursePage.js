@@ -4,15 +4,16 @@ import { Header } from '../../HeaderAndFooter/header.js';
 
 
 import MainImage from '../../MainImage/MainImage.js';
-import PromoBanner from '../../Content/PromoBanner.js';
+//import PromoBanner from '../../Content/PromoBanner.js';
 import ArrowSection from '../../Content/ArrowSection.js';
 import TextBlockWithPoints from '../../Content/TextBlockWithPoints.js';
-import ContactForm from '../../Form/ContactForm.js'
+import CourseForm from '../../Form/CourseForm.js'
 import CheckAlsoSection from '../../HeaderAndFooter/CheckAlsoSection.js';
 
 import background from '../../../assets/Gym/background.jpg';
 import offerImage from '../../../assets/Course/IMG_4249_400_320.jpg';
 import courseImage from '../../../assets/Course/CourseImg.jpeg';
+//import courseImage from '../../../assets/Course/CourseImg.png';
 import courseTextBoxImage from '../../../assets/Course/CourseTextBoxImage.jpg';
 
 const item = {
@@ -96,17 +97,17 @@ const arrowSectionData = [
   ];
 
   const pointSectionData = {
-    title: 'Uczymy przez Doświadczenie',
-    heading: 'Twoja Droga do Sukcesu w Branży Fitnessu',
+    title: 'UCZYMY PRZEZ DOŚWIADCZENIE',
+    heading: 'TWOJA DROGA DO SUKCESU W BRANŻY FITNESS',
     paragraph: 'Zapomnij o suchych wykładach i przestarzałych podręcznikach. W PITEAM zmieniamy zasady gry. Zamiast teorii, oferujemy bezpośredni dostęp do wiedzy i doświadczenia czołowych postaci polskiej branży fitness. To oni, Twoi przyszli mentorzy, dzielą się sprawdzonymi ścieżkami, które sami przeszli, budując swoje imperia trenerskie.',
     image: courseTextBoxImage,
     points: [
       {
-        title: 'Dlaczego warto wybrać nasz kurs?',
+        title: 'DLACZEGO WARTO WYBRAĆ NASZ KURS?',
         text: 'Chcesz wiedzieć, jak zbudować markę osobistą oraz prowadzić dochodowy biznes trenerski? Uczysz się od tych, którzy to osiągnęli. Nasi eksperci to aktywni gracze na rynku, którzy na co dzień pracują z wymagającymi klientami i znają branżę od podszewki. Ich praktyczne spojrzenie to Twój największy atut.',
       },
       {
-        title: 'Ulepszone Metody Treningowe',
+        title: 'ULEPSZONE METODY TRENINGOWE',
         text: 'Otrzymasz skuteczne protokoły treningowe, poparte najnowszymi badaniami. Eliminujemy zgadywanie, dając Ci gotowe do wdrożenia rozwiązania dla Twoich klientów.',
       },
     ],
@@ -128,7 +129,7 @@ function CoursePage() {
   return (
     <>
     <Header />
-    <PromoBanner />
+    {/*<PromoBanner />*/}
     <div className="courseMainBox" style={{ backgroundImage: `url(${background})`}}>
         <MainImage item={item}> 
           <div className="courseNextSession">
@@ -141,7 +142,7 @@ function CoursePage() {
                 Zapisz się na nasz kurs trenera personalnego i zdobądź wiedzę oraz umiejętności niezbędne do pracy w branży fitness.
               </p>
               <p style={{ color: 'orange', fontWeight: 'bold' }}>
-                Katowice, 1 września 2025
+                Katowice, 6 grudnia 2025
               </p>
             </div>
             <div className='courseBox' id='courseButton' style={{ alignItems: 'center', padding: '0 20px', gap: '10px' }}>
@@ -163,7 +164,7 @@ function CoursePage() {
           />
           
           <div id="contactFormSection"></div>
-          <ContactForm/>
+          <CourseForm/>
         </div>
         <CheckAlsoSection></CheckAlsoSection>
     </div>

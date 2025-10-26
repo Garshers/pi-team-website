@@ -47,7 +47,7 @@
   margin: 0;
   letter-spacing: 1px;
   font-weight: 900;
-  font-size: 1.5em;
+  font-size: 1.3em;
 }
 
 .text-box h2 {
@@ -55,7 +55,7 @@
   text-align: left;
   margin: 0 0 20px;
   font-weight: 900;
-  font-size: 1.7em;
+  font-size: 1.5em;
   font-style: normal;
 
   padding: 5px;
@@ -118,6 +118,7 @@
   margin: 0;
   letter-spacing: 0px;
   font-weight: 600;
+  font-size: 1em;
 }
 
 @media screen and (max-width: 1200px) {
