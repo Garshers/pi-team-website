@@ -84,7 +84,7 @@
   transform: translateY(-20px);
   color: white;
   width: min(90%, 1100px);
-  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-size: clamp(0.9rem, 2vw, 1.2rem);
   letter-spacing: 1px;
   font-style: italic;
   padding: 10px 10px;
@@ -102,8 +102,6 @@
   font-size: clamp(1.1rem, 1.8vw, 1.3rem);
   width: 100svw;
   transition: opacity 0.2s ease-in-out, transform 0.3s ease-in-out;
-  text-shadow:
-        2px 2px 0 rgba(0, 0, 0, 1);
 }
 
 .mainImageBox .mainImageBox-scrollButton:hover{

@@ -19,7 +19,6 @@ import courseImage from '../../../assets/Course/CourseImg.jpeg';
 import courseImageBlurred from '../../../assets/Course/CourseImgBackground_Blurred.jpeg';
 import courseImageMid from '../../../assets/Course/CourseImgBackground_Mid.jpeg';
 import courseImageSmall from '../../../assets/Course/CourseImgBackground_Small.jpeg';
-//import courseImage from '../../../assets/Course/CourseImg.png';
 import courseTextBoxImage from '../../../assets/Course/CourseTextBoxImage.jpg';
 
 const item = {
@@ -210,7 +209,8 @@ function CoursePage() {
         <div className="main-container"> 
 
           
-          <h2 className='header2' data-text={'3 WYKŁADOWCÓW, 1 KOMPLEKSOWY KURS'}>3 WYKŁADOWCÓW, 1 KOMPLEKSOWY KURS</h2>
+          <h2 className='header2' data-text={'3 WYKŁADOWCÓW'}>3 WYKŁADOWCÓW</h2>
+          <h2 className='header2' data-text={'1 KOMPLEKSOWY KURS'}>1 KOMPLEKSOWY KURS</h2>
           <PersonnelGallery 
             isMobile={isMobile}
             isLargeScreen={isLargeScreen}

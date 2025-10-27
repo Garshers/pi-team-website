@@ -78,17 +78,19 @@ const PromoBanner = () => {
         &times;
       </button>
       <div className="promo-content">
-        <h3>Nie przegap! Tylko do 6 grudnia</h3>
-        <h2>Zapisz się teraz! <br/>Ilość miejsc ograniczona <strong>17/20</strong><br/>Pierszeństwo według kolejności zgłoszeń!</h2>
+        <h3><strong>Dołącz teraz!</strong></h3>
+        <h2>Minimalna liczba uczestników już się zebrała - kurs na pewno się odbędzie! </h2>
         
+        <p>Pierszeństwo według kolejności zgłoszeń!<br/>Aktualna liczba uczestników (edycja w Katowicach): <strong>5</strong></p>
+
         {timerComponents.length ? (
           <div className="timer">
-            Pozostało: {timerComponents}
+            Do rozpoczęcia pozostało<br/> {timerComponents}
           </div>
         ) : (
           <div className="timer">Promocja zakończona!</div>
         )}
-        
+      
         <p>
           Z nami masz możliwość rozbicia płatności na 3, 4, 8, 12 lub 24 raty.<br/>
           <a 
