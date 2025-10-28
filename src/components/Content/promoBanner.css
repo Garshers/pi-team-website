@@ -3,7 +3,8 @@
   right: 0;
   bottom: 0;
   transform: translateX(100%);
-  width: min(400px, 100%);
+  width: 400px;
+  max-width: 94svw;
   background-color: #333;
   color: white;
   padding: 10px 10px;
@@ -15,6 +16,7 @@
   border-left: var(--glass-border);
   backdrop-filter: blur(10px);
   border-radius: var(--glass-radius);
+  border: 1px solid red;
 }
 
 .promo-banner.active {

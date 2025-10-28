@@ -74,6 +74,7 @@ const PromoBanner = () => {
             }
         }}
     >
+      
       <button className="close-button" onClick={handleClose}>
         &times;
       </button>
